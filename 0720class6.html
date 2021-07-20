@@ -1,0 +1,137 @@
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HTML 태그의 속성</title>
+  </head>
+  <body>
+    <a href="https://www.naver.com/">네이버 사이트로 이동</a>
+  </body>
+</html>
+-->
+
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>dl 태그 연습</title>
+  </head>
+  <body>
+    <h1>웹 표준 기술</h1>
+    <dl>
+      <dt>HTML</dt>
+      <dd>하이퍼텍스트를 마크업하는 언어이다.</dd>
+      <dt>CSS</dt>
+      <dd>웹 문서의 디자인 요소를 담당하는 기능을 가진 웹 표준 기술이다.</dd>
+      <dt>자바스크립트(JavaScript)</dt>
+      <dd>객체 기반의 스크립트 언어로써 웹의 동작을 구현할 수 있다.</dd>
+    </dl>
+
+  </body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>식물원 관람 유의사항</h1>
+    <ul>
+      <li>입장권에 게시된 관람요령을 살펴보시기 바랍니다.</li>
+      <li>안내원의 안내에 따라주시기 바랍니다.</li>
+      <li>관람 지역 이외의 출입제한 지역은 출입을 금합니다.</li>
+      <li>식물이 식재된 곳에 들어가지 마십시오.</li>
+    </ul>
+  </body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>오늘의 날씨</title>
+  </head>
+  <body>
+    <h1>오늘의 날씨</h1>
+    <table border="1">
+      <tr>
+        <th>지역</th>
+        <th>현재기온</th>
+        <th>불쾌지수</th>
+        <th>습도(%)</th>
+        <th>풍속(m/s)</th>
+      </tr>
+      <tr>
+        <td>서울</td>
+        <td>23</td>
+        <td>60</td>
+        <td rowspan="2">80</td>
+        <td>4.7</td>
+      </tr>
+      <tr>
+        <td>경기도</td>
+        <td>20</td>
+        <td>60</td>
+        <td>5.0</td>
+      </tr>
+      <tr>
+        <td>제주도</td>
+        <td colspan="2">21</td>
+        <td>85</td>
+        <td>3.6</td>
+      </tr>
+    </table>
+  </body>
+</html>
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>프론트앤드 개발자 지원서</title>
+  </head>
+  <body>
+    <form action="서버주소" method="post">
+      <fieldset>
+        <h1 style="color:orange;">프런트앤드 개발자 지원서</h1>
+        HTML, CSS, Script에 대한 기술적 이해와 경험이 있는 분을 뽑습니다.
+        <hr>
+        <dl>
+          <dt><strong>개인정보</strong></dt>
+            <dd>
+              <label for="User_name">이름</label>
+              <input type="text" id="User_name" autofocus required>
+            </dd>
+            <dd>
+              <label for="User_tel">연락처</label>
+              <input type="tel" id="User_tel">
+            </dd>
+          <dt><strong>지원분야</strong></dt>
+            <dd>
+              <label><input type="radio" name="subject">웹퍼블리싱</label>
+            </dd>
+            <dd>
+              <label><input type="radio" name="subject">웹기획</label>
+            </dd>
+            <dd>
+              <label><input type="radio" name="subject">웹개발</label>
+            </dd>
+        </dl>
+        <strong>지원동기<strong><br>
+        <textarea rows="8" cols="80" placeholder="지원동기를 적어주세요."></textarea><br>
+        <input type="submit" value="제출하기">
+        <input type="reset" value="다시작성">
+      </fieldset>
+    </form>
+  </body>
+</html>
