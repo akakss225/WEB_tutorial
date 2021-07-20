@@ -99,12 +99,16 @@
   <head>
     <meta charset="utf-8">
     <title>프론트앤드 개발자 지원서</title>
+    <style>
+      form { width: 500px; margin: 20px auto; padding: 20px; }
+      h1 { text-align: center; }
+    </style>
   </head>
   <body>
     <form action="서버주소" method="post">
       <fieldset>
         <h1 style="color:orange;">프런트앤드 개발자 지원서</h1>
-        HTML, CSS, Script에 대한 기술적 이해와 경험이 있는 분을 뽑습니다.
+        HTML, CSS, Script에 대한 기술적 이해와 경험이 있는 분을 찾습니다.
         <hr>
         <dl>
           <dt><strong>개인정보</strong></dt>
@@ -118,7 +122,7 @@
             </dd>
           <dt><strong>지원분야</strong></dt>
             <dd>
-              <label><input type="radio" name="subject">웹퍼블리싱</label>
+              <label><input type="radio" name="subject" checked>웹퍼블리싱</label>
             </dd>
             <dd>
               <label><input type="radio" name="subject">웹기획</label>
@@ -129,7 +133,7 @@
         </dl>
         <strong>지원동기<strong><br>
         <textarea rows="8" cols="80" placeholder="지원동기를 적어주세요."></textarea><br>
-        <input type="submit" value="제출하기">
+        <input type="submit" value="접수하기">
         <input type="reset" value="다시작성">
       </fieldset>
     </form>
