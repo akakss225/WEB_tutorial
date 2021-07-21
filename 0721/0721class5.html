@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 CSS속성</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Nanum+Pen+Script&display=swap');
+        h1 { color: navy; 
+            font-family: 'Nanum Pen Script', cursive; 
+            font-size: 42px; 
+            font-weight: normal;
+            font-style: italic;
+            text-decoration: underline;
+            text-align: center;
+            letter-spacing: 20px;
+            word-spacing: 50px;
+            text-shadow: 3px 3px 5px rgb(92, 14, 14);} /* 순서대로, 그림자와 텍스트의 x축 간격, 그림자와 텍스트의 y축 간격, 그림자의 진하기 */
+        h2 { font-variant: small-caps; } /* 대문자를 소문자크기에 맞추어 작게 표시 */
+        .fp { font-family: 'Gamja Flower', cursive;
+            font-size: 32px; 
+            color: skyblue;
+            text-decoration: underline;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px #ddd;
+            letter-spacing: 10px;
+            text-align: center;}
+        .textbox { text-indent: 50px; 
+                text-transform: capitalize;
+                line-height: 1.6;}
+        .list { list-style-type: none;
+                border-bottom: 2px dotted red;}
+        .sub_list { list-style-position: inside;
+                    list-style-type: square;
+                    border-bottom: 2px dashed skyblue;}
+        ol { list-style-type: decimal-leading-zero; }
+        #wrap { border: 2px solid blue; 
+                width: 700px;
+                margin: 0 auto;/* 순서대로, 위 아래, 양옆의 공간을 의미. auto는 자동으로 남는 여백을 반반으로 나눠서 설정하라는 의미. */
+                padding: 20px 50px;}
+                /* font-variant, text-transform 둘다 영어만 됨. */
+        .circle { width: 300px; height: 300px;
+                border: 3px solid orange;
+                margin: 50px auto;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 300px; /* 텍스트가 하나일때 사용할 수 있는 방법. 높이와 동일한 픽셀을 적용하면 수직 중앙정렬 된다. */
+                box-shadow: 10px 10px 10px #555;}
+        .circle2 { width: 300px; height: 300px;
+                border: 3px solid orange;
+                margin: 50px auto;
+                border-top-left-radius: 50%;
+                border-bottom-right-radius: 50%;
+                text-align: center;
+                line-height: 300px; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>이지스퍼블리싱 신입 사원 모집 공고</h1>
+        <p class="fp">IT 기획, 편집 부서에서 함께 할 신입 사원을 모집합니다.</p>
+        <ul class="list">
+            <li>- 모집 직군 : 편집 기획 부서</li>
+            <li>- 직무 내용 : 도서 프로듀싱 업무 (신입 지원 가능)
+                <ul class="sub_list">
+                    <li>도서 기획, 편집</li>
+                    <li>도서 홍보, 독자 소통</li>
+                </ul>
+            </li>
+            <li>- 접수 마감일 : 2021.3.6.</li>
+        </ul>
+        <p class="sp">자세한 내용은 공지 게시판을 참고하세요.</p>
+        <h2>Lorem ipsum dolor</h2>
+        <p class="textbox">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur quis placeat iste iure dignissimos adipisci possimus illo doloremque ex, labore totam odio, ipsa ratione consequatur incidunt earum, aspernatur enim.</p>
+        <ol>
+            <li>박효신</li>
+            <li>나얼</li>
+            <li>이수</li>
+        </ol>
+        <div class="circle">circle</div>
+        <div class="circle2">circle2</div>
+    </div>
+</body>
+</html>
