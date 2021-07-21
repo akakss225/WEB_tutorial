@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap { border: 1px solid #ccc; 
+                width: 640px;
+                margin: 0 auto;}
+        h1 { text-align: center; 
+            text-decoration: overline;
+            text-shadow: 3px 3px 5px rgb(219, 129, 129);}
+        h2 { margin-left: 20px;
+            word-spacing: 20px;}
+        #flist { border-bottom: 1px solid #ccc; 
+                padding-bottom: 30px;}
+        #slist { list-style-type: square; 
+                padding-top: 20px;
+                padding-bottom: 30px;
+                border-bottom: 1px solid #ccc;}
+        #tlist { padding-top: 20px;
+                padding-bottom: 30px;
+                list-style-image: url(dot.png);}
+        ul li { line-height: 2; }
+        .red { font-weight: bold;
+                color: red;}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="top.jpeg" alt="사과이미지" width="640px">
+        <h1>확인하세요</h1>
+        <h2>주문 및 배송</h2>
+        <ul id="flist">
+            <li>오후 2시 이전 주문건은 당일 방송합니다.</li>
+            <li>2시 이후 주문건은 다음날 방송합니다.</li>
+        </ul>
+        <h2>교환 및 환불</h2>
+        <ul id="slist">
+            <li>불만족시 <strong class="red">100% 환불</strong></li>
+            <li>고객센터로 전화주세요</li>
+        </ul>
+        <h2>고객센터</h2>
+        <ul id="tlist">
+            <li>02-000-0000</li>
+            <li>상담시간: 오전 9시 ~ 오후 6시</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -39,7 +39,7 @@
         #wrap { border: 2px solid blue; 
                 width: 700px;
                 margin: 0 auto;/* 순서대로, 위 아래, 양옆의 공간을 의미. auto는 자동으로 남는 여백을 반반으로 나눠서 설정하라는 의미. */
-                padding: 20px 50px;}
+                padding: 20px 50px;} /* 박스 내부의 여백을 관리하는 문법 */
                 /* font-variant, text-transform 둘다 영어만 됨. */
         .circle { width: 300px; height: 300px;
                 border: 3px solid orange;
@@ -55,6 +55,9 @@
                 border-bottom-right-radius: 50%;
                 text-align: center;
                 line-height: 300px; }
+        .dot { list-style-image: url(dot.png); } /* font속성들은 대부분 부모의 속성을 자식이 상속받는다. */
+        .dot li ul { list-style-type: square;
+                    list-style-image: none;} /* 따라서 자식의 경우 none을 기재해 제거해주어야한다. */
     </style>
 </head>
 <body>
@@ -81,6 +84,16 @@
         </ol>
         <div class="circle">circle</div>
         <div class="circle2">circle2</div>
+        <ul class="dot">
+            <li>1-1
+                <ul>
+                    <li>2-1</li>
+                    <li>2-2</li>
+                </ul>
+            </li>
+            <li>1-2</li>
+            <li>1-3</li>
+        </ul>
     </div>
 </body>
 </html>
