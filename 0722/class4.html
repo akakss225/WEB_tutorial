@@ -21,6 +21,12 @@
             background-position: 0 0; /*left top 이런식으로 적어도 되고, 순서대로 x축 y축이라 생각하고 픽셀단위로 적어도 된다.*/
             background-size: 500px; /*cover의 경우 100% 꽉채워서 여백을 보이지 않게하는것. 숫자를 먼저 기입하면 x축이 기본이다. contain은 상황에 따라 한쪽으로 100%채워주는 명령어*/
             }
+        .gradient_linear, .gradient_radial { height: 400px; border: 1px solid red; }
+        .gradient_linear { background-image: linear-gradient(225deg, blue, red, yellowgreen); 
+                        background-image: -webkit-linear-gradient(225deg, blue, red, yellowgreen);
+                        background-image: -moz-linear-gradient(225deg, blue, red, yellowgreen);
+                        background-image: --linear-gradient(225deg, blue, red, yellowgreen);}/* 방향, 시작색, 끝색 */
+        .gradient_radial { background-image: radial-gradient(circle, blue, red, yellowgreen); }
     </style>
 </head>
 <body>
@@ -31,5 +37,7 @@
         <li>노랑</li>
     </ul>
     <div class="bg"></div>
+    <div class="gradient_linear">선형그라데이션</div>
+    <div class="gradient_radial">원형그라데이션</div>
 </body>
 </html>
