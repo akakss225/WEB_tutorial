@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* height의 경우 width와 달리 자식의 크기를 부모가 상속받는 형태이다. 따라서  */
+        html, body { height: 100%; margin: 0; color: #777; } /* 웹 작업에서 html과 body의 height를 100%로 맞춰주고 시작함. */
+        .bg01, .bg02, .bg03 { background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: cover;
+                                background-attachment: fixed;
+                                position: relative;
+                                opacity: 0.8;
+                                background-color: #333;}
+        .bg01 { background-image: url(images/bg01.jpg); min-height: 100%; } /* min-height는 출력하고싶은 사진의 최소사이즈를 결정해준다. */
+        .bg02 { background-image: url(images/bg02.jpg); min-height: 400px; }
+        .bg03 { background-image: url(images/bg03.jpg); min-height: 400px; }
+        .caption { position: absolute; left: 50%; top: 50%;
+                    transform: translate(-50%,-50%); /*position을 이용해 좌표를 넣어서 중앙정렬해줌.*/
+                    background-color: rgba(0, 0, 0, 0.6); color: #fff;
+                    padding: 20px; font-size: 24px;
+                    letter-spacing: 10px;}
+        .txt01, .txt02, .txt03 { background-color: #fff; color: #777;
+                                padding: 50px 100px;
+                                text-align: justify;
+                                line-height: 1.8;}
+        .txt03 { background-color: #282E34; color: #ddd; text-align: center; }
+    </style>
+</head>
+
+<body>
+    <div class="bg01">
+        <span class="caption">SCROLL start</span>
+    </div>
+    <div class="txt01">
+        <h2>HAPPY</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id exercitationem facilis inventore voluptates hic vel possimus voluptatem omnis nostrum eaque in consectetur expedita rem asperiores libero, voluptas nemo explicabo.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id exercitationem facilis inventore voluptates hic vel possimus voluptatem omnis nostrum eaque in consectetur expedita rem asperiores libero, voluptas nemo explicabo.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id exercitationem facilis inventore voluptates hic vel possimus voluptatem omnis nostrum eaque in consectetur expedita rem asperiores libero, voluptas nemo explicabo.</p>
+    </div>
+    <div class="bg02">
+        <span class="caption">Test Demo1</span>
+    </div>
+    <div class="txt02">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id exercitationem facilis inventore voluptates hic vel possimus voluptatem omnis nostrum eaque in consectetur expedita rem asperiores libero, voluptas nemo explicabo.</p>
+    </div>
+    <div class="bg03">
+        <span class="caption">Test Demo2</span>
+    </div>
+    <div class="txt03">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate id exercitationem facilis inventore voluptates hic vel possimus voluptatem omnis nostrum eaque in consectetur expedita rem asperiores libero, voluptas nemo explicabo.</p>
+    </div>
+    <div class="bg01">
+        <span class="caption">SCROLL end</span>
+    </div>
+</body>
+</html>
