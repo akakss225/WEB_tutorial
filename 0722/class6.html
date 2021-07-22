@@ -10,20 +10,20 @@
                                 background-repeat: no-repeat;
                                 background-size: cover;
                                 background-attachment: fixed;
-                                position: relative;
+                                position: relative; /* 포지션 잡아주기 */
                                 opacity: 0.8;
                                 background-color: #333;}
         .bg01 { background-image: url(images/bg01.jpg); min-height: 100%; } /* min-height는 출력하고싶은 사진의 최소사이즈를 결정해준다. */
         .bg02 { background-image: url(images/bg02.jpg); min-height: 400px; }
         .bg03 { background-image: url(images/bg03.jpg); min-height: 400px; }
-        .caption { position: absolute; left: 50%; top: 50%;
-                    transform: translate(-50%,-50%); /*position을 이용해 좌표를 넣어서 중앙정렬해줌.*/
+        .caption { position: absolute; left: 50%; top: 50%; /* 잡아준 포지션 연결해주기. left , top 둘다 50%로 맞춰주면, 박스의 왼쪽 위 꼭지점이 화면 중앙으로 배치됨. */
+                    transform: translate(-50%,-50%); /* 추가적으로 transform translate(-50%, -50%)는 박스의 x축 절반, y축 절반의 길이만큼 왼쪽과 위쪽으로 옮겨주는 작업이다. */
                     background-color: rgba(0, 0, 0, 0.6); color: #fff;
                     padding: 20px; font-size: 24px;
                     letter-spacing: 10px;}
-        .txt01, .txt02, .txt03 { background-color: #fff; color: #777;
+        .txt01, .txt02, .txt03 {
                                 padding: 50px 100px;
-                                text-align: justify;
+                                text-align: justify; /* 문단을 중앙정렬. 문단의 각 줄의 양 끝 좌우 여백이 동일하게 가온데정렬 */
                                 line-height: 1.8;}
         .txt03 { background-color: #282E34; color: #ddd; text-align: center; }
     </style>
