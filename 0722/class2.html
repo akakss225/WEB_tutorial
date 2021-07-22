@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블록레벨 / 인라인레벨</title>
+    <style>
+        span {background-color: tomato; width: 100px; height: 100px; 
+            padding: 40px; display: inline-block;}
+        .btn { width: 120px; height: 50px; 
+            background-color: teal; color: #fff; 
+            display: block; 
+            border-radius: 5px; 
+            text-align: center; 
+            line-height: 50px; 
+            text-decoration: none; }
+        .btn:hover, .btn:active { background-color: rgb(171, 216, 218); } /* 쉼표로 연결해 유사클래스를 지정할 수 있다. */
+        /* .btn:active { background-color: deeppink; } */
+        .menu { list-style: none; padding: 0;}
+        .menu li { width: 100px; height: 40px; display: inline-block; /*인라인레벨의 경우 부피선택이 안되기 때문에, 인라인-블록 이라는 편법을 사용하기도 함.*/
+                text-align: center; line-height: 40px;
+                background-color: rgb(72, 155, 189); color: #fff;}
+        .menu li:hover { background-color: skyblue ; cursor: pointer; }
+        .menu li:first-child { border: 1px solid red; }
+        .menu li:last-child { border: 1px solid blue; }
+        .menu li:nth-child(2) { border: 1px solid pink; } /*순서로 자식을 선택하는 문법.*/
+        .menu li:nth-child(3) { border: 1px solid green; visibility: hidden; } /*display none의 경우 자리조차 지워버림. 하지만 visiblity hidden 자리는 차지하되, 보이지는 않게 하는것임.*/
+        a:link { color: blueviolet; } /*한번도 방문하지않은 경우 폰트컬러 지정*/
+        a:visited { color: coral; } /*한번이라도 방문했을 경우 폰트컬러 지정*/
+        #box { border: 5px solid red; display: block; margin-bottom: 300px; }
+        #box div {background-color: yellowgreen; width: 200px; height: 200px; }
+        #box div:nth-child(1) {  }
+        #box div:nth-child(2) { padding: 50px; }
+        #box div:nth-child(3) { border: 50px solid orange; }
+        #box div:nth-child(4) { padding: 50px; border: 50px solid orange; } /*전체 너비는 400px*/
+        #box div:nth-child(5) { padding: 50px; border: 50px solid orange;
+                                box-sizing: border-box; } /* 이 경우 padding 과 border가 width안으로 들어감. 결과적으로 원래 사이즈와 같아짐. */
+    </style>
+</head>
+<body>
+    <!-- div*5>{$} -->
+    <div id="box">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+        <div>E</div>
+        <div>F</div>
+    </div>
+    <hr>
+    <span>A</span>
+    <span>B</span>
+    <span>C</span>
+    <span>D</span>
+    <span>E</span>
+    <a href="#" class="btn">바로가기</a>
+    <hr>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <a href="https://www.naver.com/">네이버</a>
+    <a href="edu.brain-study.co.kr">뇌새김</a>
+    <a href="#">바로가기</a>
+</body>
+</html>
