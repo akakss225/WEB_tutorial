@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        #wrap { width: 500px; margin: 20px auto; }
+        #content { height: 400px; border: 5px solid blue; position: relative; }
+        #content div { width: 50px; height: 50px; position: absolute;
+                        background-color: green; color: #fff; font-size: 22px;
+                        text-align: center; line-height: 50px;}
+        .box1 { left: 5px; top: 5px; }
+        .box2 { right: 5px; top: 5px; }
+        .box3 { left: 5px; bottom: 5px; }
+        .box4 { right: 5px; bottom: 5px; }
+        #content .box5 { left: 50%; top: 5px; margin-left: -50px; width: 100px; background-color: #ccc; }
+        #content .box6 { left: 50%; top: 50%; border-radius: 50%; width: 100px; height: 100px; line-height: 100px; background-color: deeppink;
+                            margin-left: -50px; margin-top: -50px;}
+        #wrap .box7 { width: 50px; height: 300px; background-color: deeppink; left: -80px; top: 0; border: 5px solid deeppink; }
+
+        #footer { border: 5px solid blue; margin-top: 10px; height: 50px; position: relative; }
+        #footer span { border-radius: 50%; width: 40px; height: 40px; color: #fff; 
+                        line-height: 40px; position: absolute; text-align: center; }
+        .s1 { background-color: slateblue; font-size: 24px; right: 80px; top: 5px; }
+        .n { background-color: orange; font-size: 24px; right: 50px; top: 5px; z-index: 1; }
+        .s2 { background-color: skyblue; font-size: 24px; right: 20px; top: 5px; }
+        #wrap a { background-color: deeppink; border-radius: 50%; font-size: 18px; 
+                    text-decoration: none; color: #fff; position: fixed; right: 20px; bottom: 50px; width: 40px; height: 40px;
+                    line-height: 40px; text-align: center;}
+        #footer .test { border: 5px solid blue; width: 50px; height: 50px; position: absolute; left: -80px;
+                        border-radius: 0; background-color: cornflowerblue; line-height: 50px; bottom: 1px; }
+                
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+            <div class="box3">3</div>
+            <div class="box4">4</div>
+            <div class="box5">top/center</div>
+            <div class="box6">center</div>
+            <div class="box7">quick</div>
+        </div>
+        <div id="footer">
+            <span class="s1">S</span>
+            <span class="n">N</span>
+            <span class="s2">S</span>
+            <span class="test">TEST</span>
+        </div>
+        <a href="#">TOP</a>
+    </div>
+</body>
+</html>
