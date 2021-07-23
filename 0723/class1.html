@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap { border: 2px solid red; width: 800px; margin: 0 auto; 
+                overflow: hidden; /* 자식들의 높이를 그대로 상속받는다는 명령어 원칙적으로는 박스밖으로 흘러넘치는걸 체크해줌. */}
+        #wrap div { width: 200px; height: 200px; background-color: skyblue; 
+                    float: left;}
+        #footer { background-color: #333;
+                padding: 20px;
+                color: #fff;
+                text-align: center;
+                clear: both;/*float으로 떠있는 박스와 겹치지 말라는 명령어*/
+                }
+        #menu { width: 500px; color: #333; overflow: hidden;}
+        .menu1 , .menu2, .menu3, .menu4 {  background-color: aquamarine; padding: 10px; border: 1px solid #000; text-align: center; 
+                                            width: 100px; float: left;}
+    </style>
+</head>
+<body>
+    <!-- #wrap>.box$*4>{box$} -->
+    <div id="wrap">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+    </div>
+    <div id="footer">copyright</div>
+    <div id="menu">
+        <div class="menu1">menu1</div>
+        <div class="menu2">menu2</div>
+        <div class="menu3">menu3</div>
+        <div class="menu4">menu4</div>
+    </div>
+</body>
+</html>
