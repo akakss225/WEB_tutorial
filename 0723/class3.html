@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>float</title>
+    <style>
+        * {margin: 0;padding: 0;}
+        .clear::after { content: ""; clear: both; display: block; }
+        .menu { list-style: none; width: 816px; margin: 0 auto; }
+        .menu li { width: 200px; height: 40px;
+            border: 2px solid red;
+            text-align: center;
+            line-height: 40px; 
+            float: left;}
+        #wrap { width: 816px; margin: 0 auto; border: 2px solid blue;
+                background-color: #ddd; padding: 20px;}
+        #wrap img { float: left; margin-right: 20px; }
+        #wrap .textbox {}
+        </style>
+</head>
+<body>
+    <ul class="menu clear">
+        <li>m1</li>
+        <li>m2</li>
+        <li>m3</li>
+        <li>m4</li>
+    </ul>
+    <div id="wrap">
+        <img src="test.jpeg" alt="배너" width="200">
+        <p class="textbox">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci ullam exercitationem reiciendis provident nulla corporis hic alias, consequuntur eius dicta, maiores error praesentium amet consequatur rem itaque deleniti recusandae eum.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur soluta maxime hic error laudantium non nulla temporibus impedit delectus? Dolores aperiam odio delectus repellendus ducimus sed ea itaque laboriosam unde!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero ipsam modi maxime fuga. Repellendus, officiis? Rem at minus enim praesentium dolor corporis, assumenda deleniti hic placeat illum, ea fugiat quas?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam facere necessitatibus neque dicta, cumque optio eos vitae, inventore id fuga, sequi excepturi. Quos molestiae cupiditate, voluptates veritatis voluptatum aliquam laboriosam.
+        </p>
+    </div>
+</body>
+</html>

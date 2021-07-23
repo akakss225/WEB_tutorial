@@ -34,7 +34,16 @@
         .sub1 { list-style-type: none; }
         .sub2 { list-style-type: none; }
         .sub3 { list-style-type: none; }
-        
+        .clear::after { content: ""; clear: both; display: block; }
+        .box2 { margin: 20px; border: 1px solid #ccc; padding: 0 20px; }
+        .box2 h2 { color: red; }
+        .box2 img { float: left; }
+        .box2 .right { float: right; width: 50%; text-align: center; }
+        .box2 h3 { color: blue; font-size: 22px; }
+        .box2 p { line-height: 2; letter-spacing: 2px; }
+        .box2 .right button { background-color: red; color: #fff; border: none; padding: 10px 30px;
+                                border-radius: 5px;}
+        .box2 .right button:hover { background-color: deeppink; }
     </style>
 </head>
 <body>
@@ -72,6 +81,15 @@
             <li>《바빠 중학도형》을 사면, 고급 컴퍼스가 따라와요~</li>
             <li>《된다! 엑셀 능력자》_교보문고 6주 연속 베스트 1위!</li>
         </ul>
+        </div>
+        <div class="box2 clear">
+            <h2>공지사항</h2>
+            <img src="newBook.png" alt="책배너">
+            <div class="right">
+                <h3>[본문 PDF 무료 배포]</h3>
+                <p>책에서도 볼 수 없는<br>Xcode 폰트 변경 방법<br>무료로 공개</p>
+                <button>Download</button>
+            </div>
         </div>
     </div>
 </body>
