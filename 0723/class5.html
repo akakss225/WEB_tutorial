@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>포지셔닝</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        #wrap { width: 600px; margin: 0 auto; border: 3px solid blue; 
+                height: 600px; position: relative;}
+        #wrap div { width: 100px; height: 100px; background-color: skyblue; font-size: 22px;
+                    position: absolute; }
+        .box1 { left: 0; top: 0; }
+        .box2 { right: 0; top: 0; }
+        .box3 { left: 0; bottom: 0; }
+        .box4 { right: 0; bottom: 0; }
+        .box5 { left: 50%; top: 50%; margin-top: -50px; margin-left: -50px; 
+                z-index: 1;}
+        .box6 { left: 50%; top: 50%; margin-top: -50px; margin-left: -50px;
+                background-color: slateblue !important; z-index: 2; /*z-index는 높을수록 위로 올라온다. << position만 있음.*/ }
+        .box7 { left: 50%; top: 50%; margin-top: -50px; margin-left: -50px;
+                background-color: tomato !important;}
+        #wrap .quick { width: 100px; height: 300px; background-color: red;
+                        right: -120px; top: 0;}
+        #wrap .top { width: 50px; height: 50px; background-color: red; border-radius: 50%; 
+                        right: 10px; bottom: 20px; position: fixed; /*fixed의 경우 absolute의 영향을 벗어난다.*/}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box1">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+        <div class="box6">box6</div>
+        <div class="box7">box7</div>
+        <div class="quick">quick</div>
+        <div class="top">top</div>
+    </div>
+</body>
+</html>
