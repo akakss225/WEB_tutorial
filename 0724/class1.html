@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS 복습</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+        #wrap { width: 700px; margin: 0 auto; border: 1px solid red; }
+        h1 { text-align: center; text-decoration: underline; color: blue; font-size: 42px; 
+            font-weight: 900; font-family: 'Noto Sans KR', sans-serif; font-style: italic; text-shadow: 3px 3px 5px skyblue; }
+        #wrap .menu { list-style: none; font-size: 22px; background-color: yellow; width: 518px; margin: 0 auto; padding: 0; }
+        #wrap .menu li { display: inline-block; border: 1px solid #333; padding: 10px 30px; cursor: pointer; }
+        #wrap .menu li:hover {background-color: #333; color: #fff;}
+        p { border: 1px solid #333; padding: 50px; line-height: 5;  }
+        #wrap p { background-image: url(test.jpeg); background-size: 100px; }
+        #con1 { background-repeat: repeat-x; }
+        #con2 { background-repeat: no-repeat; background-position: center; }
+        #wrap #con3 { background-repeat: no-repeat; background-size: cover; }
+        #con4 { background-repeat: no-repeat; background-position: right bottom; }
+        body { background: #ddd url(test.jpeg) no-repeat fixed right center / 200px; /* 한번에 쓰는 문법*/  }
+                        /*  배경색상 , 이미지 경로 , 반복속성 , 고정 , 위치 , /사이즈 */
+        html { scroll-behavior: smooth; }
+        
+    </style>
+</head>
+<body>
+    <h1>CSS 기본 문법</h1>
+    <div id="wrap">
+        <ul class="menu">
+            <li><a href="#con1">menu1</a></li>
+            <li><a href="#con2">menu2</a></li>
+            <li><a href="#con3">menu3</a></li>
+            <li><a href="#con4">menu4</a></li>
+        </ul>
+        <div id="content">
+            <p id="con1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima, provident libero ipsum, sequi optio nemo beatae incidunt eligendi temporibus porro, aut maiores magnam laborum pariatur corrupti illum tempore. Harum.</p>
+            <p id="con2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima, provident libero ipsum, sequi optio nemo beatae incidunt eligendi temporibus porro, aut maiores magnam laborum pariatur corrupti illum tempore. Harum.</p>
+            <p id="con3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima, provident libero ipsum, sequi optio nemo beatae incidunt eligendi temporibus porro, aut maiores magnam laborum pariatur corrupti illum tempore. Harum.</p>
+            <p id="con4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus minima, provident libero ipsum, sequi optio nemo beatae incidunt eligendi temporibus porro, aut maiores magnam laborum pariatur corrupti illum tempore. Harum.</p>
+        </div>
+        <ul class="menu">
+            <li><a href="#con1">menu1</a></li>
+            <li><a href="#con2">menu2</a></li>
+            <li><a href="#con3">menu3</a></li>
+            <li><a href="#con4">menu4</a></li>
+        </ul>
+    </div>
+</body>
+</html>
