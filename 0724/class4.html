@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>레이아웃 연습1</title>
+    <style>
+        * { padding: 0; margin: 0; }
+        a { text-decoration: none; color: #000; border: none; }
+        header, #content, footer, section { border: 1px solid  blue; }
+        .clear::after { content: ""; display: block; clear: both; }
+
+        .inner { width: 900px; margin: 0 auto; padding: 10px 0; }
+
+        header { background-color: wheat; }
+        header .logo { float: left; }
+        header nav { float: right; }
+        .gnb { list-style: none; }
+        .gnb li { float: left; width: 100px; height: 40px; background-color: skyblue; text-align: center; line-height: 40px; margin-left: 10px; }
+        .gnb li:first-child { margin-left: 0; }
+        .gnb li:hover { background-color: steelblue; }
+        .gnb li:hover a { color: #fff; }
+
+        #content { width: 900px; margin: 10px auto;  position: relative; }
+        #content .box1 { float: left; width: 443px; margin: 0 5px 10px 0; height: 100px; }
+        #content .box2 { float: right; width: 443px; margin: 0 0 10px 5px; height: 100px; }
+        .box3, .box4, .box5 { float: left; margin-right: 10px; width: 291.3333px; height: 100px; }
+        #content .box5 { margin-right: 0; }
+        #content .box6 { position: absolute; right: -120px; height: 200px; width: 100px; background-color: red; color: #fff; border: none; }
+
+        footer { background-color: #ddd; text-align: center; }
+        footer .inner { position: relative; }
+        footer p {  height: 70px; line-height: 70px; }
+        footer span { background-color: blue; border-radius: 50%; width: 50px; height: 50px;
+                        position: absolute; line-height: 50px; color: #fff;
+                        top: 50%; margin-top: -25px;}
+        footer span:nth-of-type(1) { right: 130px; }
+        footer span:nth-of-type(2) { right: 70px; }
+        footer span:nth-of-type(3) { right: 10px; }
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="inner clear">
+                <h1 class="logo">LOGO</h1>
+                <nav>
+                    <ul class="gnb clear">
+                        <li><a href="#">menu1</a></li>
+                        <li><a href="#">menu2</a></li>
+                        <li><a href="#">menu3</a></li>
+                        <li><a href="#">menu4</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="content" class="clear">
+            <section class="box1">box1</section>
+            <section class="box2">box2</section>
+            <section class="box3">box3</section>
+            <section class="box4">box4</section>
+            <section class="box5">box5</section>
+            <section class="box6">banner</section>
+        </div>
+        <footer>
+            <div class="inner">
+                <p>copyright</p>
+                <span>S</span>
+                <span>N</span>
+                <span>S</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
