@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>애완견</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        #wrap { width: 800px; margin: 0 auto; }
+        header { height: 140px; background: #f46075 url(images2/nav2.png) no-repeat right center / 150px; }
+        header nav {}
+        .gnb { list-style: none; padding-top: 80px; }
+        .gnb li { float: left; margin: 0 30px; }
+        .gnb li a { text-decoration: none; color: #fff; }
+        .gnb li:hover a { color: greenyellow; }
+        .clear::after { content: ""; display: block; 
+                        clear: both; }
+        #content { margin: 10px 0; }
+        #content section { width: 580px; float: left; }/* 580 */
+        #content section .title { font-style: 22px; margin: 20px 0; }
+        .list { list-style: none; }
+        .list li { border: 1px solid #ddd; padding: 10px; 
+                width: 280px; box-sizing: border-box; 
+                float: left; height: 220px; }
+        /* .list li:nth-child(2n) { background-color: #eee; } */
+        .list li:nth-child(even) { background-color: #eee; }
+        /* .list li:nth-child(2n-1) { margin-right: 20px; } */
+        .list li:nth-child(odd) { margin-right: 20px; }
+        .list li h3 { margin: 10px 0; }
+        .list li p { font-size: 12px; line-height: 1.6; }
+        .list li:nth-child(1), .list li:nth-child(2) {margin-bottom: 15px;}
+
+        .list li:nth-child(1) p::first-letter { font-size: 32px; color: red; }
+        .list li:nth-child(2) p::first-line { color: blue; }
+        .list li:nth-child(3) p::selection { background-color: #f46075; }
+        .list li:nth-child(4) h3 + p { text-decoration: line-through; } /* 형제레벨 선택자. h3의 형제로 p태그가 있다면 그 p태그를 선택해줌 (바로붙어있어야함) */
+
+        .list li:not(:last-child) { font-style: italic; } /* 마지막 박스를 제외하고 나머지 박스의 폰트스타일을 이탈릭으로 바꾼다. */
+        [class="title"] { color: coral; } /* 속성선택자. 클래스 이름이 타이틀이라는것이 있다면, 그것을 선택한다. */
+        a[href="#"] { color: cyan  !important; } /* 속성값이 #이면 */
+        img[alt] { border: 5px solid green; }
+        
+        a[href^="#"] { background-color: skyblue; } /* ^ = "" 속성값이 해당 단어로 시작하면 */
+        a[href*="2"] { border-bottom: 5px solid springgreen; } /* * = "" 속성값이 해당 단어를 포함한다면 */
+        a[href$="s"] { border-top: 5px solid yellow; } /* $ = "" 속성값이 해당 단어로 끝난다면 */
+
+        #content aside { width: 200px; float: right; }/* 200 */
+        #content aside img { margin-top: 73px; }
+        footer { background-color: #333; color: #fff;
+                text-align: center; padding: 15px 0; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <nav>
+                <ul class="gnb clear">
+                    <li><a href="#">애완견 종류</a></li>
+                    <li><a href="#a123">입양하기</a></li>
+                    <li><a href="#2s">건강돌보기</a></li>
+                    <li><a href="456s">더불어살기</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content" class="clear">
+            <section class="clear">
+                <h2 class="title">강아지 용품 준비하기</h2>
+                <ul class="list clear">
+                    <li>
+                        <h3>강아지 집</h3>
+                        <p>강아지가 편히 쉴 수 있는 포근한 집이 필요합니다. 강아지의 집은 강아지가 다 큰 후에도 계속 쓸 수 있는 집으로 구입하세요.집을 구입하실 때는 박음질이 잘 되어 있는지, 세탁이 간편한 제품인지 꼭 확인하시고 고르시는 것이 좋습니다.</p>
+                    </li>
+                    <li>
+                        <h3>강아지 먹이</h3>
+                        <p>강아지의 먹이는 꼭 어린 강아지용으로 나와있는 사료를 선택하세요. 강아지들은 사람에 비해 성장속도가 8배정도 빠르답니다. 따라서 강아지에게는 성장속도에 맞는 사료를 급여하셔야 합니다. 사람이 먹는 음식을 먹게 되면 양념과 향신료에 입맛이 익숙해지고, 비만이 될 가능성이 매우 높아집니다. 강아지용 사료는 생후 12개월까지 급여하셔야 합니다.</p>
+                    </li>
+                    <li>
+                        <h3>밥그릇, 물병</h3>
+                        <p>밥그릇은 쉽게 넘어지지 않도록 바닥이 넓은 것이 좋습니다.물병은 대롱이 달린 것으로 선택하세요. 밥그릇에 물을 주게 되면 입 주변에 털이 모두 젖기 때문에 비위생적이므로 대롱을 통해서 물을 먹을 수 있는 물병을 마련하시는 것이 좋습니다.</p>
+                    </li>
+                    <li>
+                        <h3>이름표, 목줄</h3>
+                        <p>강아지를 잃어버릴 염려가 있으니 산책할 무렵이 되면 이름표를 꼭 목에 걸어주도록 하세요. 그리고 방울이 달린 목걸이를 하고자 하실 때는 신중하셔야 합니다. 움직일 때마다 방울이 딸랑 거리면 신경이 예민한 강아지들에게는 좋지 않은 영향을 끼칠 수 있기 때문입니다.</p>
+                    </li>
+                </ul>
+            </section>
+            <aside>
+                <img src="images2/pet.png" alt="강아지">
+            </aside>
+        </div>
+        <footer>
+            <p>Copyright 2021 funny.com</p>
+        </footer>
+    </div>
+</body>
+</html>
