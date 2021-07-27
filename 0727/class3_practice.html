@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body, h1, h2, h3, ul, li { margin: 0; padding: 0; }
+        ul { list-style: none; }
+        #wrap { width: 960px; margin: 0 auto; }
+        a { text-align: center; text-decoration: none; color: #555; }
+        .clear::after { content: ""; display: block; clear: both; }
+
+        header { height: 160px; position: relative; border: 1px solid red; }
+        header .title { position: absolute; left: 0; top: 50px; }
+        .title h1 { letter-spacing: 5px; }
+        .title p { color: #333; }
+        header .top_menu { position: absolute; right: 0; top: 0; }
+        .top_menu li { float: left;
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        border-right: 1px solid black;
+                        font-size: 12px;
+                        padding: 5px 10px;
+                        text-align: center;}
+        .top_menu li:hover { background-color: #555; }
+        .top_menu li:hover a { color: #fff; }
+        .top_menu li:first-child { border-left: 1px solid black;
+                                    border-bottom-left-radius: 5px;
+                                    border-top-left-radius: 5px;}
+        .top_menu li:last-child { border-bottom-right-radius: 5px;
+                                    border-top-right-radius: 5px;}
+        header .main_menu { position: absolute; right: 0; bottom: 0; }
+        .main_menu li { float: left; 
+                        border-top: 1px solid black;
+                        border-bottom: 1px solid black;
+                        border-right: 1px solid black;
+                        font-size: 18px;
+                        padding: 5px 10px;
+                        text-align: center;}
+        .main_menu li:hover { background-color: #555; }
+        .main_menu li:hover a { color: #fff; }
+        .main_menu li:first-child { border-left: 1px solid black;
+                                    border-bottom-left-radius: 5px;
+                                    border-top-left-radius: 5px;}
+        .main_menu li:last-child { border-bottom-right-radius: 5px;
+                                    border-top-right-radius: 5px;}
+        
+
+        #content { margin: 10px 0; }
+        section { float: left; width: 730px; }
+        aside { float: right; width: 200px; border: 1px solid black; }
+        .tab_menu label { width: 100px; box-sizing: border-box; background-color: red; }
+
+        section ul li { border: 1px solid #333; margin-bottom: 10px;  
+                        box-sizing: border-box; padding: 30px 20px;
+                        line-height: 1.6;}
+        section ul li h3 { color: red; }
+
+        .tab_con .tab_list1 li { border-top: 1px solid black; height: 60px; overflow: hidden;}
+        .tab_con .tab_list1 li img { margin: 5px; }
+        .tab_con .tab_list1 li p { font-size: 12px; float: left; }
+
+        .tab_con .tab_list2 li { border-top: 1px solid black; float: left; }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="title">
+                <h1>레이아웃 코딩</h1>
+                <p>HTML5 + CSS3</p>
+            </div>
+            <nav class="top_menu clear">
+                <ul>
+                    <li><a href="#">웹</a></li>
+                    <li><a href="#">모바일</a></li>
+                    <li><a href="#">게임</a></li>
+                    <li><a href="#">시뮬레이션</a></li>
+                    <li><a href="#">데이터</a></li>
+                </ul>
+            </nav>
+            <nav class="main_menu clear">
+                <ul>
+                    <li><a href="#">HTML5</a></li>
+                    <li><a href="#">CSS3</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                    <li><a href="#">jQuery</a></li>
+                    <li><a href="#">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content" class="clear">
+            <section>
+                <ul>
+                    <li>
+                        <h3>문단제목01</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora voluptatibus quidem nesciunt eum quo neque officiis deserunt quas, quam labore qui aperiam eaque maiores omnis reiciendis doloribus cupiditate soluta possimus.</p>
+                    </li>
+                    <li>
+                        <h3>문단제목02</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit in cupiditate unde facilis velit, et eius quisquam, perferendis laudantium quas totam, voluptatibus id dolores incidunt sapiente? Odio facere reiciendis quis!</p>
+                    </li>
+                    <li>
+                        <h3>문단제목03</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam obcaecati perspiciatis, reiciendis quaerat fuga quia eligendi dolorem modi ratione expedita, maxime possimus. Explicabo adipisci mollitia, commodi corporis praesentium tenetur ipsam!</p>
+                    </li>
+                </ul>
+            </section>
+            <aside>
+                <input type="radio" name="tab" id="one" checked>
+                <input type="radio" name="tab" id="two">
+                <div class="tab_menu">
+                    <label for="one">첫번째탭</label>
+                    <label for="two">두번째탭</label>
+                </div>
+                <div class="tab_con">
+                    <div class="tab_list1">
+                        <ul class="clear">
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_list2">
+                        <ul class="clear">
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                            <li>
+                                <img src="http://placehold.it/50" alt="">
+                                <span>HTML5<br>2021-07-27</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+        <footer></footer>
+    </div>
+</body>
+</html>
