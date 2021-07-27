@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>연습</title>
+    <style>
+        body, h1, h2, h3, p, ul, li {margin: 0; padding: 0;} /* reset */
+        #wrap { width: 960px; margin: 0 auto; }
+        ul { list-style: none; }
+        .clear::after { content: ""; display: block; clear: both; }
+        a { text-decoration: none; }
+        header a { color: blue; }
+
+        header { height: 160px;  position: relative; }
+        header .top_copy { position: absolute; left: 0; top: 50%; height: 80px; margin-top: -20px; }
+        .top_copy h1 { margin-bottom: 10px; } 
+        .top_copy h3 { color: #333; }
+
+        header .top_menu { position: absolute; right: 0; top: 0; }
+        .top_menu ul { text-align: center; border: 1px solid black; border-radius: 5px; width: 400px; }
+        .top_menu ul li { float: left; border-right: 1px solid black; width: 80px; box-sizing: border-box; }
+        .top_menu ul li:nth-child(5) { border-right: none; }
+
+        header .main_menu { position: absolute; right: 0; bottom: 0; }
+        .main_menu ul { text-align: center; border: 1px solid black; border-radius: 5px; width: 500px; }
+        .main_menu ul li { float: left; border-right: 1px solid black; width: 100px; box-sizing: border-box; padding: 5px 10px; }
+        .main_menu ul li:nth-child(5) { border-right: none; }
+
+        #content { margin: 15px 0; }
+        #content section { float: left; width: 730px; }
+        #content section article { border: 1px solid #333; padding: 15px; margin-bottom: 10px; }
+        #content section article h3 { color: red; margin-bottom: 10px; }
+        #content section article p { font-size: 12px; line-height: 1.8; color: #555; }
+
+        #content aside { float: right; width: 200px; }
+
+        #content aside input:first-of-type:checked ~ 
+        .tab_menu label:first-of-type { background-color: #fff; color: #000; }
+
+        #content aside input:last-of-type:checked ~ 
+        .tab_menu label:last-of-type { background-color: #fff; color: #000; }
+
+        .tab_con { border-left: 1px solid #555;
+                    border-right: 1px solid #555;}
+        .tab_con .tab_list { display: none; } /* 안보이게 설정 */
+        .tab_con .tab_list li { height: 60px; overflow: hidden; border-bottom: 1px solid #555; }
+        .tab_con .tab_list li img { margin: 5px; width: 50px; float: left;}
+        .tab_con .tab_list li span { color: #555; line-height: 1.4; font-size: 12px; }
+
+        /* input태그의 첫번째 값이 checked가 되어있다면 .tab_con에 있는 .tab_list의 첫번째 요소의 display속성을 block으로 바꿔준다.*/
+        #content aside input:first-of-type:checked ~ 
+        .tab_con .tab_list:first-of-type { display: block; }
+
+        /* input태그의 마지막 값이 checked가 되어있다면 .tab_con에 있는 .tab_list의 마지막 요소의 display속성을 block으로 바꿔준다.*/
+        #content aside input:last-of-type:checked ~ 
+        .tab_con .tab_list:last-of-type { display: block; }
+
+        #content aside .tab_menu {}
+        #content aside input { display: none; }
+        .tab_menu label { background-color: #555; border: 1px solid #555; 
+                            box-sizing: border-box; text-align: center; line-height: 30px;
+                            font-size: 12px; float: left; width: 50%; height: 30px; color: #fff; }
+        #content aside  {}
+        #content aside .con  {}
+        #content aside .con .tab_list  {}
+
+        footer { border: 1px solid #333; padding: 20px; text-align: center; }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="top_copy">
+                <h1>레이아웃 코딩</h1>
+                <h3>HTML5 + CSS3</h3>
+            </div>
+            <nav class="top_menu">
+                <ul class="clear">
+                    <li><a href="">웹</a></li>
+                    <li><a href="">모바일</a></li>
+                    <li><a href="">게임</a></li>
+                    <li><a href="">시뮬레이션</a></li>
+                    <li><a href="">데이터</a></li>
+                </ul>
+            </nav>
+            <nav class="main_menu">
+                <ul class="clear">
+                    <li><a href="">HTML5</a></li>
+                    <li><a href="">CSS3</a></li>
+                    <li><a href="">Javascript</a></li>
+                    <li><a href="">jQuery</a></li>
+                    <li><a href="">Node.js</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="content" class="clear">
+            <section>
+                <article>
+                        <h3>문단제목01</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse suscipit quo saepe consequatur! Repellendus excepturi officiis similique qui, minima nostrum consequuntur placeat porro dolorum laboriosam voluptatem facilis vero. Inventore, voluptate?</p>
+                </article>
+                <article>
+                    <h3>문단제목01</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse suscipit quo saepe consequatur! Repellendus excepturi officiis similique qui, minima nostrum consequuntur placeat porro dolorum laboriosam voluptatem facilis vero. Inventore, voluptate?</p>
+                </article>
+                <article>
+                    <h3>문단제목01</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse suscipit quo saepe consequatur! Repellendus excepturi officiis similique qui, minima nostrum consequuntur placeat porro dolorum laboriosam voluptatem facilis vero. Inventore, voluptate?</p>
+                </article>
+            </section>
+            <aside>
+                <input type="radio" name="tab" id="one" checked>
+                <input type="radio" name="tab" id="two">
+                <div class="tab_menu clear">
+                        <label for="one">첫번째탭</label>
+                        <label for="two">두번째탭</label>
+                </div>
+                <div class="tab_con">
+                    <ul class="tab_list tab1">
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>HTML5 + CSS3</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>HTML5 + CSS3</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>HTML5 + CSS3</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>HTML5 + CSS3</span>
+                        </li>
+                    </ul>
+                    <ul class="tab_list tab2">
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>JavaScript</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>JavaScript</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>JavaScript</span>
+                        </li>
+                        <li>
+                            <img src="http://placehold.it/100" alt="">
+                            <span>2021-07-27<br>JavaScript</span>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <p>HTML5 + CSS3</p>
+        </footer>
+    </div>
+</body>
+</html>
