@@ -43,8 +43,9 @@ header .main_menu { float: right; }
 
 
 
-footer { height: 100pxs; border-top: 2px solid #ddd; }
+footer { height: 100px; border-top: 2px solid #ddd;}
 .btm_logo { float: left; padding-top: 30px; }
 .copy { float: left; width: 800px; text-align: center; line-height: 100px; }
 .copy strong { color: #1d8844; }
 #site { float: right; margin-top: 30px; padding: 10px; border: 1px solid #ccc; width: 200px; }
+/* form태그 관련 속성들은 전부 display: inline이기 때문에 padding과 border를 쓰더라도 자동적으로 박스사이징 보더박스 처럼된다. */
