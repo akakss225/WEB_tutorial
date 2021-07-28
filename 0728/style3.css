@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+body, h1, h2, h3, ul, li, p ol { padding: 0; margin: 0; }
+a { text-decoration: none; color: #333; }
+ul { list-style: none; }
+.clear::after { content: ""; display: block; clear: both; }
+
+/* header , div, footer, section { border: 1px solid red; } */
+
+#wrap { width: 1200px; margin: 0 auto; }
+
+header { height: 100px; } 
+header .logo { float: left; margin-top: 30px;  }
+header .main_menu { float: right; }
+.gnb { margin-top: 50px; }
+.gnb>li { float: left; background-color: #3cb149; width: 220px; height: 50px; box-sizing: border-box; 
+            text-align: center; line-height: 60px; position: relative;}
+.gnb>li a {  color: #fff;  }
+.gnb>li:hover { background-color: #1d8844; }
+.gnb>li:hover .sub_menu { display: block; }
+
+.sub_menu { position: absolute; left: 0; top: 50px; width: 100%; display: none; z-index: 10;}
+.sub_menu li { background-color: #434748; opacity: 0.7; }
+.sub_menu li:hover { background-color: rgb(106, 106, 106); }
+
+
+#visual { height: 300px; overflow: hidden; position: relative; }
+#visual .caption { position: absolute; left: 50%; top: 50%; background-color: rgba(29, 136, 68, 0.8); 
+                    color: #fff; width: 400px; height: 50px; margin-left: -200px; margin-top: -25px;  
+                    text-align: center; line-height: 50px; border-radius: 25px; font-size: 18px; }
+
+
+#content { height: 200px; padding: 20px 0 0; }
+#content section { float: left; width: 380px; box-sizing: border-box;  }
+#content section h3 { color: #1d8844; padding-bottom: 7px; border-bottom: 1px solid #1d8844; }
+#content .notice .notice_list { font-size: 14px; margin-top: 10px; }
+#content .notice .notice_list li { line-height: 2.4; border-bottom: 1px solid #eee; 
+                                    padding: 0 5px;}
+#content .notice .notice_list li span { float: right; }
+
+#content .gallery { margin: 0 28px; }
+#content .gallery .imgbox { margin-top: 20px; text-align: center; }
+
+
+
+footer { height: 100pxs; border-top: 2px solid #ddd; }
+.btm_logo { float: left; padding-top: 30px; }
+.copy { float: left; width: 800px; text-align: center; line-height: 100px; }
+.copy strong { color: #1d8844; }
+#site { float: right; margin-top: 30px; padding: 10px; border: 1px solid #ccc; width: 200px; }
