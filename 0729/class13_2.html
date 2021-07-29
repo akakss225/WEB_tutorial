@@ -7,15 +7,14 @@
         nav { margin-left: 100px; }
         .main_menu { list-style: none; }
         .main_menu li { float: left; margin: 0 50px; height: 40px; position: relative; font-size: 24px;  }
-        .main_menu li::after { content: ""; position: absolute; bottom: 0; 
-                                border: 1px solid black; width: 0px; left: 0; opacity: 0;
-                                transition: width .5s ease, opacity 0s ease;
+        .main_menu li::after { content: ""; position: absolute; bottom: 0; height: 2px;
+                                background-color: black; width: 100%; left: 0; transform: scaleX(0);
+                                transition: transform .2s linear, opacity 0s ease; transform-origin: left;
                             }
-        .main_menu li:hover::after { width: 85px; opacity: 1; }
+        .main_menu li:hover::after { transform: scaleX(100%); }
     </style>
 </head>
 <body>
-
     <nav class="menu">
         <ul class="main_menu">
             <li>Menu01</li>
