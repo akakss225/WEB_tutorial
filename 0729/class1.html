@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform -> 변형</title>
+    <style>
+        #origin { border: 1px solid #333; float: left;
+                    margin: 50px;}
+        #origin div { width: 350px; height: 200px; 
+                        transition: all 1s ease; }
+        #origin div img { width: 100%; }
+        /* 좌표이동 */
+        .translate:hover { transform: translate(-50px,-50px); 
+                            opacity: 0.5;}
+        .translateX:hover { transform: translateX(-50px); }
+        .translateY:hover { transform: translateY(-50px); }
+
+        /* 확대축소/배수로 입력한다. */
+        .scale:hover { transform: scale(0.5); }
+        .scaleX:hover { transform: scaleX(1.5); }
+        .scaleY:hover { transform: scaleY(1.5); }
+
+        /* 회전 -> 각도 */
+        .rotateA:hover { transform: rotate(180deg);/*시계방향*/ }
+        .rotateB:hover { transform: rotate(-180deg); /*반시계방향*/ }
+
+        /* 기울기 효과 -> 각도 */
+        .skew:hover { transform: skew(30deg, 30deg); }
+        .skewX:hover { transform: skewX(45deg); }
+        .skewY:hover { transform: skewY(45deg);}
+
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="skew">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="skewX">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="skewY">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+</body>
+</html>

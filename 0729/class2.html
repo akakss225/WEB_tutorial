@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform -> 3차원</title>
+    <style>
+        #origin { border: 1px solid #333; float: left;
+            margin: 50px; perspective: 500px; }
+        #origin div { width: 350px; height: 200px; 
+                transition: all 1s ease; }
+        #origin div img { width: 100%; }
+
+        /* 좌표이동 3d */
+        .translate:hover { transform: translate3d(50px, 20px, -300px); }
+        .translateZ:hover { transform: translateZ(-500px); }
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="translate">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="translateX">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="translateY">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="translateZ">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+</body>
+</html>
