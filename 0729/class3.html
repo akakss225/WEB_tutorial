@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform -> 3차원</title>
+    <style>
+        #origin { border: 1px solid #333; float: left;
+            margin: 50px; perspective: 500px; }
+        #origin div { width: 350px; height: 200px; 
+                transition: all 1s ease; }
+        #origin div img { width: 100%; }
+
+        .rotateX:hover { transform: rotateX(90deg);/*시계방향*/ }
+        .rotateY:hover { transform: rotateY(90deg); /*반시계방향*/ }
+        .rotateZ:hover { transform: rotateZ(90deg); }
+    </style>
+</head>
+<body>
+    <div id="origin">
+        <div class="rotate">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateX">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateY">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+    <div id="origin">
+        <div class="rotateZ">
+            <img src="test.jpeg" alt="bn">
+        </div>
+    </div>
+</body>
+</html>
