@@ -9,10 +9,11 @@
                 border: 1px solid #333; perspective: 1000px; }
         #wrap .inner { width: 100%; height: 100%; position: relative; 
                         transform-style: preserve-3d; /* 부모가 가진 3d공간을 상속받겠다 */ 
-                        transition: transform 1s ease;}
+                        transition: transform 1s ease;
+                        backface-visibility: visible;}
         #wrap:hover .inner { transform: rotateY(180deg);}
         .front, .back { position: absolute; left: 0; top: 0; width: 100%; height: 100%; 
-                            }
+                            backface-visibility: hidden; }
         #wrap .inner .front img { width: 100%; }
         #wrap .inner .back { background-color: #ddd; text-align: center; 
                                 padding: 30px; box-sizing: border-box;
