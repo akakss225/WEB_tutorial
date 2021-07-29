@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        nav { margin-left: 100px; }
+        .main_menu { list-style: none; }
+        .main_menu li { float: left; margin: 0 50px; height: 40px; position: relative; font-size: 24px;  }
+        .main_menu li::after { content: ""; position: absolute; bottom: 0; 
+                                border: 1px solid black; width: 0px; left: 0; opacity: 0;
+                                transition: width 1s ease, opacity 0s ease;
+                            }
+        .main_menu li:hover::after { width: 85px; opacity: 1; }
+    </style>
+</head>
+<body>
+
+    <nav class="menu">
+        <ul class="main_menu">
+            <li>Menu01</li>
+            <li>Menu02</li>
+            <li>Menu03</li>
+            <li>Menu04</li>
+        </ul>
+    </nav>
+</body>
+</html>
