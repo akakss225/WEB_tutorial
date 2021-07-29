@@ -7,11 +7,16 @@
         #origin { border: 1px solid #333; float: left;
             margin: 50px; perspective: 500px; }
         #origin div { width: 350px; height: 200px; 
-                transition: all 1s ease; }
+                /* transition: all 1s ease; */
+                    transition-property: transform; /* 애니메이션을 적용할 속성 선택 */
+                    transition-duration: 0.5s; /* 애니메이션이 진행되는 시간을 선택 */
+                    transition-timing-function: ease; /* 애니메이션 움직임의 가속도 선택 */
+                }
         #origin div img { width: 100%; }
 
-        .rotateX:hover { transform: rotateX(90deg);/*시계방향*/ }
-        .rotateY:hover { transform: rotateY(90deg); /*반시계방향*/ }
+        .rotate:hover { transform: rotate3d(1, 1, 1, 30deg); } /* 비율을 입력후 각도 */
+        .rotateX:hover { transform: rotateX(90deg); }
+        .rotateY:hover { transform: rotateY(90deg); }
         .rotateZ:hover { transform: rotateZ(90deg); }
     </style>
 </head>

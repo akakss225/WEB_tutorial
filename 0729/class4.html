@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap { border: 1px solid #333; padding: 10px; }
+        #wrap div { width: 50px; height: 100px; margin: 10px; background-color: skyblue; 
+                    transition-property: width;
+                    transition-duration: 3s;
+                    }
+        #wrap:hover div { width: 100%; }
+        #wrap:hover .box1 { transition-timing-function: linear; }
+        #wrap:hover .box2 { transition-timing-function: ease; }
+        #wrap:hover .box3 { transition-timing-function: ease-in; }
+        #wrap:hover .box4 { transition-timing-function: ease-out; }
+        #wrap:hover .box5 { transition-timing-function: ease-in-out; }
+        #wrap:hover .box6 { transition-timing-function: cubic-bezier(.86,1.47,0,-1.04); }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!-- linear: 항상 일정한 속도 -->
+        <div class="box1">linear</div>
+        <!-- ease: 느리게 시작후 빠르게 진행하다가 느리게 끝 -->
+        <div class="box2">ease</div>
+        <!-- ease-in: 느리게 시작 후, 점진적으로 가속 -->
+        <div class="box3">ease-in</div>
+        <!-- ease-out: 빠르게 시작 후, 점진적으로 감속 -->
+        <div class="box4">ease-out</div>
+        <!-- ease-in-out: 느리게 시작 후 빠르게 진행하다가 느리게 끝 (속도 변화 속도가 ease 보다 느림) -->
+        <div class="box5">ease-in-out</div>
+        <!-- 내가 만든 모양으로 가속도 설정 -->
+        <div class="box6">cubic</div>
+    </div>
+</body>
+</html>
