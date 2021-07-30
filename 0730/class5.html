@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .line { width: 50px; float: right; 
+                margin: 100px 100px 0 0;
+        }
+        .line span { width: 100%; height: 2px; background-color: #000; display: block; 
+                    margin: 10px 0;
+        }
+
+        .line span:nth-child(1) { transition: .8s; }
+        .line span:nth-child(2) { transition: .6s; }
+        .line span:nth-child(3) { transition: .4s; }
+
+        .line:hover span { transform: rotateY(180deg); }
+
+    </style>
+</head>
+<body>
+    <div class="line">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
