@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        ul { list-style: none; }
+        #wrap { width: 1000px; margin: 0 auto; }
+
+        h1 { text-align: center; margin: 50px auto; position: relative; width: 350px; }
+        h1::after { content: ""; position: absolute; height: 2px; background-color: black; width: 100%; 
+                    left: 0; bottom: 0; transform-origin: left; transform: scaleX(0); transition: .5s;
+                } 
+        .list { width: 792px; margin: 0 auto; }
+        .list li { float: left; width: 224px; margin: 0 20px; 
+                    box-sizing: border-box;
+        }
+        .imgbox { width: 224px; height: 224px; position: relative; }
+        .bg1, .bg2, .bg3 { width: 100%; height: 100%; border-radius: 50%; 
+                            border: 3px solid green; box-sizing: border-box; overflow: hidden;
+                            transition: .5s;
+                        }
+        .imgbox .bg1 { background: url(marke/marke4.jpg) no-repeat center / 100%; }
+        .imgbox .bg2 { background: url(marke/marke5.jpg) no-repeat center / 100%; }
+        .imgbox .bg3 { background: url(marke/marke6.jpg) no-repeat center / 100%; }
+        .imgbox .icon { background-color: green; width: 50px; height: 50px;  
+                        border-radius: 50%; color: #fff; text-align: center;
+                        line-height: 50px; position: absolute; left: 10px; top: 10px;
+                        transition: .5s, transform 2s; transform-origin: 102px 102px;
+        }
+        .detail { font-size: 14px; text-align: center; line-height: 1.6; height: 50px; 
+                    margin: 20px 0 10px;
+                }
+        .price { text-align: center; font-size: 13px; }
+        .price strong { font-size: 20px; }
+
+        .imgbox:hover [class^="bg"] { border: 3px solid orange; background-size: 105%; }
+        .imgbox:hover .icon { background-color: orange; transform: rotate(1turn); }
+
+        h1:hover::after { transform: scaleX(100%); }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>지금 제일 잘 나가는 상품</h1>
+        <ul class="list">
+            <li>
+                <div class="imgbox">
+                    <div class="bg1"></div>
+                    <div class="icon">20%</div>
+                </div>
+                <p class="detail">[아토세이프]덴티본조르노 치약(잇몸 2개+치석 2개+구취 2개) +증정</p>
+                <p class="price"><strong>13,900</strong> 원</p>
+            </li>
+            <li>
+                <div class="imgbox">
+                    <div class="bg2"></div>
+                    <div class="icon">50%</div>
+                </div>
+                <p class="detail">[잘풀리는집]잘풀리는집 순수프리미엄 30M 30롤 리뉴얼 2팩</p>
+                <p class="price"><strong>28,900</strong> 원</p>
+            </li>
+            <li>
+                <div class="imgbox">
+                    <div class="bg3"></div>
+                    <div class="icon">35%</div>
+                </div>
+                <p class="detail">[페레로로쉐]페레로로쉐 T24 300G</p>
+                <p class="price"><strong>10,690</strong> 원</p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
