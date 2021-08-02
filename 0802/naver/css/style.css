@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* 1020px 중앙정렬 */
 
-#wrap {  }
 .inner { width: 1020px; margin: 0 auto; position: relative; 
         overflow: hidden;
     }
@@ -17,16 +16,15 @@
 .spot_subtitle { font-size: 30px; letter-spacing: -1px; line-height: 42px; }
 .spot_subtitle span { font-size: 22px; color: #8a8a8a; letter-spacing: 0; display: block;}
 #spot .linkbox { width: 300px; height: 54px; line-height: 54px;
-                display: block; margin: 24px auto; text-decoration: none; border: 5px solid transparent;
+                display: block; margin: 24px auto; text-decoration: none; border: 5px solid transparent; /* transparent << 투명 */
                 border-image: linear-gradient(to right, #01c9ca, #3886ff); /* 테두리에 그라데이션 주는방법. */
-                border-image-slice: 1; font-size: 16px; color: #3886ff;
+                border-image-slice: 1;/* 그라데이션 채워주는 문법 */ font-size: 16px; color: #3886ff;
 }
 
 
 #onstage_2dot0 { padding-bottom: 140px; }
 .onstage2_title { text-align: center; font-size: 23px; line-height: 41px; font-weight: 500; 
                     letter-spacing: -1px; width: 495px; padding: 70px 0 40px; float: left;
-                    
 }
 .onstage2_title strong { display: block; width: 400px; height: 45px; overflow: hidden; 
                         background: url(../images/sp_images_v2.png) no-repeat 0 -84px;
@@ -41,7 +39,7 @@
                         left: 50%; top: 50%; background: url(../images/sp_images_v2.png) no-repeat 0 -176px;
                         transform: translate(-50%, -50%);
 }
-.linkbox_video.off::after { display: none; }
+.linkbox_video.off::after { display: none; } /* 같은 레벨의 클래스이면 띄워쓰기를 하지않는다. */
 .music2 { background-position: 0 -362px; }
 .music3 { background-position: 0 -724px; }
 .dllist { position: absolute; top: 40px; left: 40px; }
@@ -72,10 +70,12 @@
 #onstage_x .musician2 { background-position: 0 -402px; }
 #onstage_x .musician3 { background-position: 0 -804px; }
 
-#onstage_x .txtbox { font-size: 16px; color: #141414; line-height: 43px; text-align: center; width: 100%; padding-top: 0; }
+#onstage_x .txtbox { font-size: 16px; color: #141414; line-height: 43px; text-align: center; 
+                    width: 100%; padding-top: 0; }
 #onstage_x .txtbox .left{ float: left; width: 50%; text-align: center;  }
-#onstage_x .txtbox .linkbox { display: block; width: 185px; height: 44px; text-indent: -999em; overflow: hidden; 
-                            margin: 5px auto 0; background: url(../images/sp_images_v2.png) no-repeat 0 -341px; }
+#onstage_x .txtbox .linkbox { display: block; width: 185px; height: 44px; text-indent: -999em; 
+                            overflow: hidden; margin: 5px auto 0; 
+                            background: url(../images/sp_images_v2.png) no-repeat 0 -341px; }
 #onstage_x .txtbox .right { float: right; width: 50%; }
 
 #digging { padding-bottom: 265px; height: 1127px; color: #262626;
@@ -84,9 +84,10 @@
 #digging .digging_title { font-size: 25px; font-weight: normal; line-height: 36px; letter-spacing: -1px; 
                             width: 495px; float: right; padding-top: 110px; text-align: center; }
 
-#digging .digging_title strong { display: block; width: 400px; height: 53px; overflow: hidden; text-indent: -999em;
+#digging .digging_title strong { display: block; width: 400px; height: 53px; overflow: hidden; 
+                                text-indent: -999em; margin: 0 0 26px 65px;
                                 background: url(../images/sp_images_v2.png) no-repeat 0 -471px; 
-                                margin: 0 0 26px 65px;}
+                                }
 
 
 footer { height: 120px; margin-top: 200px; border-top: 1px solid #bfc0c2; 

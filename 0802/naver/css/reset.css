@@ -35,7 +35,7 @@ body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,select{
     padding:0;
 }
 body,input,textarea,select,button{
-    font-family:'나눔스퀘어',NanumSquare,'나눔고딕',NanumGothic,'맑은고딕',MalgunGothic,'돋움',Dotum,Helvetica,sans-serif;
+    font-family:'나눔스퀘어',NanumSquare,'나눔고딕',NanumGothic,'맑은고딕',MalgunGothic,'돋움',Dotum,sans-serif;
     font-size:12px;
 }
 img {
