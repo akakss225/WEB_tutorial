@@ -96,3 +96,8 @@ footer .copyright { margin: 40px auto 0; text-align: center; color: #5c5c5c; fon
 footer .copyright .btm_logo { float: left; width: 300px; border-right: 1px solid #ccc; }
 footer .copyright .btm_logo img { width: 100%; }
 footer .copyright .copytxt { float: right; width: 800px; line-height: 50px; }
+
+.top a { color: #fff; line-height: 40px; width: 40px; height: 40px; background-color: #1a1f71; 
+        position: fixed; right: 20px; bottom: 20px; text-align: center; border-radius: 5px;
+        font-size: 20px; z-index: 999;}
+.top a:hover { color: #f7b600; }  

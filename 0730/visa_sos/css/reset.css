@@ -6,4 +6,4 @@ header, footer, div, section, nav, aside { box-sizing: border-box; }
 ul { list-style: none; }
 a { text-decoration: none; color: #333; }
 img { vertical-align: top; }
-.clear::after { content: ""; display: block; clear: both;}
+.clear::after { content: ""; display: block; clear: both; }
