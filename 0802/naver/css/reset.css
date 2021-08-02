@@ -4,25 +4,25 @@
     font-family: 'NanumSquare';
     font-style: normal;
     font-weight: 300;  
-    src: local('NanumSquare'), url('../webfont/NanumSquare_acL.ttf') format('truetype');
+    src: local('NanumSquare'), url('../NanumSquare/NanumSquare_acL.ttf') format('truetype');
 }
 @font-face {
     font-family: 'NanumSquare';
     font-style: normal;
     font-weight: 400;  
-    src: local('NanumSquare'), url('../webfont/NanumSquare_acR.ttf') format('truetype');
+    src: local('NanumSquare'), url('../NanumSquare/NanumSquare_acR.ttf') format('truetype');
 }
 @font-face {
     font-family: 'NanumSquare';
     font-style: normal;
     font-weight: 700;  
-    src: local('NanumSquare'), url('../webfont/NanumSquare_acB.ttf') format('truetype');
+    src: local('NanumSquare'), url('../NanumSquare/NanumSquare_acB.ttf') format('truetype');
 }
 @font-face {
     font-family: 'NanumSquare';
     font-style: normal;
     font-weight: 800;  
-    src: local('NanumSquare'), url('../webfont/NanumSquare_acEB.ttf') format('truetype');
+    src: local('NanumSquare'), url('../NanumSquare/NanumSquare_acEB.ttf') format('truetype');
 }
 
 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic');
