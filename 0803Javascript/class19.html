@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pocketmoney calculator</title>
+</head>
+<body>
+    용돈 총액 : <input type="text" id="all" value="10000">원
+    <hr>
+    교통비 : <input type="text" id="trans" placeholder="교통비 입력">원 <br>
+    식비 : <input type="text" id="food" placeholder="식비 입력">원 <br>
+    기타 : <input type="text" id="etc" placeholder="기타 지출 입력">원
+    <button onclick="cal()">계산</button>
+    <hr>
+    <p id="result"></p>
+    <script>
+        // 교통비, 식비, 기타 >> 지출총액 / 용돈 = 만원 >> 만원 - 지출총액
+        // 1만원 초과 -> 000원 초과 되었으니 용돈 관리를 잘 못하셨습니다.
+        // 000원 세이브 되었으니 용돈 관리를 잘하셨습니다.
+        function cal() {
+            const pocket = Number(document.getElementById('all').value);
+            let trans = Number(document.getElementById('trans').value);
+            let food = Number(document.getElementById('food').value);
+            let etc = Number(document.getElementById('etc').value);
+            let remains = pocket - trans - food - etc;
+            let result = remains >= 0 ? `${remains}원이 세이브 되었으니 용돈관리를 잘하셨습니다.` : `${-remains}원이 초과되었으니 용돈관리를 잘 못하셨습니다.`;
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
