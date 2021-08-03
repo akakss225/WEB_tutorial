@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="day"></h1>
+    <script>
+        var t1 = '학교종이 ';
+        var t2 = '땡땡땡 ';
+        var t3 = 8282;
+        var t4 = ' 어서모이자 <br>';
+        var result = t1 + t2 + t3 + t4;
+        document.write(result);
+
+        var t5 = "학교종이 ";
+        t5 += "땡땡땡 ";
+        t5 += 8282;
+        t5 += " 어서모이자 <br>";
+        document.write(t5);
+
+        var day = "오늘 ";
+        day += "날씨가 ";
+        day += "좋습니다.";
+
+        document.getElementById('day').innerHTML = day;
+    </script>
+</body>
+</html>
