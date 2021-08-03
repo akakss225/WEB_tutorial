@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>투표 가능한지 확인</title>
+</head>
+<body>
+    <h1>투표여부확인</h1>
+    <input type="text" id="age" placeholder="나이를 입력하세요.">
+    <button onclick="vote()">확인</button>
+    <hr>
+    <p id="result"></p>
+    <script>
+        const standard = 18;
+        function vote() {
+            let age = document.getElementById('age').value;
+            let result = age >= standard ? "투표가능" : "투표 불가능";
+            document.getElementById('result').innerHTML = result
+        }
+    </script>
+</body>
+</html>
