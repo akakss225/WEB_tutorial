@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        // var로 선언된 변수는 재선언이 가능하다.
+        var x = 6;
+        var x = 12;
+        console.log(x);
+        // let으로 선언된 변수는 재선언이 불가능하다. but 재할당은 가능하다.
+        let y = 7;
+            y = 14;
+        console.log(y);
+        
+        // 논리연산자
+        let i = 6;
+        let j = 3;
+        
+        document.getElementById('result').innerHTML = (i < 10 && j > 1) + "<br>" + (i > 10 && j > 1);
+        document.getElementById('result').innerHTML = (i == y) + "<br>" + (i > 10 || j > 1);
+    </script>
+</body>
+</html>
