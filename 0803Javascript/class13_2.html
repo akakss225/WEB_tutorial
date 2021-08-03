@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ice"></p>
+    <button onclick="test()">확인</button>
+    <script>
+        var price = 2000;
+        var num = 4;
+        var price2 = 3000;
+        var num2 = 2;
+
+        var txt = "아이스크림은 " + price + "원에 " + num + "개 구매했습니다."
+        var txt2 = `초콜릿 아이스크림은 ${price2}원에 ${num2}개 구매했습니다.`; // 백틱 (``) 으로 묶고 변수명을 ${}로 묶으면 간단.
+        
+        document.write(txt, "<br>");
+        
+        function test() {
+            //document.write(txt2); // document.write은 바디에 직접 쓰는 내용임.
+            document.getElementById('ice').innerHTML = txt2;
+        }
+
+    </script>
+</body>
+</html>

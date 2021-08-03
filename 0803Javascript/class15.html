@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="num1" size="2">
+    <input type="text" id="num2" size="2">
+    <button onclick="add()"> + </button>
+    <button onclick="sub()"> - </button>
+    <button onclick="mul()"> * </button>
+    <button onclick="div()"> / </button>
+    <input type="text" id="result">
+    <script>
+        function sub() {
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value);
+            var result = num1 - num2;
+            document.getElementById('result').value = result;
+        }
+        function add() { 
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value); // 사실 (-) 연산은 자동 형 변환을 해주기 때문에 Number()가 필요없음.
+            document.getElementById('result').value = num1 + num2;
+        }
+        function mul() { 
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value); 
+            document.getElementById('result').value = num1 * num2;
+        }
+        function div() { 
+            var num1 = Number(document.getElementById('num1').value);
+            var num2 = Number(document.getElementById('num2').value); 
+            document.getElementById('result').value = num1 / num2;
+        }
+    </script>
+</body>
+</html>
