@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let walk = prompt('How much you walk in a day?', 10000);
+        if (walk >= 10000) {
+            document.write('매우 건강합니다.');
+        }
+        else if (walk >= 7000) {
+            document.write('건강합니다.');
+        }
+        else if (walk >= 5000) {
+            document.write('조금만 더 걸으세요');
+        }
+        else if ( walk >= 3000) {
+            document.write('운동 부족입니다.');
+        }
+        else {
+            document.write('건강하지 않습니다.');
+        }
+    </script>
+</body>
+</html>
