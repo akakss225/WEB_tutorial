@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = prompt('write a number');
+        let test3 = a % 3 == 0;
+        let test5 = a % 5 == 0;
+        let test15 = a % 15 == 0;
+        console.log(test3, test5, test15);
+
+        if (test15) { 
+            alert('15의 배수입니다.');
+        }
+        else if (test5) {
+            alert('5의 배수입니다.');
+        }
+        else if (test3) {
+            alert('3의 배수입니다.');
+        }
+        else {
+            alert('15, 5, 3 의 배수가 아닙니다.');
+        }
+
+        
+    </script>
+</body>
+</html>
