@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="ride"></p>
+    <script>
+        let height = Number(prompt("어린이의 키를 입력하세요"));
+        const standard = 110;
+        let result = height > standard ? "탑승가능" : "탑승 불가능";
+        document.getElementById('ride').innerHTML = result;
+    </script>
+</body>
+</html>
