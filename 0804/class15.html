@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>체중</title>
+</head>
+<body>
+    <script>
+        // 적정체중 = (본인 키 - 100) * 0.9
+        // 정상체중 = -5 < 적정체중 < + 5
+        // 입력값 : 신장, 체중, 이름 
+        let name = prompt("이름을 입력하세요.");
+        let height = Number(prompt('키를 입력하세요(cm).'));
+        let weight = Number(prompt('몸무게를 입력하세요(kg).'));
+        let normal = (height - 100) * 0.9;
+
+        if (normal-5 <= weight && normal + 5 > weight) {
+            document.write(name + "씨는 정상체중입니다.");
+        }
+        else if (weight <= normal-5) {
+            document.write(name + "씨는" + (normal-5-weight) + "kg 저체중입니다.");
+        }
+        else {
+            document.write(name + '씨는'+ (weight-normal-5) + 'kg과체중입니다.');
+        }
+    </script>
+</body>
+</html>
