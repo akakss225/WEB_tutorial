@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        table { border-collapse: collapse; } /* table에서 두줄처럼나오는 테두리를 없애줌. */
+        table td { border: 1px solid #ddd; padding: 5px; }
+    </style>
 </head>
 <body>
     <script>
-        let table = "<table border='1'>";
+        let table = "<table>";
         for(let i = 0; i < 5; i++){
             table += "<tr>";
             for(let j = 1; j <= 5; j++){
