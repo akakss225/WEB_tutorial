@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = "test";
+        let pw = 1234;
+
+        let userId = prompt('아이디를 입력하세요',"");
+        
+
+        if (userId == id){
+            let userPw = prompt('비밀번호를 입력하세요',"");
+            if (userPw == pw){
+                document.write('로그인 확인');
+            }
+            else{
+                document.write('비밀번호가 틀렸습니다.');
+            }
+        }
+        else {
+            document.write('존재하지않는 아이디입니다.');
+        }
+    </script>
+</body>
+</html>
