@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.write("<table border='1'>");
+        for(let i = 1; i <= 3; i++ ){
+            document.write("<tr>");
+            for(let j = 1; j <= 3; j++){
+                document.write(`<td>${i}-${j}</td>`);
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>","<br>");
+
+        let table = "<table border='1'>";
+        for(let i = 1; i <= 3; i++){
+            table += "<tr>";
+            for(let j = 1; j <= 3; j++){
+                table += `<td> ${i} - ${j} </td>`;
+            }
+            table += "</tr>";
+        }
+        table += "</table>";
+        
+        document.write(table);
+    </script>
+</body>
+</html>
