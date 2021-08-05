@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>팩토리얼</title>
+</head>
+<body>
+    <script>
+        let n = prompt("팩토리얼 계산할 숫자");
+        function factoral(n) {
+            let num = n;
+            if(num == 0 || num == 1){
+                return 1
+            }
+            else{
+                return num * factoral(num-1);
+            }
+        }
+        document.write(factoral(n));
+    </script>
+</body>
+</html>
