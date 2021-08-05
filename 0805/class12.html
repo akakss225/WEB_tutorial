@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>수강종료까지 D-day</h1>
+    <h2 id="result"></h2>
+    <script>
+        // 종강 날짜 ( 01.17 ) 까지 D-day만들기
+        let today = new Date();
+        let dDay = new Date(2022, 01, 17);
+        console.log(dDay);
+
+        let time = dDay.getTime() - today.getTime();
+        console.log(time)
+
+        let result = Math.ceil(time/1000/60/60/24);
+        document.getElementById('result').innerHTML = result+"일";
+    </script>
+</body>
+</html>
