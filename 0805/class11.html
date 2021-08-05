@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let ran = Math.random();
+        let num = Math.ceil(ran*5);
+        let menu = "";
+        switch(num){
+            case 1: menu = "짜장면"; break;
+            case 2: menu = "피자"; break;
+            case 3: menu = "냉면"; break;
+            case 4: menu = "돈까스"; break;
+            case 5: menu = "비빔밥"; break;
+        }
+        document.write(`오늘의 점심 메뉴는 '${menu}'입니다.`);
+    </script>
+</body>
+</html>
