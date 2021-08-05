@@ -13,6 +13,22 @@
         // 0 ~ 10 까지의 난수
         // floor : 소수점 이하 버림.
         document.write(Math.floor(Math.random()*11));
+
+        // 랜덤 출력 숫자의 범위를 지정하는 공식.
+        /*
+        Math.floor( Math.random() * (출력하고자하는 최댓값 - 출력하고자하는 최솟값 + 1)) + 최솟값 
+        0 ~ 100 인 경우  따라서 (100 - 0 + 1) + 0 = 101
+        
+        120 ~ 150 : Math.floor( Math.random()*31 ) + 120;
+        */
+        document.write("<br>");
+        
+        document.write(Math.floor(Math.random()*31 + 120));
+        
+        // 11 ~ 99:
+        document.write("<br>");
+        document.write(Math.floor(Math.random()*89 + 11));
+
     </script>
 </body>
 </html>
