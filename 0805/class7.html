@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>날짜객체 >> 내장</title>
+</head>
+<body>
+    <h1>2021년도 12월 25일까지 며칠 남았는지 계산</h1>
+    <!-- D-day 계산법 : 표적날짜 - 오늘날짜 >> 둘다 시간으로 환산해서 시간 - 시간으로 계산한다. -->
+    <script>
+        let today = new Date();
+        let theDate = new Date(2021, 11, 25);
+        console.log(theDate);
+        console.log(today.getDay());
+        
+        let dTime = theDate.getTime() - today.getTime();
+        console.log(dTime); // 1 / 1000 초 단위 시간으로 환산.
+
+        let result = Math.ceil(dTime / 1000 / 60 / 60 / 24);
+        console.log(result);
+        document.write(`크리스마스는 오늘부터 ${result} 일 남았습니다.`);
+
+    </script>
+</body>
+</html>
