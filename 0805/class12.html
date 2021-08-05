@@ -10,14 +10,18 @@
     <script>
         // 종강 날짜 ( 01.17 ) 까지 D-day만들기
         let today = new Date();
-        let dDay = new Date(2022, 01, 17);
-        console.log(dDay);
+        let dDay = new Date(2022, 0, 17);
 
         let time = dDay.getTime() - today.getTime();
         console.log(time)
 
         let result = Math.ceil(time/1000/60/60/24);
         document.getElementById('result').innerHTML = result+"일";
+        
+        document.write("<br>");
+
+        let now = Math.ceil(today.getTime()/1000/60/60/24/365);
+        document.write(now);
     </script>
 </body>
 </html>
