@@ -16,7 +16,7 @@
         let dTime = theDate.getTime() - today.getTime();
         console.log(dTime); // 1 / 1000 초 단위 시간으로 환산.
 
-        let result = Math.ceil(dTime / 1000 / 60 / 60 / 24);
+        let result = Math.ceil(dTime / 1000 / 60 / 60 / 24); // Math.ceil >> 소수점 올림 메소드.
         console.log(result);
         document.write(`크리스마스는 오늘부터 ${result} 일 남았습니다.`);
 
