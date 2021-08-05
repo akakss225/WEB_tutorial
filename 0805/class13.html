@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>추천색상</h1>
+    <script>
+        let ran = Math.ceil(Math.random()*10);
+        let color;
+        switch(ran){
+            case 1: color = "<h1 style='color: red;'>red</h1>"; break;
+            case 2: color = "<h1 style='color: blue;'>blue</h1>"; break;
+            case 3: color = "<h1 style='color: yellow;'>yellow</h1>"; break;
+            case 4: color = "<h1 style='color: orange;'>orange</h1>"; break;
+            case 5: color = "<h1 style='color: black;'>black</h1>"; break;
+            case 6: color = "<h1 style='color: pink;'>pink</h1>"; break;
+            case 7: color = "<h1 style='color: skyblue;'>skyblue</h1>"; break;
+            case 8: color = "<h1 style='color: green;'>green</h1>"; break;
+            case 9: color = "<h1 style='color: purple;'>purple</h1>"; break;
+            case 10: color = "<h1 style='color: grey;'>grey</h1>"; break;
+        }
+        document.write(color)
+    </script>
+</body>
+</html>
