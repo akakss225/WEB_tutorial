@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="bg">
+    <h1>추천색상</h1>
+    <script>
+        let ran = Math.ceil(Math.random()*10);
+        let color;
+        switch(ran){
+            case 1: color = "red"; break;
+            case 2: color = "blue"; break;
+            case 3: color = "yellow"; break;
+            case 4: color = "orange"; break;
+            case 5: color = "black"; break;
+            case 6: color = "hotpink"; break;
+            case 7: color = "skyblue"; break;
+            case 8: color = "green"; break;
+            case 9: color = "purple"; break;
+            case 10: color = "grey"; break;
+        }
+        document.getElementById('bg').style.backgroundColor = color;
+    </script>
+</body>
+</html>
