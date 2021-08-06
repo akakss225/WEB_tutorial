@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let table = "";
+        for (let i = 2; i < 10; i++){
+            table += "<table>";
+            table += "<caption>" + i + "단 </caption>";
+            for (let j = 2; j < 10; j++){
+                let result = i * j
+                let color;
+                let txt = String(result);
+                if (txt.match("7")){
+                    color = "yellow";
+                }
+                else if(txt.match("9")){
+                    color = "red";
+                }
+                table += `<tr style='background-color: ${color};'>`;
+                table += `<td> ${i} x ${j} = ${result}`;
+                table += "</tr>";
+            }
+            table == "</table>"
+        }
+        document.write(table);
+    </script>
+</body>
+</html>
