@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이메일 유효성 검사</title>
+</head>
+<body>
+    <script>
+        let userEmail = prompt("Write a Email adress");
+        let arrUrl = [".com", ".co.kr", ".net", ".or.kr" , ".go.kr"];
+
+        let check1 = false; // @유무
+        let check2 = false; // 이메일 형싱 확인
+        if (userEmail.match("@")){
+            check1 = true;
+        }
+        for (let i = 0; i < arrUrl.length; i++){
+            if (userEmail.match(arrUrl[i])){
+                check2 = true;
+            }
+        }
+        if (check1 && check2){
+            document.write("Correct!")
+        }
+        else{
+            document.write("Incorrect!")
+        }
+
+    </script>
+</body>
+</html>
