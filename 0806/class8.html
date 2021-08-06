@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 편집</title>
+</head>
+<body>
+    <script>
+        let text = "Hello JavaScript"
+        let text2 = new String(" hello JavaScript ");
+        let text3 = " jQuery";
+
+        console.log(text);
+        console.log(text2);
+        
+        console.log(text.toUpperCase()); // 일괄 대문자
+        console.log(text.toLowerCase()); // 일괄 소문자
+        
+        console.log(text[4].toUpperCase());
+
+        console.log(text.charAt(1));
+        
+        console.log(text.indexOf("S"));
+        console.log(text.indexOf("l"));
+        console.log(text.lastIndexOf("l"));
+        console.log(text[text.length-1]);
+
+
+        console.log(text.slice(6,10));
+        console.log(text.substring(6, 10)); // substring(from, to) >> 마지막 인덱스 이후의 요소는 모두 삭제.
+        console.log(text.substr(6, 10)); // substr(위치지정, 문자갯수)
+        console.log(text.length); // length는 '프로퍼티'로, 메서드와 달리 괄호를 쓰지 않는다.
+        
+        console.log(text2);
+        console.log(text2.trim()); // 앞 뒤의 공백문자열을 제거.
+
+        console.log(text.concat(text3));
+        
+        console.log(text.charCodeAt(0)); // 해당 인덱스번호의 문자열을 아스키코드로 반환
+
+        console.log(text.match("JavaScript"));
+
+        console.log(text.replace("Hello", "Hi"), text);
+        
+    </script>
+</body>
+</html>
