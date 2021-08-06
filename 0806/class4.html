@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>랜덤 인삿말 출력</title>
+</head>
+<body>
+    <p id="test"></p>
+    <script>
+        let greeting = ["Hi", "안녕", "Bonjour", "Ohio", "Nihao"];
+        let ran = Math.floor(Math.random()*greeting.length);
+        console.log(ran);
+        document.getElementById('test').innerHTML = greeting[ran];
+        
+    </script>
+</body>
+</html>
