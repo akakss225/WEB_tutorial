@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let txt = "Hello Thank you good luck to you";
+        let txt2 = new String("javascript");
+
+        document.write(txt[16], "<br>");
+        // document.write(txt.charAt(16), "<br>");
+        document.write(txt.indexOf("you"), "<br>");
+        document.write(txt.lastIndexOf("you"), "<br>");
+        document.write(txt.length, "<br>");
+        document.write(txt.toUpperCase(), "<br>");
+        document.write(txt.toLowerCase(), "<br>");        
+        document.write(txt.match('luck'), "<br>"); // luck or null
+        document.write(txt.search('you'), "<br>"); // index number return.
+        document.write(txt.substr(21,4), "<br>");
+        document.write(txt.slice(21,25), "<br>");
+        document.write(txt.substring(6,11), "<br>");
+        document.write(txt.replace("you","me"), "<br>");
+
+        let txt3 = txt.split(" ");
+        document.write(txt3, "<br>");
+        document.write(txt3[0], "<br>");
+        document.write(txt3[4], "<br>");
+        document.write(txt3[0], "<br>");
+
+    </script>
+</body>
+</html>
