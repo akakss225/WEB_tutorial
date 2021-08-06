@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <button onclick="add()">등록하기</button>
+    <hr>
+    <p id="lineup"></p>
+    <script>
+        let music = [];
+        function add(){
+            music.push(document.getElementById("input").value);
+            let list = "<ul>";
+            for(i in music){
+                list += `<li>${music[i]}</li>`;
+            }
+            list += "</ul>"
+            document.getElementById("lineup").innerHTML = list;
+        }
+    </script>
+</body>
+</html>

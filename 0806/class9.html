@@ -23,11 +23,11 @@
         document.write(txt.substring(6,11), "<br>");
         document.write(txt.replace("you","me"), "<br>");
 
-        let txt3 = txt.split(" ");
-        document.write(txt3, "<br>");
-        document.write(txt3[0], "<br>");
-        document.write(txt3[4], "<br>");
-        document.write(txt3[0], "<br>");
+        let txt3 = txt.split(" "); // 공백을 기준으로 단어 분리. >> 분리된 단어들은 배열로 저장.
+        document.write(txt3, "<br>"); // Hello,Thank,you,good,luck,to,you
+        document.write(txt3[0], "<br>"); // Hello
+        document.write(txt3[4], "<br>"); // luck
+        
 
     </script>
 </body>
