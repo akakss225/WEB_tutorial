@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let list = [30, '따르릉', true, 1, "test"];
+        console.log(typeof list, list)
+        
+        let list2 = new Array();
+        list2[0] = 30;
+        list2[1] = "따르릉";
+        list2[2] = true;
+        console.log(list2);
+
+        let list3 = new Array(30, "따르릉", true);
+        console.log(list3);
+
+        document.write("<h2>배열 가져오기1</h2>");
+        document.write(list[0],"<br>");
+        document.write(list[1],"<br>");
+        document.write(list[2],"<br>");
+        document.write("<h2>배열 가져오기2</h2>");
+        for(let i = 0; i < list.length; i++){
+            document.write(list[i],"<br>");
+        }
+        
+        document.write("<h2>배열 가져오기3</h2>");
+        for(i in list){
+            document.write(list[i], "<br>");
+        }
+        
+        document.write("<h2>배열 가져오기4</h2>");
+        let li = "";
+        for(i in list){
+            if (i == 0){
+                li += "<ul>";
+                li += `<li>${list[i]}</li>`;
+            }
+            else if (i == li.length - 1){
+                li += `<li>${list[i]}</li>`;
+                li += "</ul>";
+            }
+            else{
+                li += `<li>${list[i]}</li>`;
+            }
+        }
+        document.write(li);
+        document.write("<h2>메뉴</h2>");
+        let menu = ["짜장면", "냉면", "피자", "햄버거", "비빔밥"];
+        for(i in menu){
+            document.write(menu[i], "<br>");
+        }
+        document.write("<h2>메뉴2</h2>");
+        menu[4] = "탕수육"
+        for(i in menu){
+            document.write(menu[i], "<br>");
+        }
+
+
+        
+    </script>
+</body>
+</html>
