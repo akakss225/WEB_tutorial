@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배열 편집</title>
+</head>
+<body>
+    <script>
+        let arr_1 = ["사당", "교대", "방배", "강남"];
+        let arr_2 = ["신사", "압구정", "옥수"];
+
+        let result = arr_1.join(" - "); // 배열 연결하기
+        console.log(result);
+        
+        result = arr_1.concat(arr_2); // 배열 합치기
+        console.log(result);
+        
+        result = arr_1.slice(1,3); // 지정범위 자르기
+        console.log(result);
+        
+        result = arr_1.sort();
+        console.log(result);
+        
+        result = arr_2.reverse();
+        console.log(result);
+        
+        result = arr_1.splice(2,1,"test"); // (인덱스번호, 자를갯수, 대체요소)
+        console.log(result);
+        console.log(arr_1);
+        
+        arr_1.pop();
+        arr_1.pop();
+        console.log(arr_1);
+        
+        result = arr_1.shift(); // 첫번째 인덱스 삭제
+        console.log(arr_1, result);
+        
+        arr_1.push(result);
+        console.log(arr_1);
+        
+        arr_1.push("test"); // 배열 맨 뒤에 요소 추가
+        console.log(arr_1);
+        
+        arr_1.unshift("123"); // 첫번째 인덱스에 요소 추가
+        console.log(arr_1);
+    </script>
+</body>
+</html>
