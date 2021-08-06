@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>추천메뉴 랜덤출력</title>
+</head>
+<body>
+    <script>
+        let car = ["미니쿠퍼", "벤츠", "볼보", "소나타", "테슬라"];
+        document.write(car, car.length , "<br>");
+        document.write(car[2]);
+
+        let carList = "<ul>";
+        for (i in car){
+            if(i == car.length - 1){
+                carList += `<li>${car[i]}</li>`;
+                carList += "</ul>";
+            }
+            else{
+                carList += `<li>${car[i]}</li>`;
+            }
+        }
+        document.write(carList);
+
+    </script>
+</body>
+</html>
