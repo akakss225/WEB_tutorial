@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let green = ["교대", "방배", "강남"];
+        let yellow = ["미금", "정자", "수서"];
+        console.log(green);
+        console.log(yellow);
+        
+        green.splice(1,1,"서초","역삼");
+        console.log(green);
+        
+        let data1 = green.pop();
+        console.log(green);
+        
+        let data2 = green.shift();
+        console.log(green);
+        
+        green.push("신도림");
+        console.log(green);
+        
+        yellow.push(data1);
+        console.log(yellow);
+        
+        yellow.unshift(data2);
+        console.log(yellow);
+
+
+
+
+    </script>
+</body>
+</html>
