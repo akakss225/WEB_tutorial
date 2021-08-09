@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clearInterval(autoAdd)">증가 정지</button>
+    <button onclick="clearInterval(autoSub)">감소 정지</button>
+    <script>
+        let addNum = 0;
+        let subNum = 1000;
+        
+        let autoAdd = setInterval(function(){
+            addNum++; console.log("addNum : ",addNum);
+        }, 1000);//함수, 시간 순으로 인자를 입력(milsec단위.) 1000 -> 1sec
+        let autoSub = setInterval(function(){
+            subNum--; console.log("subNum : ", subNum);
+        }, 1000)
+    </script>
+</body>
+</html>
