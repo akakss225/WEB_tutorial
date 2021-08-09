@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let count = 0;
+        // 호이스팅 -> 끌어올리다. 정의되기 전에 호출해도 찾아서 실행해준다. >> 함수와같은 메서드가 입력되면 위로 올라가는 특성.
+        myFuc();
+        myFuc();
+        myFuc();
+
+        function myFuc(){ // 이름이 있는함수
+            count++;
+            document.write(count,". 안녕하세요.<br>");
+        }
+
+        // 참조변수의 경우 함수지만, 정의되기 이전에 호출이돼도 실행이되지 않는다.
+        let theFuc = function(){ // 이름이 없는함수 >> 익명함수. >> 참조변수를 이용해 정의함. 
+            count++;
+            document.write(count,". 반갑습니다..<br>");
+        }
+        theFuc();
+        theFuc();
+
+    </script>
+</body>
+</html>
