@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let rightId = "korea";
+        let rightPw = "1234";
+
+        function login(id, pw){
+            if(id == rightId){
+                if(pw == rightPw){
+                    document.write(`Mr.${id}, Welcome to our Home.`)
+                }
+                else{
+                    alert("Wrong Passward. Please check your Passward again!")
+                }
+            }
+            else{
+                alert("Wrong ID. Please check your ID again!")
+            }
+        }
+        let userId = prompt("Write a ID");
+        let userPw = prompt("Write a Passward");
+
+        login(userId, userPw);
+
+    </script>
+</body>
+</html>
