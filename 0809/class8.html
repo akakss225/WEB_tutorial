@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>배경 color 순서대로 출력</title>
+</head>
+<body id="bg">
+    <button onclick="changeBg()">배경색 바꾸기</button>
+    <script>
+        let color = ["red", "blue", "orange", "green", "yellow"];
+        let count = 0;
+        function changeBg(){
+            document.getElementById("bg").style.backgroundColor = color[count%color.length];
+            count++;
+        }
+    </script>
+</body>
+</html>
