@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFuc() {
+            let name = 'Sumin';
+            let area = 'Incheon';
+            document.write(`Hi, My name is ${name}!. Nice to meet you.<br>`);
+            document.write(`Im from ${area}.<br>`);
+        }
+        function myFuc2() {
+            let name = 'John';
+            let area = 'NewYork';
+            document.write(`Hi, My name is ${name}!. Nice to meet you.<br>`);
+            document.write(`Im from ${area}.<br>`);
+        }
+        function myFuc3(name, area){ // 파라미터를 함수를 작성할때 미리 작성해놓는다. >> 미리 인자값을 어떻게 받을지 표시함.
+            document.write(`Hi, My name is ${name}!. Nice to meet you.<br>`);
+            document.write(`Im from ${area}.<br>`);
+        }
+        myFuc();
+        myFuc2();
+        myFuc3('Dooley', 'Busan');
+        myFuc3('Doughner', 'Seoul');
+    </script>
+</body>
+</html>
