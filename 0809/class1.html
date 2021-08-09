@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse; float: left; margin: 10px; }
+        td { border: 1px solid #ccc; padding: 5px;}
+    </style>
+</head>
+<body>
+    <script>
+        let table = "";
+        for (let i = 2; i < 10; i++){
+            table += "<table>";
+                table += "<caption> " + i + " 단 </caption>";
+                for (let j = 2; j < 10; j++){
+                    let total = i * j;
+                    let txt = String(total);
+                    let color = "white";
+                    if (txt.match(9)){
+                        color = "red";
+                    }
+                    else if (txt.match(7)){
+                        color = "yellow"
+                    }
+                    table += `<tr><td style='background-color:${color};'> ${i} x ${j} = ${total}  </td></tr>`;
+
+                }
+            table += "</table>";
+        }
+        document.write(table);
+    </script>
+</body>
+</html>
