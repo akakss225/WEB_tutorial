@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>layer</title>
+    <style>
+        #wrap { width: 800px; margin: 0 auto; padding: 50px; }
+        #wrap p { color: #555;, line-height: 2; }
+
+        #popup_bg { position: fixed; left: 0; right: 0; top: 0; bottom: 0; 
+                    background-color: rgba(0, 0, 0, 0.5); }
+        #popup_bg .modal { width: 300px; padding: 20px; background-color: #fff; text-align: center;
+                            margin: 100px auto; }
+        #popup_bg .modal img { margin-bottom: 20px; }
+        #popup_bg .modal button {  }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1 id="title" onclick="popOpen()">레이어 팝업 만들기</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto quam ea nam! Rem similique ut officia aspernatur ullam saepe harum consectetur deserunt dolore repellat esse, suscipit aperiam quia perspiciatis inventore?</p>
+    </div>
+    <!-- 기존 웹 문서위에 팝업을 겹쳐서 올려놓는 팝업. -->
+    <div id="popup_bg">
+        <div class="modal">
+            <img src="window_object_1.jpeg" alt="">
+            <button onclick="popclose()">닫기</button>
+        </div>
+    </div>
+    <script>
+        function popclose(){
+            document.getElementById("popup_bg").style.display = "none";
+        }
+        function popOpen(){
+            document.getElementById("popup_bg").style.display = "block";
+        }
+    </script>
+</body>
+</html>
