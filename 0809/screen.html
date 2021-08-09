@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let w = screen.width; // 화면 전체 너비
+        let h = screen.height; // 화면 전체 높이
+
+        let w2 = screen.availWidth; // 작업표시줄을 제외한 너비
+        let h2 = screen.availHeight; // 작업표시줄을 제외한 높이
+
+        let color = screen.colorDepth; // 접속한 모니터가 표현가능한 color의 bit수를 알려줌.
+
+        console.log("w : ", w, ", h : ",h);
+        console.log("w2 : ", w2, ", h2 : ",h2);
+        console.log("모니터가 표현가능한 color bit : ",color);
+
+        // window객체의 경우 브라우저가 중심.
+        let ow = window.outerWidth; // 브라우저 자체 너비
+        let oh = window.outerHeight; // 브라우저 자체 높이
+        let iw = window.innerWidth; // 브라우저 안쪽 너비
+        let ih = window.innerHeight; // 브라우저 안쪽 높이
+
+        console.log("브라우저 자체 너비 : ", ow, ", 브라우저 자체 높이 : ", oh);
+        console.log("브라우저 안쪽 너비 : ", iw, ", 브라우저 안쪽 높이 : ", ih);
+    </script>
+</body>
+</html>

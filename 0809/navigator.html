@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator - OS_information, Screen_information</title>
+</head>
+<body>
+    <script>
+        let info = navigator.userAgent.toLowerCase(); // 운영체제 정보를 소문자로.
+        let osImg = null;
+
+        console.log(info);
+        /*
+            mozilla/5.0 (macintosh; intel mac os x 10_15_7) 
+            applewebkit/537.36 (khtml, like gecko) 
+            chrome/92.0.4515.131 
+            safari/537.36
+        */
+        if (info.indexOf('windows') >= 0){
+            osImg = "windows";
+        }
+        else if (info.indexOf('macintosh') >= 0){
+            osImg = "macintosh";
+        }
+        else if (info.indexOf('android') >= 0){
+            osImg = "android";
+        }
+        else if (info.indexOf('iphone') >= 0){
+            osImg = "iphone";
+        }
+        document.write(`<img src='${osImg}.png'><br>`);
+
+        let mw = screen.width;
+        let mh = screen.height;
+
+        document.write("현재 모니터 해상도 너비 : ",mw,"px","<br>");
+        document.write("현재 모니터 해상도 높이 : ",mh,"px","<br>");
+    </script>
+</body>
+</html>
