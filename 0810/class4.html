@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 0;
+        function test(){
+            num++;
+            let hi = "안녕";
+            document.write(num, "<br>");
+            if (num == 10) return; 
+            test();
+            document.write(hi);
+        }
+        test();
+    </script>
+</body>
+</html>

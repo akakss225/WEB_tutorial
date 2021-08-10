@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>베너 갤러리</title>
+    <style>
+        #gallery { width: 350px; margin: 50px auto; text-align: center; }
+        #gallery img { width: 100%; }
+        #gallery button { margin-top: 30px;}
+    </style>
+</head>
+<body>
+    <!-- element.setAttribute(attribute, value) : element의 attribute값을 변경 -->
+    <div id="gallery">
+        <div><img src="images/n1.jpeg" alt="베너1" id="photo"></div>
+        <div>
+            <button onclick="pre()">이전</button>
+            <button onclick="next()">다음</button>
+        </div>
+    </div>
+    <script>
+        let num = 1;
+        function next(){
+            if (num == 6){ num = 0 }
+            num++;
+            console.log(num,"이미지 넘기기");
+            document.getElementById("photo").setAttribute("src",`images/n${num}.jpeg` );
+        }
+        function pre(){
+            if (num == 1){ num = 7 };
+            num--;
+            console.log(num,"이미지 돌리기");
+            document.getElementById("photo").setAttribute("src",`images/n${num}.jpeg`);
+        }
+    </script>
+</body>
+</html>

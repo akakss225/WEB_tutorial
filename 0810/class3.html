@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #gallery { width: 350px; margin: 50px auto; text-align: center; }
+        #gallery img { width: 100%; }
+        #gallery button { margin-top: 30px;}
+    </style>
+</head>
+<body>
+    <div id="gallery">
+        <div><img src="images/n1.jpeg" alt="베너1" id="photo"></div>
+        <div>
+            <button onclick="gallery(0)">이전</button>
+            <button onclick="gallery(1)">다음</button>
+        </div>
+    </div>
+    <script>
+        let num = 1;
+        function gallery(btn){
+            if (btn){
+                // if (num == 6){ num = 0 }
+                if (num == 6){ return; }
+                num++;
+                console.log(num,"이미지 넘기기");
+            }
+            else{
+                // if (num == 1){ num = 7 };
+                if (num == 1){ return; }
+                num--;
+                console.log(num,"이미지 돌리기");
+            }
+            let imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src",`images/n${num}.jpeg`);
+            
+        }
+
+    </script>
+</body>
+</html>
