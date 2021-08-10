@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 시계</title>
+    <style>
+        h1 { text-align: center; }
+        #time { border: 2px solid #ccc; padding: 30px; 
+                text-align: center; width: 500px; margin: 0 auto;
+                background-color: #f1f1f1; color: #333;}
+    </style>
+</head>
+<body>
+    <h1>JavaScript Clock</h1>
+    <h2 id="time"><!-- 8/10 TuesDay 09:37:01 --></h2>
+    <script>
+        let timeShow = document.getElementById("time");
+        function clock(){
+            let today = new Date()
+            let month = today.getMonth()+1;
+            let date = today.getDate();
+            let day = today.getDay();
+
+            let hour = today.getHours() < 10 ? "0" + today.getHours() : today.getHours();
+            let min = today.getMinutes() < 10 ? "0" + today.getMinutes() : today.getMinutes();            
+            let sec = `${today.getSeconds() < 10 ? `0${today.getSeconds()}` : today.getSeconds()}`;
+
+            let week = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+
+            timeShow.innerHTML = month + " / " + date + " " + week[day]+ " " 
+                                + hour + " : " + min + " : " + sec
+        }
+        clock();
+        setInterval(clock, 1000);
+    </script>
+</body>
+</html>
