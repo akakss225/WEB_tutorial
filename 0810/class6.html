@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>함수 유효범위</title>
+</head>
+<body>
+    <script>
+        function test(){
+            alert("전역함수");
+        }
+        function test2(){
+            function test3(){
+                alert("지역함수");
+            }
+            test();
+        }
+        test();
+        test2();
+    </script>
+</body>
+</html>
