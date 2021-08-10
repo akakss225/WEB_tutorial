@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button { width: 100px; height: 30px; position: absolute; left: 50%; top: 50%;
+                    transform: translate(-50%, -50%);}
+    </style>
+</head>
+<body id="bg">
+    <button onclick="chColor()">change</button>
+    <script>
+        function chColor(){
+            let red = Math.floor(Math.random()*256);
+            let green = Math.floor(Math.random()*256);
+            let blue = Math.floor(Math.random()*256);
+            console.log(red, green, blue);
+            let backGround = document.getElementById("bg");
+            backGround.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
+    </script>
+</body>
+</html>

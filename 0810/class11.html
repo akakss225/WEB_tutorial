@@ -15,7 +15,7 @@
     <script>
         let num = 1;
         setInterval(function(){
-            if(num == 9) {num = 1};
+            if(num >= 9) {num = 1};
             document.getElementById("photo").setAttribute("src", `images/n${num}.jpeg`);
             num++;
         }, 1000);
