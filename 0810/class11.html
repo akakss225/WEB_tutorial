@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap { width: 400px; margin: 100px auto; }
+        #wrap img { width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <img src="images/n1.jpeg" alt="베너" id="photo">
+    </div>
+    <script>
+        let num = 1;
+        setInterval(function(){
+            if(num == 9) {num = 1};
+            document.getElementById("photo").setAttribute("src", `images/n${num}.jpeg`);
+            num++;
+        }, 1000);
+    </script>
+</body>
+</html>
