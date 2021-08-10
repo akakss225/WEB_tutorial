@@ -12,9 +12,9 @@
         let image = document.getElementById("photo");
         let num = 1;
         function change(){
-            if(num == 9) { num = 1};
-            image.setAttribute("src", `images/n${num}.jpeg`);
             num++;
+            if(num > 8) { num = 1};
+            image.setAttribute("src", `images/n${num}.jpeg`);
         }
     </script>
 </body>
