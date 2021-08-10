@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <img src="images/n1.jpeg" alt="베너" id="photo" onclick="change()">
+    </div>
+    <script>
+        let image = document.getElementById("photo");
+        let num = 1;
+        function change(){
+            if(num == 9) { num = 1};
+            image.setAttribute("src", `images/n${num}.jpeg`);
+            num++;
+        }
+    </script>
+</body>
+</html>

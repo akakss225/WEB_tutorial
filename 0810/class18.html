@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #figure { width: 200px; height: 200px; background-color: green; 
+                    text-align: center; line-height: 200px; margin: 200px auto;
+                    transition: .5s; color: tomato;
+                }
+    </style>
+</head>
+<body>
+    <div id="figure" onclick="change()">네모</div>
+    <script>
+        let figure = document.getElementById("figure");
+        let status = "rectangle";
+        function change(){
+            if(status == "rectangle"){
+                figure.style.backgroundColor = "blue";
+                figure.style.borderRadius = "50%";
+                figure.style.color = "white";
+                figure.innerHTML = "동그라미";
+                status = "circle";
+            }
+            else if(status == "circle"){
+                figure.style.backgroundColor = "green";
+                figure.style.borderRadius = "0";
+                figure.style.color = "tomato";
+                figure.innerHTML = "네모";
+                status = "rectangle";
+            }
+        }
+    </script>
+</body>
+</html>

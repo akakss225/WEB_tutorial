@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        h1 { float: left; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); 
+            transition: 1s;}
+    </style>
+</head>
+<body>
+    <h1 id="title" onclick="change()">타이틀 텍스트 변경</h1>
+    <script>
+        let head = document.getElementById("title");
+        let status = "normal"
+        function change(){
+            if(status == "normal"){
+                head.innerHTML = "제목입니다.";
+                status = "change";
+            }
+            else{
+                head.innerHTML = "타이틀 텍스트 변경.";
+                status = "normal";
+            }
+        }
+    </script>
+</body>
+</html>
