@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 생성자 함수 메모리절약 >> prototype</title>
+</head>
+<body>
+    <script>
+        function CheckWeight(name, height, weight){ // 객체 생성자 함수는 '틀'을 제공하기 때문에 첫글자를 대문자로 표기해 다름을 표현한다.
+            this.userName = name;
+            this.userHeight = height;
+            this.userWeight = weight;
+            this.minWeight;
+            this.maxWeight;
+        }
+        CheckWeight.prototype.getInfo = function(){
+            let str = "";
+            str += `이름 : ${this.userName}, `;
+            str += `키 : ${this.userHeight}cm, `;
+            str += `몸무게 : ${this.userWeight}kg <br>`;
+            return str;
+        }
+        CheckWeight.prototype.getResult = function(){
+            this.minWeight = (this.userHeight - 100) * 0.9 - 5;
+            this.maxWeight = (this.userHeight - 100) * 0.9 + 5;
+
+            if(this.minWeight <= this.userWeight && this.maxWeight >= this.userWeight){
+                return "정상체중입니다.<br><br>";
+            }
+            else if(this.userWeight < this.minWeight){
+                return "저체중입니다.<br><br>";
+            }
+            else{
+                return "과체중입니다.<br><br>";
+            }
+        };
+        let song = new CheckWeight("송수민", 178, 75);
+        let ko = new CheckWeight("고길동", 165, 70);
+
+        console.log(song);
+        document.write(song.getInfo());
+        document.write(song.getResult());
+
+        console.log(ko);
+        document.write(ko.getInfo());
+        document.write(ko.getResult());
+    </script>
+</body>
+</html>
