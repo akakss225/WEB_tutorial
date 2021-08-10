@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>유효범위</title>
+</head>
+<body>
+    <script>
+        let num = 10; // 전역범수. global변수.
+
+        function test(){
+            let num = 50; // 지역변수. local.
+            console.log(num);
+        }
+        test();
+        console.log(num);
+    </script>
+</body>
+</html>
