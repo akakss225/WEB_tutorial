@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM 선택자</title>
+</head>
+<body>
+    <h1 id="title">DOM 선택자</h1>
+    <p class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio doloribus neque nobis qui similique nemo a, cumque, enim ea excepturi, consequatur fuga veniam impedit amet deleniti quis voluptatibus eum nihil?</p>
+    <ul>
+        <li>banana</li>
+        <li>strawberry</li>
+        <li>wartermellon</li>
+        <li>grape</li>
+        <li>kiwi</li>
+        <li>cherry</li>
+        <li>mango</li>
+    </ul>
+    <p>문단입니다.</p> <!-- 과일은 7 개입니다. -->
+    <hr>
+    <button onclick="test1()">backgroudColor</button> <!-- class="text"의 배경칼라 yellow변경 -->
+    <button onclick="test2()">change</button> <!-- 바나나 > 파인애플 -->
+    <button onclick="test3()">number</button> <!-- li태그 갯수출력 -->
+    <button onclick="test4()">delete</button> <!-- class="text" 삭제 -->
+    <button onclick="test5()">post</button> <!-- class="text" 출력 -->
+    <script>
+        let title = document.querySelector('#title');
+        title.style.backgroundColor = 'red';
+        title.style.color = "#fff";
+        title.style.textAlign = "center";
+        let text = document.getElementsByClassName("text")[0];
+        let list = document.getElementsByTagName("li");
+        let p = document.getElementsByTagName('p');
+        let hide = document.querySelector('.text');
+        function test1(){
+            text.style.backgroundColor = "yellow";
+        }
+        function test2(){
+            list[0].innerHTML = "fineapple";
+        }
+        function test3(){
+            let n = list.length;
+            p[1].innerHTML = `과일의 갯수는 ${n}개 입니다.`;
+        }
+        function test4 (){
+            hide.style.display = "none";
+        }
+        function test5 (){
+            hide.style.display = "block";
+        }
+
+        for(let i = 0; i < list.length; i++){
+            document.querySelectorAll('li')[i].style.backgroundColor = "skyblue";
+        }
+    </script>
+</body>
+</html>
