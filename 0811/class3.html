@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이벤트</title>
+</head>
+<body>
+    <h1>점심 리스트</h1>
+    <ul>
+        <li>짜장면</li>
+        <li>탕수육</li>
+        <li>피자</li>
+        <li>햄버거</li>
+        <li>냉면</li>
+    </ul>
+    <button>title</button>
+    <button>change</button>
+    <button>pizza</button>
+    <div class="imgbox">
+        <img src="../0810/images/n8.jpeg" alt="img">
+    </div>
+    <script>
+        let title = document.getElementsByTagName('button')[0];
+        title.onclick = function(){
+            document.querySelector('h1').innerHTML = "음식 리스트";
+        }
+        document.getElementsByTagName('button')[1].addEventListener('click',function(){
+            for (let i = 0; i < document.querySelectorAll('li').length; i++){
+                document.querySelectorAll('li')[i].style.backgroundColor = "yellow";
+                document.querySelectorAll('li')[i].style.border = "2px solid red";
+            }
+        });
+        let imgTag = document.querySelector('img');
+        imgTag.addEventListener("mouseover",function(){
+            imgTag.src = "../0810/images/n3.jpeg";
+            imgTag.setAttribute('alt', `베너3번`);
+        });
+        imgTag.addEventListener("mouseout",function(){
+            imgTag.src = "../0810/images/n8.jpeg";
+            imgTag.setAttribute('alt', "베너8번");
+        });
+        let list = document.getElementsByTagName('li')[2];
+        let pizza = document.getElementsByTagName('button')[2];
+        pizza.addEventListener('click',function(){
+            list.style.cssText = `font-size: 32px; color: red;`;
+            
+        })
+    </script>
+</body>
+</html>
