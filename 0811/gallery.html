@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IU_Gallery</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        #imgbox { width: 800px; margin: 50px auto; }
+        .imglist { list-style: none; }
+        .imglist li { float: left; width: 32%; margin: 0.5%; overflow: hidden; height: 250px; 
+                        box-sizing: border-box;}
+        .imglist li img { width: 100%; transition: .5s; filter: grayscale(1); }
+        .imglist li:hover { border: 1px solid skyblue; }
+        .imglist li:hover img { transform: scale(1.1); filter: grayscale(0); }
+
+        #lightBox { position: fixed; left: 0; right: 0; top: 0; bottom: 0; 
+                    background-color: rgba(0,0,0,0.5); display: none; }
+        #lightBox img { display: block; margin: 100px auto; border: 5px solid #fff; 
+                        max-height: 600px;}
+    </style>
+</head>
+<body>
+    <div id="imgbox">
+        <ul class="imglist">
+            <li><img src="iu/iu-1-thumb.jpg" data-src='iu/iu-1.jpg' alt="0"></li>
+            <li><img src="iu/iu-2-thumb.jpg" data-src='iu/iu-2.jpg' alt="1"></li>
+            <li><img src="iu/iu-3-thumb.jpg" data-src='iu/iu-3.jpg' alt="2"></li>
+            <li><img src="iu/iu-4-thumb.jpg" data-src='iu/iu-4.jpg' alt="3"></li>
+            <li><img src="iu/iu-5-thumb.jpg" data-src='iu/iu-5.jpg' alt="4"></li>
+            <li><img src="iu/iu-6-thumb.jpg" data-src='iu/iu-6.jpg' alt="5"></li>
+        </ul>
+        <div id="lightBox">
+            <img src="iu/iu-1.jpg" alt="lightBoxImg">
+        </div>
+    </div>
+    <script>
+        let thumbImg = document.querySelectorAll('.imglist>li>img');
+        let lightBoxImg = document.querySelector('#lightBox>img');
+        let lightBox = document.getElementById('lightBox');
+
+        for(let i = 0; i < thumbImg.length; i++){
+            thumbImg[i].addEventListener('click',function(){
+                let dataSrc = this.getAttribute('data-src');
+                lightBoxImg.src = dataSrc;
+                lightBox.style.display = "block";
+            })
+        }
+        lightBox.addEventListener('click',function(){
+            this.style.display = "none";
+        })
+    </script>
+</body>
+</html>
