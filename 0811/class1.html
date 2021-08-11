@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 선택자</title>
+</head>
+<body>
+    <h1 id="title">자바스크립트 선택자</h1>
+    <ul class="list">
+        <li class="item">태그선택자</li>
+        <li class="item">id선택자</li>
+        <li class="item">class선택자</li>
+        <li class="item">querySelector:단수</li>
+        <li class="item">querySelectorAll:배열</li>
+    </ul>
+    <h2 id="menuList">점심메뉴 리스트</h2>
+    <dl class="menu">
+        <dt class="menuTitle">점심메뉴</dt>
+        <dd class="m">짜장면</dd>
+        <dd class="m">햄버거</dd>
+        <dd class="m">피자</dd>
+    </dl>
+    <script>
+        // getElementsByTagName >> 데이터를 (유사)배열에 저장. 이 경우 배열 메소드를 사용할 수 없음.
+        // getElementById >> 변수에 저장.
+        // getElementsByClassName >> 배열에 저장.
+
+        // id 선택자
+        document.getElementById("title").style.border = "2px solid blue";
+
+        // class선택자 /  유사배열이기 때문에 인덱스번호를 지정해주어야한다.
+        document.getElementsByClassName("list")[0].style.border = "2px solid red";
+        console.log(document.getElementsByClassName("item"));
+        document.getElementsByClassName("item")[2].style.border = "2px solid green";
+        document.getElementsByClassName("item")[2].style.border = "2px solid green";
+        for(let i = 0; i < 5; i++){
+            document.getElementsByClassName("item")[i].style.textDecoration = "underline";
+        }
+
+        // 태그선택자
+        document.getElementsByTagName('h1')[0].style.textAlign = "center";
+        console.log(document.getElementsByTagName("h1"))
+        for(let i = 0; i < 5; i++){
+            document.getElementsByTagName('li')[i].style.fontSize = "24px";
+        }
+        
+        // querySelector
+        document.querySelector("#menuList").style.textAlign = "center";
+        document.querySelector('.menu').style.border = "2px solid red";
+        document.querySelector('dd').style.color = "red";
+        document.getElementsByTagName('dd')[0].style.fontSize = "24px";
+
+        // querySelectorAll
+        document.querySelectorAll('.menu')[0].style.backgroudColor = "orange";
+        document.querySelectorAll('dd')[1].style.backgroudColor = "skyblue"
+    </script>
+</body>
+</html>
