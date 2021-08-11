@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">음악리스트</h1>
+    <ul class="list">
+        <li>봄 사랑 벚꽃말고</li>
+        <li>한여름밤의 꿀</li>
+        <li>가을안부</li>
+        <li>눈사람</li>
+        <li>I love you 3000</li>
+    </ul>
+    <script>
+        let list = document.querySelectorAll('li');
+        for(let i = 0; i < list.length; i++){
+            list[i].addEventListener('click',function(){
+            for (let j = 0; j < list.length; j++ ){
+                list[j].style.backgroundColor = "";
+            }
+            this.style.backgroundColor = "skyblue"
+            })
+        }
+    </script>
+</body>
+</html>
