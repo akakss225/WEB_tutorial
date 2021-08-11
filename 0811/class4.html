@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .imgbox { width: 400px; padding: 20px; border: 1px solid #ccc;
+                    margin-bottom: 20px;}
+        .imgbox img { width: 100%;}
+        .caption { width: 400px; padding: 20px; border: 1px solid #ccc; display: none;}
+    </style>
+</head>
+<body>
+    <div class="imgbox">
+        <img src="../0810/images/n1.jpeg" alt="">
+        <button>상세보기</button>
+    </div>
+    <div class="caption">
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut porro illo sit accusamus nesciunt consequuntur consectetur blanditiis dolor accusantium, incidunt harum perspiciatis ipsam ea! Ex vero aliquam excepturi et ipsum?</p>
+        <button>닫기</button>
+    </div>
+    <script>
+        let show = document.querySelector('.imgbox>button');
+        show.addEventListener('click', function(){
+            document.querySelector('.caption').style.display = "block";
+            this.style.display = "none";
+        });
+        let hide = document.querySelector('.caption>button');
+        hide.addEventListener('click', function(){
+            document.querySelector('.caption').style.display = "none";
+            show.style.display = "block";
+        });
+
+    </script>
+</body>
+</html>
