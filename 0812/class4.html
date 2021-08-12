@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>모바일 서랍메뉴</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        .toggle { display: inline-block; cursor: pointer; margin: 50px 0 0 500px; }
+        .toggle span { width: 35px; height: 2px; background-color: #333; 
+                        display: block; margin: 7px 0;}
+        .sideNav { height: 100%; position: fixed; z-index: 10; top: 0; padding: 100px 150px 0 50px;  
+                    background-color: rgba(0,0,0,0.7); overflow-x: hidden; transition: 1s; 
+                    left: -400px;
+                }
+        .sideNav a { color: #fff; text-decoration: none; padding: 10px; font-size: 32px; 
+                        display: block; 
+                    }
+        .on { left: 0; }
+    </style>
+</head>
+<body>
+    <div class="toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav class="sideNav">
+        <a href="#" class="close">x</a>
+        <a href="#">menu1</a>
+        <a href="#">menu2</a>
+        <a href="#">menu3</a>
+        <a href="#">menu4</a>
+    </nav>
+    <script>
+        let toggle = document.querySelector(".toggle");
+        let sideNav = document.querySelector(".sideNav");
+        let close = document.querySelector(".close");
+
+        toggle.onclick = function(){
+            sideNav.classList.toggle("on");
+        }
+        close.onclick = function(){
+            sideNav.classList.remove("on");
+        }
+    </script>
+</body>
+</html>
