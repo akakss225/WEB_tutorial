@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>슬라이더</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        #slider { width: 700px; margin: 20px auto; border: 1px solid #333; 
+                    position: relative; height: 400px; overflow: hidden;
+                }
+        #slider .imgbox { list-style: none; width: 2800px; height: 400px; 
+                            position: absolute; left: 0px; top: 0;
+                        }
+        #slider .imgbox li { float: left;  }
+        #slider .imgbox li img { width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <ul class="imgbox">
+            <li><img src="images/n1.jpeg" alt="0"></li>
+            <li><img src="images/n2.jpeg" alt="1"></li>
+            <li><img src="images/n3.jpeg" alt="2"></li>
+            <li><img src="images/n1.jpeg" alt="0"></li>
+        </ul>
+    </div>
+    <script>
+        let imgbox = document.querySelector('.imgbox');
+        let num = 0;
+        //etInterval(function(){
+        //    num++;
+        //    if(num == 3 ){num = 0}
+        //   imgbox.style.left = `${num * (-700)}px`;
+        //},2000);
+        setInterval(function(){
+            num++;
+            if(num > 3){
+                imgbox.style.transition = "none";
+                imgbox.style.left = "0px";
+                num = 0;
+            }
+            else{
+                imgbox.style.transition = "left 1s";
+                imgbox.style.left = `${num * (-700)}px`;
+            }
+        },2000)
+    </script>
+</body>
+</html>
