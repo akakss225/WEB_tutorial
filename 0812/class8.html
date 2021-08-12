@@ -43,7 +43,7 @@
         let tab_box = document.querySelectorAll('.tab_box');
 
         for(let i = 0; i < tab_btn.length; i++){
-            tab_btn[i].onclick = function(){
+            tab_btn[i].onclick = function(){ // 초기화 코드
                 for(let j = 0; j < tab_box.length; j++){
                     tab_btn[j].classList.remove('on');
                     tab_box[j].classList.remove('on');
@@ -52,7 +52,7 @@
                 tab_box[i].classList.add('on');
             }
         }
-        tab_btn[0].click();
+        tab_btn[0].click(); // 첫번째 메뉴 강제 시작. >> 일종의 초기화코드
         
     </script>
 </body>
