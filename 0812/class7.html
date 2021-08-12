@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <style>
-* { margin: 0; padding: 0; }
-#wrap { width: 1000px; margin: 0 auto; }
-.tab_box { padding: 50px; text-align: center; color: #fff; display: none; }
-#crimson { background-color: crimson; } 
-#deepskyblue { background-color: deepskyblue; }       
-#darkolivegreen { background-color: darkolivegreen;} 
-#orange { background-color: orange; }        
-.tab_btn { background-color: #555; color: #fff; border: 0; outline: 0; cursor: pointer; padding: 14px 20px; float: left; width: 25%; }
-.tab_btn:hover { background-color: #999; }        
+        * { margin: 0; padding: 0; }
+        #wrap { width: 1000px; margin: 0 auto; }
+        .tab_box { padding: 50px; text-align: center; color: #fff; display: none; }
+        #crimson { background-color: crimson; } 
+        #deepskyblue { background-color: deepskyblue; }       
+        #darkolivegreen { background-color: darkolivegreen;} 
+        #orange { background-color: orange; }        
+        .tab_btn { background-color: #555; color: #fff; border: 0; outline: 0; cursor: pointer; padding: 14px 20px; float: left; width: 25%; }
+        .tab_btn:hover { background-color: #999; }        
     </style>
 </head>
 <body>
@@ -48,6 +48,7 @@
                 tab_box[i].style.display = "none";
                 tab_btn[i].style.backgroundColor = "";
             }
+            console.log(color, self);
             document.getElementById(color).style.display = "block";
             self.style.backgroundColor = color;
         }
