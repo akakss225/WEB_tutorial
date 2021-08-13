@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>위치 속성</title>
+    <style>
+        * { margin: 0; padding: 0;}
+        #box { width: 150px; height: 100px; background-color: orange; 
+                margin: 100px 250px; 
+            }
+    </style>
+</head>
+<body>
+    <div id="box">box</div>
+    <script>
+        let box = document.getElementById('box');
+        // 위치, 크기정보 가져오기
+        console.log("offsetWidth: " + box.offsetWidth); // 상자 너비
+        console.log("offsetHeight: " + box.offsetHeight) // 상자 높이
+        console.log("offsetTop: " + box.offsetTop) // 상자의 y좌표
+        console.log("offsetLeft: " + box.offsetLeft) // 상자의 x좌표
+
+        // 화면 크기
+        console.log("window.outerWidth: " + window.outerWidth);
+        console.log("window.outerHeight: " + window.outerHeight);
+        console.log("window.innerWidth: " + window.innerWidth);
+        console.log("window.innerHeight: " + window.innerHeight);
+    </script>
+</body>
+</html>
