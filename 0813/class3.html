@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>노드로 리스트 만들기</title>
+</head>
+<body>
+    <h1>Lunch list</h1>
+    <input type="text" id="menu" placeholder="write a menu" required>
+    <button onclick="add()">regi</button>
+    <ul class="menuList"></ul>
+    <script>
+        let menuList = document.querySelector('.menuList');
+        function add(){
+            let newTagLi = document.createElement('li');
+            let newText = document.getElementById('menu').value;
+            let newMenu = document.createTextNode(newText);
+            newTagLi.appendChild(newMenu);
+            menuList.appendChild(newTagLi);
+            
+            let listLi = document.querySelectorAll('li');
+            console.log(listLi);
+            for (let i = 0; i < listLi.length; i++){
+                listLi[i].onclick = function(){
+                    this.remove();
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
