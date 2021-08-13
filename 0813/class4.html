@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { margin: 0; }
+        header { text-align: center; padding: 30px; }
+        nav { background-color: #333; transition: .5s; }
+        nav ul { padding: 0; list-style: none; }
+        nav ul li { display: inline-block; padding: 10px 30px; }
+        nav ul li a { color: #fff; text-decoration: none; }
+        nav ul li:hover a { color: skyblue;}
+
+        #content { padding: 30px;}
+        .sticky { position: fixed; top: 0; width: 100%; background-color: darkorchid; }
+        .sticky + #content { padding-top: 100px; }
+
+        .btntop { display: block; width: 50px; height: 50px; text-align: center; 
+                    border-radius: 50%; line-height: 50px; text-decoration: none; 
+                    color: #fff; background-color: darkcyan; position: fixed;
+                    right: 20px; bottom: 50px; z-index: 10;  opacity: 0;
+                    animation-duration: 1s; animation-iteration-count: 1;
+                    animation-fill-mode: forwards;
+                }
+        .on { animation-name: show; }
+        .off { animation-name: hide; }
+
+        @keyframes hide {
+            from { opacity: 1;}
+            to {opacity: 0; display: none;}
+            
+        }
+        @keyframes show {
+            from { opacity: 0;}
+            to { opacity: 1; display: block; }
+        }
+    </style>
+</head>
+<body onscroll="sticky()">
+    <header id="top">
+        <h1>메뉴단 고정</h1>
+        <p>Sticky 효과 상단 고정하기</p>
+    </header>
+    <nav>
+        <ul class="menu">
+            <li><a href="#">home</a></li>
+            <li><a href="#">notice</a></li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, doloremque quibusdam. Ex obcaecati iste odit. Vitae, tenetur illo? Veniam cupiditate voluptas iste harum eveniet, nostrum laboriosam sint quod dolore officia.</p>
+    </div>
+    <a href="#top" class="btntop">TOP</a>
+    <script>
+        let nav = document.querySelector('nav');
+        let navTop = nav.offsetTop;
+        console.log(navTop);
+        
+        function sticky(){
+            let scroll = window.pageYOffset; // 세로방향 스크롤된 좌표값
+            console.log(scroll);
+            if (navTop < scroll){
+                nav.classList.add('sticky');
+            }
+            else{
+                nav.classList.remove('sticky');
+            }
+            let topBtn = document.querySelector('.btntop');
+            if ( 600 <= scroll){
+                topBtn.className = "btntop on";
+            }
+            else{
+                topBtn.className = "btntop off";
+            }
+        }
+    </script>
+</body>
+</html>
