@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>D-Day for love</title>
+	<style>
+        @import url('https://fonts.googleapis.com/css?family=Black+Han+Sans|Jua');
+        * {
+            box-sizing: border-box;
+        }
+        .container{
+        width:450px;
+        margin:0 auto;
+        /* background:url(images/heart.png) no-repeat 5px -100px;
+        background-size:500px;   */
+        border:1px solid #ccc;
+        border-radius:2%;
+        box-shadow:2px 2px 10px #ccc;
+        }
+        .day1{
+        padding-top:30px;
+        text-align:center;  
+        }
+        .day1 h3 {
+        font-size:1.2em;
+        color:#666;
+        }
+        .accent{
+            margin: 0 auto 40px;
+            font-family: 'Jua', sans-serif;
+            font-weight:bold;
+            font-size:4em;
+            color:#6b1ed1;
+        }
+        .bar {
+            width:100%;
+            margin:0 auto;
+            padding-left:15px;
+            height:50px;	
+            background:#792fdb;
+            color:#fff;
+            font-size:1.2em;
+            line-height:50px;
+        }
+        .day2 {
+        width:420px;
+        margin:20px auto 20px auto;
+        }
+        .day2 ul {
+        list-style: none;
+        border-bottom:1px dashed #ccc;
+        height:60px;
+        }
+        .day2 ul:last-child {
+            border-bottom:none;
+        }
+        .item-title {
+        float:left;
+        width:170px;        
+        font-size:1.5em;
+        line-height:60px;
+        }
+        .item-date {
+        float:left;
+        /*  margin-left:60px;*/
+        font-size:1.2em;
+        color:#222;
+        text-align:right;
+        line-height:60px;
+        }
+    </style>
+</head>
+<body>
+	<div class="container">
+		<div class="day1">
+			<h3>수업시작일 <span id="firstDay">2021-07-20</span></h3>
+			<p id="accent" class="accent">
+				<span style="font-size:0.6em; font-style:italic">며칠?</span>
+			</p>
+			</div>
+			<div class="bar">기념일 계산</div>
+			<div class="day2">
+				<ul>
+					<li class="item-title">100일</li>         
+					<li class="item-date" id="date100"></li>
+				</ul>
+				<ul>
+					<li class="item-title">200일</li>
+					<li class="item-date" id="date200"></li>
+				</ul>     
+				<ul>
+                    <li class="item-title">500일</li>
+                    <li class="item-date" id="date500"></li>
+                </ul>      
+				<ul>
+                    <li class="item-title">1년</li>
+                    <li class="item-date" id="date365"></li>
+                </ul>      									     
+			</div>
+		</div>
+        <script>
+            let pointDay = prompt('계산할 기념일을 입력해주세요.',"2021-7-20");
+            let days = prompt("게산할 일자를 입력하세요.", "100");
+
+            let now = new Date();
+            let dDay = new Date(pointDay);
+
+            let toNow = now.getTime();
+            let todDay = dDay.getTime();
+
+            let passTime = toNow - todDay;
+            console.log(toNow-todDay);
+
+            let passDay = Math.trunc(passTime / 1000 / 60 / 60 / 24);
+            console.log(passDay);
+            document.getElementById('accent').innerHTML = passDay + "일 경과";
+            document.getElementById('firstDay').innerHTML = pointDay;
+
+            let itemDate = document.querySelectorAll(".item-date");
+            let itemPoint = document.getElementById('pointDay');
+
+            function calcDate(days){
+                let theTime = days * 24 * 60 * 60 * 1000;
+                let future = todDay + theTime;
+                let someDay = new Date(future);
+
+                let year = someDay.getFullYear();
+                let month = someDay.getMonth() + 1;
+                let date = someDay.getDate();
+
+                let dateId  = "date" + days;
+
+                
+                if( itemDate ){
+                    document.getElementById(dateId).innerHTML = year + "년 " + month + "월 " + date + "일";
+                }
+            }
+            calcDate(days);
+        </script>
+	</body>
+	</html>
