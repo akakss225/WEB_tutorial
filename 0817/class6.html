@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Typing effect</title>
+</head>
+<body>
+    <button onclick="typeWrite()">Typing effect</button>
+    <p id="text"></p>
+    <script>
+        let txt = prompt("Write functiom of typing effect", "Today's weather is really nice");
+        let speed = 100; // 0.1s
+        let i = 0;
+
+        function typeWrite(){
+            if(i < txt.length && txt.length > 0){
+                document.getElementById('text').innerHTML += txt.charAt(i);
+                i++;
+                setTimeout(typeWrite, speed);
+            }
+        }
+    </script>
+</body>
+</html>
