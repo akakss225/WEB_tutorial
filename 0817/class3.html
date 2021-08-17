@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>점심메뉴리스트</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="점심메뉴 입력" id="menuText">
+        <button id="addBtn">등록</button> <!-- form태그 내부의 btn은 전송 기능을 갖는다.(연결된 서버로) -->
+    </form>
+    <ul id="menuBox"></ul>
+    <script>
+        let menuText = document.getElementById('menuText');
+        let addBtn = document.getElementById('addBtn');
+        let menuBox = document.getElementById('menuBox');
+        let menuList = [];
+
+        addBtn.addEventListener('click', function(e){
+            e.preventDefault();
+            let menuValue = menuText.value;
+            if(menuValue != null && menuValue != ""){
+                menuList.push(menuValue);
+                console.log(menuList);
+            }
+            menuText.value = "";
+            menuText.focus();
+
+            let li = "";
+            for (let i = 0; i < menuList.length; i++){
+                li += `<li>${menuList[i]}---------<span id=${i}>x</span></li>`;
+            }
+            menuBox.innerHTML = li;
+
+            let menuDelete = document.querySelectorAll('#menuBox>li>span');
+            for(let i = 0; i < menuDelete.length; i++){
+                menuDelete[i].addEventListener('click', del);
+            }
+        })
+
+        function del(){
+            let index = this.getAttribute('id');
+            menuList.splice(index, 1);
+
+            let li = "";
+            for (let i = 0; i < menuList.length; i++){
+                li += `<li>${menuList[i]}---------<span class='del' id=${i}>x</span></li>`;
+            }
+            menuBox.innerHTML = li;
+
+            let menuDelete = document.querySelectorAll('#menuBox>li>span');
+            for(let i = 0; i < menuDelete.length; i++){
+                menuDelete[i].addEventListener('click', del);
+            }
+        }
+    </script>
+</body>
+</html>
