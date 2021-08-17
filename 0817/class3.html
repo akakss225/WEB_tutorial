@@ -36,6 +36,18 @@
             for(let i = 0; i < menuDelete.length; i++){
                 menuDelete[i].addEventListener('click', del);
             }
+            
+            let menu = document.querySelectorAll('li');
+            for (let i = 0; i < menuList.length; i ++){
+                menu[i].onclick = function(){
+                    for(let j = 0; j < menu.length; j++){
+                        menu[j].style.color = "black";
+                        menu[j].style.fontWeight = "normal";
+                    }
+                    this.style.color = "red";
+                    this.style.fontWeight = "bold";
+                }
+            }
         })
 
         function del(){
@@ -52,7 +64,21 @@
             for(let i = 0; i < menuDelete.length; i++){
                 menuDelete[i].addEventListener('click', del);
             }
+            let menu = document.querySelectorAll('li');
+            for (let i = 0; i < menuList.length; i ++){
+                menu[i].onclick = function(){
+                    for(let j = 0; j < menu.length; j++){
+                        menu[j].style.color = "black";
+                        menu[j].style.fontWeight = "normal";
+                    }
+                    this.style.color = "red";
+                    this.style.fontWeight = "bold";
+                }
+            }
         }
+        
+        
+
     </script>
 </body>
 </html>
