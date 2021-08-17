@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FormTag - onfocus / onblur</title>
+</head>
+<body>
+    <label for="userId">ID</label><input type="text" id="userId"><br>
+    <label for="userPw">Passward</label><input type="text" id="userPw"><br>
+    <input type="search" placeholder="검색어 입력"><br>
+    <textarea name="" id="content" cols="30" rows="10"></textarea>
+    <script>
+        let input = document.querySelectorAll('input');
+
+        for(let i = 0; i < input.length; i++){
+            input[i].onfocus = function(){ // cursor가 input박스 안에 들어갔을 때 실행됨.
+                this.style.backgroundColor = "yellow";
+            }
+            input[i].onblur = function(){ // cursor가 input박스 밖으로 나왔을 때 실행됨.
+                this.style.backgroundColor = "transparent";
+            }
+        }
+
+        let search = document.querySelector('input[type="search"]');
+        let content = document.getElementById('content');
+        search.oninput = function(){ // input박스에 입력이 되면 실행.
+            content.value = this.value;
+        }
+
+    </script>
+</body>
+</html>
