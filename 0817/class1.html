@@ -70,6 +70,7 @@
         line-height:60px;
         }
     </style>
+    <script src="script.js" defer></script>
 </head>
 <body>
 	<div class="container">
@@ -78,65 +79,26 @@
 			<p id="accent" class="accent">
 				<span style="font-size:0.6em; font-style:italic">며칠?</span>
 			</p>
-			</div>
-			<div class="bar">기념일 계산</div>
-			<div class="day2">
-				<ul>
-					<li class="item-title">100일</li>         
-					<li class="item-date" id="date100"></li>
-				</ul>
-				<ul>
-					<li class="item-title">200일</li>
-					<li class="item-date" id="date200"></li>
-				</ul>     
-				<ul>
-                    <li class="item-title">500일</li>
-                    <li class="item-date" id="date500"></li>
-                </ul>      
-				<ul>
-                    <li class="item-title">1년</li>
-                    <li class="item-date" id="date365"></li>
-                </ul>      									     
-			</div>
-		</div>
-        <script>
-            let pointDay = prompt('계산할 기념일을 입력해주세요.',"2021-7-20");
-            let days = prompt("게산할 일자를 입력하세요.", "100");
-
-            let now = new Date();
-            let dDay = new Date(pointDay);
-
-            let toNow = now.getTime();
-            let todDay = dDay.getTime();
-
-            let passTime = toNow - todDay;
-            console.log(toNow-todDay);
-
-            let passDay = Math.trunc(passTime / 1000 / 60 / 60 / 24);
-            console.log(passDay);
-            document.getElementById('accent').innerHTML = passDay + "일 경과";
-            document.getElementById('firstDay').innerHTML = pointDay;
-
-            let itemDate = document.querySelectorAll(".item-date");
-            let itemPoint = document.getElementById('pointDay');
-
-            function calcDate(days){
-                let theTime = days * 24 * 60 * 60 * 1000;
-                let future = todDay + theTime;
-                let someDay = new Date(future);
-
-                let year = someDay.getFullYear();
-                let month = someDay.getMonth() + 1;
-                let date = someDay.getDate();
-
-                let dateId  = "date" + days;
-
-                
-                if( itemDate ){
-                    document.getElementById(dateId).innerHTML = year + "년 " + month + "월 " + date + "일";
-                }
-            }
-            calcDate(days);
-        </script>
-	</body>
-	</html>
+        </div>
+        <div class="bar">기념일 계산</div>
+        <div class="day2">
+            <ul>
+                <li class="item-title">100일</li>         
+                <li class="item-date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item-title">200일</li>
+                <li class="item-date" id="date200"></li>
+            </ul>     
+            <ul>
+                <li class="item-title">500일</li>
+                <li class="item-date" id="date500"></li>
+            </ul>      
+            <ul>
+                <li class="item-title">1년</li>
+                <li class="item-date" id="date365"></li>
+            </ul>      									     
+        </div>
+    </div>
+</body>
+</html>
