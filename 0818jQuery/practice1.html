@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".sideMenu>li:nth-child(odd)").css("background", "#555")
+            $(".sideMenu>li:nth-child(even)").css("background", "#ccc")
+            $(".sideMenu>li").css("color", "#fff")
+
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>jQuery</h1>
+        </header>
+        <div id="content" class="clear">
+            <section class="left">
+                <div class="imgBox"></div>
+                <div class="leftBox">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, ea iusto corporis quasi sint nesciunt fuga perferendis corrupti, magnam nihil ipsam temporibus veritatis placeat non doloremque saepe beatae ipsa unde.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum eum amet sequi veritatis non. Ullam cum, unde, ex consectetur accusantium illum aperiam voluptates placeat excepturi tempora hic. Distinctio, saepe eius.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate doloribus alias vel temporibus distinctio culpa cum rerum, explicabo earum est deserunt amet sapiente dolor nihil aliquam recusandae omnis pariatur veniam.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error expedita itaque accusamus cum alias recusandae, sit quidem facere, nostrum eum minima voluptates aperiam ratione repellat dolores culpa quam praesentium laudantium!
+                </div>
+            </section>
+            <section class="right">
+                <ul class="sideMenu">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JAVASCRIPT</li>
+                    <li>jQuery</li>
+                </ul>
+            </section>
+        </div>
+        <footer>copyright</footer>
+    </div>
+</body>
+</html>

@@ -13,10 +13,11 @@
         $(function(){
             $("li[class='list_1']").css("border", "2px solid red");
             $("li[class!='list_1']").css("border", "2px solid orange");
-            $("li[class~='list']").css("background", "yellow"); // 문자열이 있으면 선택. but _혹은 -같은 것들이 붙어있으면 제외
-            $("li[class*='list']").css("border", "2px solid green"); // 문자열을 포함하면 무조건 전부다
-            $("li[class^='list']").css("border", "2px solid blue"); // 해당 문자열로 시작하면.
-            $("li[class$='bg']").css("border", "2px solid deeppink"); // 해당 문자열로 끝나면.
+            $("li[class~='list']").css("background", "yellow"); // ~문자열이 있으면 선택. but _혹은 -같은 것들이 붙어있으면 제외
+            $("li[class*='list']").css("border", "2px solid green"); // *문자열을 포함하면 무조건 전부다
+            $("li[class^='list']").css("border", "2px solid blue"); // ^해당 문자열로 시작하면.
+            $("li[class$='bg']").css("border", "2px solid deeppink"); // $해당 문자열로 끝나면.
+            $
             
         })
     </script>
