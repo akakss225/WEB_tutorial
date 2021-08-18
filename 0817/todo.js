@@ -18,9 +18,9 @@ function removeBtn(){
     let indexNum = this.getAttribute("id");
     itemList.splice(indexNum,1);
     console.log(itemList);
-
     showList();
 }
+
 function showList(){
     let li = "";
     for(let i = 0; i < itemList.length; i++){

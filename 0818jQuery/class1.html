@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="title1"></h1>
+    <h1 id="title2"></h1>
+    <h1 id="title3"></h1>
+    <ul id="box">
+        <li>바나나</li>
+        <li>수박</li>
+        <li>포도</li>
+    </ul>
+    <ul id="fru">
+        <li>키위</li>
+        <li>토마토</li>
+        <li>멜론</li>
+    </ul>
+    <script>
+        document.getElementById('title1').innerHTML = "<q>안녕하세요</q>";
+        $('#title2').html("<q>반갑습니다.</q>");
+        $('#title3').text('<q>잘부탁드립니다.</q>')
+
+        let fruit = document.querySelectorAll('#box>li');
+        
+        for(let i = 0; i < fruit.length; i++){
+            fruit[i].onclick = function(){
+                for(let j = 0; j < fruit.length; j++){
+                    fruit[j].style.backgroundColor = "white";
+                }
+                this.style.backgroundColor = "red";
+            }
+        }
+
+        $("#fru>li").click(function(){
+            $("#fru>li").css("background","#fff");
+            $(this).css("background","red");
+        })
+
+    </script>
+</body>
+</html>
