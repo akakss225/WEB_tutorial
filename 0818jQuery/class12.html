@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>text() / html()메서드</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //console.log($("#n1").html());
+            let text = $("#n1").text();
+            console.log(text);
+            $("#n2>div").text(function(index, text){ // 배열로 들어오면, 자동적으로 반복문 실행. 순서대로 index, text가 들어옴.
+                return "div 요소의 텍스트는 " +  text + ", index :" + index + " 입니다."
+            })
+            console.log($("#m1").html());
+            $("#m1").html("<em>jQuery</em>");
+            $("#m2>div").html(function(){
+                return "<strong>" + $(this).text() + "</strong>";
+            })
+        });
+    </script>
+</head>
+<body>   
+    <div id="n1">jQuery</div>
+    <div id="n2">
+        <div>html</div>
+        <div>css</div>
+        <div>javascript</div>
+    </div>
+    <hr>
+    <div id="m1">
+        <strong>jQuery</strong>
+    </div>
+    <div id="m2">
+        <div><em>html</em></div>
+        <div><em>css</em></div>
+        <div><em>javascript</em></div>
+    </div>
+    <hr>
+    <div id="o1">
+        <div>jQuery</div>
+    </div>
+    <div id="o2">
+        <div>html</div>
+        <div>css</div>
+        <div>javascript</div>
+    </div>
+    <hr>
+    <div id="p1">
+        <div class="con">콘텐츠</div>
+    </div>
+    <div id="p2">
+        <div class="c1 bg">내용1</div>
+        <div class="c2 bg">내용2</div>
+        <div class="c3 bg">내용3</div>
+    </div>
+</body>
+</html>
