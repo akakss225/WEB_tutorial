@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>폼 관련 이벤트</title>
+    <style>
+        * {
+            margin: 5px;
+        }
+        input[type=text].on {
+            background: #ff6600;
+            color: #fff;
+        }
+        p{
+            color: #ff0000;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // 이부분에 코드를 작성합니다. 
+            // focus >> cursor가 작동중일때
+            $("#m1 input").focus(function(){ // 선택자가 input이기 때문에 focus사용가능. div박스가 선택자일경우 focus불가능.
+                $(this).addClass("on");
+            }).blur(function(){
+                $(this).removeClass("on");
+            });
+
+            $("#m2").focusin(function(){ // 선택된 요소 or 자식요소에 focus되면 이벤트 발생.
+                $(this).children().addClass("on");
+            }).focusout(function(){
+                $(this).children().removeClass("on");
+            })
+            
+            $("#m3 input").change(function(){ // 값이 바뀌면 실행
+                let text = confirm("값을 바꾸시겠습니까?");
+                if(!text){
+                    $(this).val(10);
+                }
+            })
+
+            $("#m4 input").select(function(){
+                // let text = $(this).val();
+                // let size = text.length;
+                // alert(size);
+                let t1 = window.getSelection(); // 자바스크립트의 드래그한 부분을 가져오는 메소드 getSelection()
+                alert(t1.toString().length); // 이때 getSelection()은 객체로, toString을 통해 문자열로 바꿔야함.
+            })
+
+            $(".frm").submit(function(){ // form이 전송될 때 이벤트 발생
+                if( !$("#id").val()){ // 아이디가 입력되지 않으면 실행
+                    $(".msg1").css("display", "block");
+                    $("#id").focus();
+                }
+                else{
+                    $(".msg1").css("display", "none");
+                }
+                if( !$("#pw").val()){
+                    $(".msg2").css("display", "block");
+                    $("#pw").focus();
+                    return false;
+                }
+                else{
+                    $(".msg2").css("display", "none");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <input type="text" placeholder="값을 입력하세요.">
+    </div>
+    <div id="m2">
+        <input type="text" placeholder="값을 입력하세요.">
+    </div>
+    <div id="m3">
+        <span>값을 수정한 후 다음 입력요소로 이동하세요.</span>
+        <input type="text" value="10">
+    </div>
+    <div id="m4">
+        <input type="text" value="텍스트를 드래하세요.">
+    </div>
+    <form action="#" class="frm">
+        <fieldset>
+            <legend>로그인</legend>
+            <div>
+                <label for="id">아이디</label><input type="text" id="id">
+            </div>
+            <p class="msg1">아이디를 입력하세요!</p>
+            <div>
+                <label for="pw">비밀번호</label><input type="password" id="pw">
+            </div>
+            <p class="msg2">비밀번호를 입력하세요!</p>
+            <button>전송</button>
+        </fieldset>
+    </form>
+</body>
+</html>
