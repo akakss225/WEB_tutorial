@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("a:eq(0)").attr({
+                href : "https://www.naver.com",
+                target : "_blank"
+            });
+            $("a:eq(1)").attr({
+                href : "https://www.google.com",
+                target : "_blank",
+            }).on("click",function(){
+                $(this).html("구글바로가기");
+            });
+
+            $("p").on("click", function(){
+                $(this).css("display", "none");
+            }).mouseover(function(){
+                $(this).css({
+                    "background-color": "red",
+                    color : "#fff"
+                });
+            }).mouseout(function(){
+                $(this).css({
+                    "background-color": "blue",
+                    color : "#fff"
+                }).siblings("p").css({
+                    backgroundColor : "",
+                    color : ""
+                });
+            });
+            $("p:last").trigger("mouseover");
+
+            $("button").on("click", function(){
+                $("p").css("display", "block");
+            });
+        })
+    </script>
+</head>
+<body>
+    <a href="">네이버 바로가기</a> <!-- 네이버 새창열기 -->
+    <a href="">바로가기</a> <!-- 구글 새창열기 text >> google바로가기로 바꿔주기 -->
+    <hr>
+    <!-- p태그 클릭시 사라지기 
+        mouseover > background-color : red
+        mouseout > background-color : blue
+        마지막 p태그에 강제 마우스오버.
+    -->
+    <p>나를 클릭하면 사라집니다.1</p> 
+    <p>나를 클릭하면 사라집니다.2</p>
+    <p>나를 클릭하면 사라집니다.3</p>
+    <p>나를 클릭하면 사라집니다.4</p>
+    <p>나를 클릭하면 사라집니다.5</p>
+    <p>나를 클릭하면 사라집니다.6</p>
+    <hr>
+    <!-- 버튼 클릭시 p태그 다시 출력 -->
+    <button>나타나기</button>
+</body>
+</html>
