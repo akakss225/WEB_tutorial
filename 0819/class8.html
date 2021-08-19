@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; }
+        .pic { background-color: #eee; }
+        .pic img { vertical-align: top; transform: translateX(-300px); transition: .5s; }
+        .pic img.on { transform: translateX(0); }
+        button { display: block; }
+        .on { background-color: orange; }
+        .display { word-break: break-all; }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                //$(".pic>img").toggleClass("on");
+                if($(".pic>img").hasClass("on")){
+                    $(".pic>img").removeClass("on");
+                    $("button").html("image open");
+                }
+                else{
+                    $(".pic>img").addClass("on");
+                    $("button").html("image close");
+                }
+            })
+            // $("button").mouseover(function(){
+            //     $(".pic>img").addClass("on");
+            //     $("button").html("image close");
+            // })
+            // $("button").mouseout(function(){
+            //     $(".pic>img").removeClass("on");
+            //     $("button").html("image open");
+            // })
+            $("button").hover(function(){
+                //마우스가 올라갔을때
+                $(".pic>img").addClass("on");
+                $("button").html("image close");
+            },function(){
+                //마우스가 벗어났을때
+                $(".pic>img").removeClass("on");
+                $("button").html("image open");
+            })
+
+            $("textarea").keydown(function(){
+                $(this).addClass('on');
+                $(".display").text( $(this).val() );
+            }).keyup(function(){
+                $(this).removeClass("on");
+            }).keypress(function(){
+                // keydown과 유사. alt / shift / ctrl / esc와 같은 명령키들의 이벤트가 발생하지 않는다.
+                // 따라서 한글키가 나오지 않는 오류가 있다.
+                $(".display").text( $(this).val() );
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="pic">
+        <img src="./math_img_1.jpeg" alt="가위">
+    </div>
+    <button>image open</button>
+
+    <hr>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <div class="display"></div>
+</body>
+</html>
