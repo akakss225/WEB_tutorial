@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .bg { padding: 40px; margin-bottom: 40px; background-color: #ccc; }
+        .inner { padding: 20px; background-color: #999; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#wrap1").mouseover(function(){ // 부모 자식 간 이동시에도 이벤트가 계속 발생. >> 범위에 포함시키지 않음.
+                $('.display').append("<strong>mouse over</strong>");
+            })
+
+
+            $("#wrap2").mouseenter(function(){ // 부모 자식 간 이동시에 이벤트를 발생시키지 않음. >> 범위에 포함시킴.
+                $('.display').append("<strong>mouse enter</strong>");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap1" class="bg">
+        <div class="inner">mouseover</div>
+    </div>
+    <div id="wrap2" class="bg">
+        <div class="inner">mouseenter</div>
+    </div>
+    <div class="display"></div>
+
+</body>
+</html>
