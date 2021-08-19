@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>속성 메소드 - attr()</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+</head>
+<body>
+    <a href="#"><img src="./math_img_1.jpeg" alt="가위"></a>
+    <script>
+        $("[href]").click(function(){
+            //alert("click");
+            //$("[href]>img").attr("src", "./math_img_2.jpeg");
+            //$("[href]>img").attr("alt", "바위");
+            $("a>img").attr({
+                src : "./math_img_2.jpeg",
+                alt : "바위",
+            }).css("border","2px solid red");
+
+            $(this).attr({
+                href : "https://www.naver.com/",
+                target : "_blank"
+            });
+            
+            console.log($("a>img").attr("src"));
+        })
+    </script>
+</body>
+</html>
