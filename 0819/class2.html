@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .left { float: left; margin: 20px; color: red; }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("ul>li").click(function(){
+                $("ul>li").attr("class", "left");
+            })
+            $("a").click(function(e){
+                e.preventDefault();
+                $(this).attr("href","#");
+            });
+        })
+    </script>
+</head>
+<body>
+    <!-- li박스 클릭시 클릭한 li박스에 left 클래스 추가. / a 태그에는 #을 넣는다. -->
+    <ul>
+        <li><a href="">menu1</a></li>
+        <li><a href="">menu2</a></li>
+        <li><a href="">menu3</a></li>
+    </ul>
+</body>
+</html>
