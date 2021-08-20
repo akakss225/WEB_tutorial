@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <style>
+        .move1 { background-color: skyblue; margin: 10px 0; }
+        .move2 { background-color: orange; margin: 10px 0; }
+    </style>
+    <script>
+        $(function(){
+            $(".btn1").click(function(){
+                $(".move1").animate({
+                    marginLeft : "500px"
+                }, 2000, "linear", function(){
+                    alert("END");
+                })
+            })
+            $(".btn2").click(function(){
+                $(".move2").animate({
+                    marginLeft : "+=50px"
+                }, 500, "linear")
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <button class="btn1">button1</button>
+    </div>
+    <span class="move1">500px</span>
+    <div>
+        <button class="btn2">button2</button>
+    </div>
+    <span class="move2">50px</span>
+</body>
+</html>
