@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        ul { margin: 0; padding: 0;  list-style: none; }
+        ul>li { float: left; padding: 10px 20px; background-color: skyblue; position: relative; }
+        ul>li>ul { position: absolute; width: 100%; left: 0; top: 40px; display: none; }
+        ul>li>ul>li { width: 100%; padding: 5px 0; background-color: yellow; }
+    </style>
+    <script>
+        $(function(){
+            $("ul>li").on("mouseover", function(){
+                $(this).children("ul").stop().slideDown(500);
+            });
+            $("ul>li").on("mouseout", function(){
+                $(this).children("ul").stop().slideUp(500);
+            });
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="">Menu1</a>
+            <ul>
+                <li>subMenu1-1</li>
+                <li>subMenu1-2</li>
+                <li>subMenu1-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Menu2</a>
+            <ul>
+                <li>subMenu2-1</li>
+                <li>subMenu2-2</li>
+                <li>subMenu2-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Menu3</a>
+            <ul>
+                <li>subMenu3-1</li>
+                <li>subMenu3-2</li>
+                <li>subMenu3-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Menu4</a>
+            <ul>
+                <li>subMenu4-1</li>
+                <li>subMenu4-2</li>
+                <li>subMenu4-3</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Menu5</a>
+            <ul>
+                <li>subMenu5-1</li>
+                <li>subMenu5-2</li>
+                <li>subMenu5-3</li>
+            </ul>
+        </li>
+        
+    </ul>
+</body>
+</html>
