@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        #box { width: 300px; height: 100px; border: 5px solid red;
+                background-color: yellowgreen; padding: 20px; margin: 50px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button:eq(0)").click(function(){
+                $("#box").slideUp();
+            })
+            $("button:eq(1)").click(function(){
+                $("#box").slideDown();
+            })
+            $("button:eq(2)").click(function(){
+                $("#box").slideToggle();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="box">box</div>
+    <button>slideUp</button>
+    <button>slideDown</button>
+    <button>slideToggle</button>
+</body>
+</html>
