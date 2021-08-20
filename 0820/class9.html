@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <style>
+        * { margin: 5px; }
+        span { display: block; }
+        div { width: 100px; height: 100px; background-color: skyblue; 
+                position: relative;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").eq(0).click(function(){
+                $(".m1").animate({height : "toggle"}, 1000, "swing")
+            })
+            $("button").eq(1).click(function(){
+                $(".m2").stop().animate({height : "toggle"}, 1000, "swing")
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>play</button>
+    <div class="m1"></div>
+    <hr>
+    <button>play</button>
+    <div class="m2"></div>
+</body>
+</html>
