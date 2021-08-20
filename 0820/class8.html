@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <style>
+        * { margin: 5px; }
+        span { display: block; }
+        div { width: 100px; height: 100px; background-color: skyblue; 
+                position: relative;
+        }
+    </style>
+    <script>
+        $(function(){
+            function move(target){
+                target = $(target);
+                target.animate({left: 200}, 2000)
+                .animate({width: 200}, 2000)
+                .animate({height: 200}, 2000);
+            }
+            $("button").eq(0).click(function(){
+                move('.m1');
+            })
+            $("button").eq(1).click(function(){
+                $(".m1").stop(); // 현재 진행중인 애니메이션만 멈춤
+            })
+
+            $("button").eq(2).click(function(){
+                move('.m2');
+            })
+            $("button").eq(3).click(function(){
+                $(".m2").stop(true); // 대기중인 애니메이션도 다 멈춤
+            })
+            
+
+            $("button").eq(4).click(function(){
+                move('.m3');
+            })
+            $("button").eq(5).click(function(){
+                $(".m3").stop(false, true); // 현재 진행중인 애니메이션 종료 후 다음 진행.
+            })
+
+            $("button").eq(6).click(function(){
+                move('.m4');
+            })
+            $("button").eq(7).click(function(){
+                $(".m4").stop(true, true); // 현재 진행중인 애니메이션 종료 후 멈춤
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <button>play</button>
+    <button>stop()</button>
+    <div class="m1"></div>
+
+    <button>play</button>
+    <button>stop(true)</button>
+    <div class="m2"></div>
+
+    <button>play</button>
+    <button>stop(false, true)</button>
+    <div class="m3"></div>
+
+    <button>play</button>
+    <button>stop(true,true)</button>
+    <div class="m4"></div>
+</body>
+</html>
