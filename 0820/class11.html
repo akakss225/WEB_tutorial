@@ -56,7 +56,7 @@
             $("#gnb").append("<span></span>"); // 맨 마지막 자식으로 넣어줌. 
             $("#gnb>ul>li").on("mouseenter focusin",function(){ // focus in 의 경우 키보드를 이용해서 동작해도 작동함.
                 let index = $(this).index();
-                $("#gnb span").animate({left : index*w}, "fast", "swing");
+                $("#gnb span").stop().animate({left : index*w}, "fast", "swing");
                 $(this).children("a").addClass("on").parent("li").siblings("li").children("a").removeClass("on");
             })
             $("#gnb>ul>li:eq(0)").trigger("mouseenter");
