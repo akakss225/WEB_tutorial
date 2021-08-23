@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>복사 / 삭제</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        div { padding: 10px; border: 2px solid red; }
+    </style>
+    <script>
+        $(document).ready(function(){
+            let d;
+            let c;
+            $("button:eq(0)").click(function(){
+                // removeAttr : 태그 속성삭제
+                $("#m1 a").removeAttr("href");
+                // empty : 내용물 삭제 (children)
+                $("#m2").empty();
+                // remove : 선택자 삭제
+                $("#m3").remove();
+                // detach : 변수에 삭제할 내용을 담아놨다가 사용가능. Python의 pop느낌.
+                d = $("#m4").detach();
+            });
+            $("button:eq(1)").click(function(){
+                d.insertAfter("#m2");
+            });
+            $("#m5").click(function(){
+                alert("alert");
+            })
+            $("button:eq(2)").click(function(){
+                // clone : 복사
+                // true : 이벤트까지 같이 복사 / false : 요소만 복사
+                c = $("#m5").clone(false);
+                c.insertBefore("#m4");
+            });
+            
+        })
+    </script>
+</head>
+<body>
+    <div id="m1">
+        <a href="#"><span>Link1</span></a>
+    </div>
+    <div id="m2">
+        <span>content2</span>
+    </div>
+    <div id="m3">
+        <span>content3</span>
+    </div>
+    <div id="m4">
+        <span>content4</span>
+    </div>
+    <div id="m5">
+        <span>content5</span>
+    </div>
+
+    <button>삭제</button>
+    <button>detach</button>
+    <button>복사</button>
+</body>
+</html>

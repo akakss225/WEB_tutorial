@@ -28,7 +28,7 @@
 
             $(".nextBtn").click(function(){
                 // 첫번째 이미지박스를 마지막요소 뒤로 이동시킴.
-                $(".imgBox").stop().animate({left : "-300px"},1000, function(){
+                $(".imgBox").stop().animate({left : -boxWidth},1000, function(){
                     $(".imgBox>div:first").insertAfter(".imgBox>div:last");
                     $(".imgBox").css("left",0);
                     let pageNum = $(".imgBox>div>img:first").attr("alt");
@@ -38,7 +38,7 @@
             $(".prevBtn").click(function(){
                 // 마지막 이미지박스를 첫번째 요소 앞으로 이동시킴.
                 $(".imgBox>div:last").insertBefore(".imgBox>div:first");
-                $(".imgBox").css("left", "-300px")
+                $(".imgBox").css("left", -boxWidth)
                 $(".imgBox").stop().animate({left : 0}, 1000, function(){
                     let pageNum = $(".imgBox>div>img:first").attr("alt");
                     $(".page span:first").text(pageNum);
