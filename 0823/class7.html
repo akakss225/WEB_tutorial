@@ -21,12 +21,15 @@
                 // detach : 변수에 삭제할 내용을 담아놨다가 사용가능. Python의 pop느낌.
                 d = $("#m4").detach();
             });
+
             $("button:eq(1)").click(function(){
                 d.insertAfter("#m2");
             });
+
             $("#m5").click(function(){
                 alert("alert");
-            })
+            });
+            
             $("button:eq(2)").click(function(){
                 // clone : 복사
                 // true : 이벤트까지 같이 복사 / false : 요소만 복사

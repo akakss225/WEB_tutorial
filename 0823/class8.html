@@ -29,6 +29,9 @@
 
             // replaceAll : replaceWith와 유사. 다만 선택자를 뒤에씀.
             $("<p>replace a m6</p>").replaceAll("#m6");
+
+            // unwrap : 선택한 요소의 부모요소 삭제
+            $("#m1>li:last>img").unwrap();
         })
     </script>
 </head>
