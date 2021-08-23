@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wrapping</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <style>
+        li { display: inline-block; }
+        li img { width: 200px; }
+    </style>
+    <script>
+        $(function(){
+            $("#m1").clone().insertAfter("#m1");
+            
+            // wrap : 요소 각각을 wrapping함.
+            $("#m2 strong").wrap("<div></div>");
+            $("#m2 strong").parent("div").css("border","2px solid skyblue");
+            
+            // wrapAll : 요소 각각을 하나의 부모로 wrapping함.
+            $("#m3 strong").wrapAll("<div></div>");
+            $("#m3 strong").parent("div").css("border","2px solid orange");
+
+            // wrapInner : 내용물을 wrapping. 이 경우 자식요소가 생가는것과 비슷
+            $("#m4").wrapInner("<div></div>");
+            $("#m4").children("div").css("border", "2px solid red");
+
+            // replaceWith : 선택자를 교체함.
+            $("#m5").replaceWith("<p>replace a m5</p>");
+
+            // replaceAll : replaceWith와 유사. 다만 선택자를 뒤에씀.
+            $("<p>replace a m6</p>").replaceAll("#m6");
+        })
+    </script>
+</head>
+<body>
+    <ul id="m1">
+        <li><img src="./images/marke1.jpg" alt="1"></li>
+        <li><img src="./images/marke2.jpg" alt="2"></li>
+        <li><img src="./images/marke3.jpg" alt="3"></li>
+        <li><img src="./images/marke4.jpg" alt="4"></li>
+    </ul>
+    <div id="m2">
+        <strong>con0</strong>
+        <strong>con1</strong>
+    </div>
+    <div id="m3">
+        <strong>con2</strong>
+        <strong>con3</strong>
+    </div>
+    <div id="m4">con4</div>
+    <div id="m5">con5</div>
+    <div id="m6">con6</div>
+</body>
+</html>
