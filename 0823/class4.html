@@ -7,13 +7,13 @@
         * { margin: 0; padding: 0; }
         body { font-size: 12px; font-family: "굴림", sans-serif; }
         #wrap { width: 300px; margin: 20px auto; border: 2px solid red; position: relative; 
-                height: 320px; box-sizing: border-box; overflow: hidden;}
+                height: 320px; box-sizing: border-box; overflow: hidden; }
         #wrap .page { text-align: right; margin-bottom: 5px; }
         #wrap .page button { border: none; background-color: #777; width: 20px; height: 20px; 
                             line-height: 1.5; overflow: hidden; color: #fff;
                         }
-        #wrap .imgBox { width: 2100px; height: 300px; position: absolute; left: 0; top: 20px; }
-        #wrap .imgBox div { float: left; width: 300px; height: 300px; }
+        #wrap .imgBox { width: 300px; height: 300px; position: absolute; left: 0; top: 20px; }
+        #wrap .imgBox div { width: 300px; height: 300px; }
         #wrap .imgBox img { width: 100%; }
         
     </style>
@@ -23,27 +23,19 @@
             let num = 0;
             let total = $(".imgBox img").length;
             $(".nextBtn").click(function(){
-                num++;
-                if( num > total - 1) { num = 0}
-                $(".imgBox").stop().animate({left : num*-300}, 1000,function(){
-                    if (num == total-1){
-                        $(".imgBox").css("left" , 0);
-                    }
-                })
-                $(".page span").eq(0).text(num+1);
+                // 첫번째 이미지박스를 마지막요소 뒤로 이동시킴.
+                $(".imgBox>div:first").insertAfter(".imgBox>div:last");
+                let pageNum = $(".imgBox>div>img:first").attr("alt");
+                $(".page span:first").text(pageNum);
             })
             $(".prevBtn").click(function(){
-                num--;
-                if( num < 0 ) { num = total-1 }
-                $(".imgBox").stop().animate({left : num*-300}, 1000, function(){
-                    if(num == 0) {
-                        $(".imgbox").css("left", -1800);
-                    }
-                })
-                $(".page span").eq(0).text(num+1);
+                // 마지막 이미지박스를 첫번째 요소 앞으로 이동시킴.
+                $(".imgBox>div:last").insertBefore(".imgBox>div:first");
+                let pageNum = $(".imgBox>div>img:first").attr("alt");
+                $(".page span:first").text(pageNum);
             })
             $(".page span").eq(0).text(num+1);
-            $(".page span").eq(1).text(total)
+            $(".page span").eq(1).text(total);
         })
     </script>
 </head>
@@ -60,8 +52,7 @@
             <div><img src="./images/marke3.jpg" alt="3"></div>
             <div><img src="./images/marke4.jpg" alt="4"></div>
             <div><img src="./images/marke5.jpg" alt="5"></div>
-            <div><img src="./images/marke6.jpg" alt="5"></div>
-            <div><img src="./images/marke1.jpg" alt="1"></div>
+            <div><img src="./images/marke6.jpg" alt="6"></div>
         </div>
     </div>
 </body>

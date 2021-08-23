@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>객체 편집 메소드</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            // append : 선택한 부모요소의 마지막 자식으로 요소를 추가.
+            $("#listBox").append("<li>append</li>");
+            // appendTo : append와 동일. 다만 선택자를 뒤에 작성.
+            $("<li>appendTo</li>").appendTo("#listBox");
+
+            // prepend : 선택한 부모요소의 첫번째 자식으로 요소를 추가.
+            $("#listBox").prepend("<li>prepend</li>");
+            // prependTo : prepend와 동일. 다만 선택자를 뒤에 작성.
+            $("<li>prependTo</li>").prependTo("#listBox")
+        })
+    </script>
+</head>
+<body>
+    <ul id="listBox">
+        <li>list</li>
+    </ul>
+</body>
+</html>
