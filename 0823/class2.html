@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { font-size: 12px; font-family: "굴림", sans-serif; }
+        #wrap { width: 300px; margin: 20px auto; }
+        #wrap .page { text-align: right; margin-bottom: 5px; }
+        #wrap .page button { border: none; background-color: #777; width: 20px; height: 20px; 
+                            line-height: 1.5; overflow: hidden; color: #fff;
+                        }
+        #wrap .imgBox { width: 300px; height: 300px; border: 2px solid red; overflow: hidden; }
+        #wrap .imgBox img { width: 100%; }
+        
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            let num = 1;
+            $(".nextBtn").click(function(){
+                num++;
+                if(num == 7){num = 1};
+                $(".imgBox img").attr("src","./images/marke"+num+".jpg");
+                $(".page span").eq(0).text(num);
+            })
+            $(".prevBtn").click(function(){
+                if(num == 1){num = 7};
+                num--;
+                $(".imgBox img").attr("src","./images/marke"+num+".jpg");
+                $(".page span").eq(0).text(num);
+            })
+            $(".page span").eq(0).text(num);
+        })
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="page">
+            <span>현재번호</span> / <span>총 이미지 갯수</span>
+            <button class="prevBtn"> &lt; </button>
+            <button class="nextBtn"> &gt; </button>
+        </div>
+        <div class="imgBox">
+            <div><img src="./images/marke1.jpg" alt="1"></div>
+            <!-- <div><img src="./images/marke2.jpg" alt="2"></div>
+            <div><img src="./images/marke3.jpg" alt="3"></div>
+            <div><img src="./images/marke4.jpg" alt="4"></div>
+            <div><img src="./images/marke5.jpg" alt="5"></div> -->
+        </div>
+    </div>
+</body>
+</html>
