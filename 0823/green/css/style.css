@@ -8,15 +8,17 @@ ul li a { text-decoration: none; color: #333; }
 /* header, footer, div, ul, li, section { border: 1px solid red; } */
 
 #wrap { width: 1200px; margin: 0 auto; }
-header { height: 100px; }
+header { height: 100px; position: relative; }
+.bg { background-color: #434748; position: absolute; left: 0; top: 100px; 
+        width: 100%; z-index: 10; height: 120px; display: none; }
 header .logo { float: left; width: 200px; height: 40px; 
-               margin-top: 30px; }
-header nav { float: right; }
+                margin-top: 30px; }
+header nav { float: right;  }
 .gnb { margin-top: 60px; }
 .gnb>li { float: left; background-color: #1d8844; 
-          position: relative; 
-          width: 200px; text-align: center;
-          height: 40px; line-height: 40px; }
+            position: relative; 
+            width: 200px; text-align: center;
+            height: 40px; line-height: 40px; }
 .gnb>li>a { color: #fff; }
 .gnb>li:hover { background-color: #3cb149 }
 .submenu { position: absolute; left: 0; top: 40px; 
