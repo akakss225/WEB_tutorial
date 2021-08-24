@@ -50,12 +50,10 @@ header nav { float: right;  }
 #tab_menu a { color: #555; text-decoration: none; display: block; width: 120px; float: left; background-color: #eee; padding: 7px 0; }
 #tab_menu a.on { background-color: #1d8844; color: #fff; }
 
-#tab_box {}
-#tab_box .list {}
 #tab_box .list:nth-child(2) { text-align: center; display: none; }
 #tab_box .list:nth-child(2) li { display: inline-block; }
 
-.notice {}
+
 .notice .list { border-top: 2px solid #1d8844; padding-top: 10px; }
 .notice .list li { line-height: 2; font-size: 14px; }
 .notice .list li:nth-child(2n) { background-color: #eee; }
@@ -66,7 +64,7 @@ header nav { float: right;  }
                     text-align: center; }
 .gallery .imglist li { display: inline-block; }
 
-.banner {}
+
 .banner .box { border-top: 2px solid #1d8844; padding-top: 10px; 
                text-align: center; }
 
