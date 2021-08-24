@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        // $.grep(Arr, function(value, index){}) >> return식 사용가능.
+        let arr1 = [
+            {"name": "무대리",
+                "area": "서울"},
+            {"name" : "홍과장",
+                "area" : "부산"},
+            {"name" : "박사장",
+                "area" : "대전"},
+            {"name" : "빅마마",
+                "area" : "서울"}
+        ];
+        let arr3 = $.grep(arr1, function(value, index){
+            if(value.area == "서울"){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+        console.log(arr3);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
