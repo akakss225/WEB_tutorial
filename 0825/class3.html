@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>json 타입 회원 data table print</title>
+    <style>
+        table { border-collapse: collapse;  }
+        table td { border: 1px solid #ccc; padding: 5px; }
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                url : "./data/MOCK_DATA.json",
+                dataType : "json",
+                success : function(data){
+                    // console.log(data);
+                    let $table = $("<table>");
+                    for(let i in data){
+                        let $id = data[i].id;
+                        let $first_name = data[i].first_name;
+                        let $last_name = data[i].last_name;
+                        let $email = data[i].email;
+                        let $gender = data[i].gender;
+
+                        //console.log($id, $first_name, $email)
+                        let $tr = $("<tr>").append(
+                            $("<td>").text($id),
+                            $("<td>").text($first_name),
+                            $("<td>").text($last_name),
+                            $("<td>").text($email),
+                            $("<td>").text($gender)
+                        );
+                        $table.append($tr);
+                    };
+                    $("#wrap").append($table);
+                },
+                error : function(){
+                    alert("Failed");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>회원 정보 출력</h1>
+    <div id="wrap">
+        <!-- <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table> -->
+    </div>
+</body>
+</html>
