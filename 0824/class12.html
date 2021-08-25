@@ -5,7 +5,7 @@
     <title>Document</title>
     <script src="./js/jquery-3.3.1.min.js"></script>
     <script>
-        // $.grep(Arr, function(value, index){}) >> return식 사용가능.
+        // $.grep(Arr, function(object, index){}) >> return식 사용가능.
         let arr1 = [
             {"name": "무대리",
                 "area": "서울"},
@@ -16,8 +16,8 @@
             {"name" : "빅마마",
                 "area" : "서울"}
         ];
-        let arr3 = $.grep(arr1, function(value, index){
-            if(value.area == "서울"){
+        let arr3 = $.grep(arr1, function(object, index){
+            if(object.area == "서울"){
                 return true;
             }
             else{

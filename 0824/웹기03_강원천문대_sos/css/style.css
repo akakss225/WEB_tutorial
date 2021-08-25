@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+body, h1, h2, h3, ul, li, p { margin: 0; padding: 0; }
+ul { list-style: none; }
+a { text-decoration: none; color: #333; }
+.clear::after { content: ""; display: block; clear: both; }
+
+#wrap { width: 1200px; margin: 0 auto; }
+
+header { height: 100px; }
+header .title { float: left; top: 10; }
+header .gnb { float: right;}
+header .gnb>li { float: left; }

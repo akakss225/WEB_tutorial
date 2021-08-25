@@ -7,9 +7,9 @@
     <script>
         // $.map("배열 또는 객체명", function(value, index){}); // function 요소값이 다른것과 반대.
         let city = ["서울", "부산", "광주", "인천"];
-        let newCity = $.each(city, function(value, index){
-            if (value < 2){
-                return index;
+        let newCity = $.map(city, function(value, index){ // each는 return식이 실행되지 않음. 따라서 map을 사용해야함.
+            if (index < 2){
+                return value;
             }
         }); 
         console.log(city.toString());
