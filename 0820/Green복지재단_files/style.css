@@ -51,7 +51,7 @@ header nav { float: right;  }
 #tab_menu a.on { background-color: #1d8844; color: #fff; }
 
 #tab_box .list:nth-child(2) { text-align: center; display: none; }
-#tab_box .list:nth-child(2) li { display: inline-block; margin: 0 3px; }
+#tab_box .list:nth-child(2) li { display: inline-block; }
 
 
 .notice .list { border-top: 2px solid #1d8844; padding-top: 10px; }

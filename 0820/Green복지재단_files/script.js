@@ -80,30 +80,20 @@ $(function(){
     });
 
     $.ajax({
-        url : "./js/notice.json",
+        url : "/Users/sumin/Desktop/WEB/WEB_tutorial/0823/green/notice.json",
         dataType : "json",
         success : function(data){
-            console.log(data);
-            let li = "";
             $.each(data, function(index, value){
-                li += "<li>" + value.title + "<span>" + value.date + "</span></li>";
+                let $li = $("<li>").append(
+                    $li.text(value.notice),
+                    $li.append($("<span>").text(value.date))
+                )
+                $("#tab_box .list").eq(0).append($li);
+                console.log($li)
             });
-            $(".list").eq(0).append(li);
         },
         error : function(){
             alert("failed");
         }
     });
-    $.ajax({
-        url : "./js/gallery.json",
-        dataType : "json",
-        success : function(data){
-            let li = "";
-            $.each(data, function(index, value){
-                li += `<li><img src="./images/${value.imgSrc}" alt="${value.alt}"></li>`;
-            })
-            $(".list").eq(1).append(li);
-        },
-        error : function(){ alert("failed") }
-    })
 });
