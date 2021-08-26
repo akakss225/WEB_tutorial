@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>rss test</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        ul, li { list-style: none; }
+        body { font: 12px Malgun Gothic, "맑은고딕", gulim, "굴림", sans-serif; color: #333; 
+                padding: 20px; }
+        h1, h2, h3, h4 { font-size: 100%; font-weight: normal; }
+        a { color: #333; text-decoration: none; outline: none; }
+        h1 { font-size: 32px; text-align: center; margin-bottom: 20px; }
+        
+        
+        #rssWrap { width: 700px; margin: 0 auto; }
+        .tab_menu { height: 50px; }
+        .tab_menu h2 { float: left; font-size: 18px; }
+        .tab_menu h2 a { display: block; padding: 10px 20px; border: 1px solid #ccc;
+                            border-bottom: none; border-radius: 5px 5px 0 0; 
+                            background-color: rgb(236, 236, 236); }
+        .tab_menu h2 a.on { background-color: #fff; font-weight: bold; }
+        
+        #rssList li { line-height: 3; padding: 0 5px; font-size: 16px; }
+        #rssList li:nth-child(2n) { background-color: rgb(246, 246, 246); }
+        #rssList li a { width: 430px; display: block; text-overflow: ellipsis;
+                            white-space: nowrap; overflow: hidden; float: left; }
+        #rssList li::after { content: ""; display: block; clear: both; }
+        #rssList li span { float: right; color: #555; font-size: 14px; }
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $("#rssWrap .tab_menu h2 a").on("click", function(e){
+                e.preventDefault();
+                $(this).addClass("on").parent("h2").siblings("h2").children("a").removeClass("on");
+                $.ajax({
+                    url : "https://api.rss2json.com/v1/api.json",
+                    dataType : "json",
+                    // http요청과 함께 서버로 보낼 데이터
+                    data : {
+                        rss_url : $(this).attr("href"), // a 클릭 >> 주소 넘기기
+                        count : 10 // 전송받을 데이터 갯수 제한.
+                    },
+                    success : function(data){
+                        console.log(data.items);
+                        $("#rssList").empty(); // 데이터를 붙히기 전에 내부를 초기화 시켜줌.
+                        let tagLi = "";
+                        for( i in data.items ){
+                            let title = data.items[i].title;
+                            let link = data.items[i].link;
+                            let date = data.items[i].pubDate;
+
+                            tagLi += "<li>";
+                            tagLi += "<a href='" + link +  "' target='_blank'>"+ (Number(i) + 1) + ". "  + title + "</a>";
+                            tagLi += "<span>"+ date.substr(0, 10) +"</span>";
+                            tagLi += "</li>";
+                        }
+                        $("#rssList").append(tagLi);
+                    },
+                    error : function(){
+                        alert("failed");
+                    }
+                });
+            });
+            $("#rssWrap .tab_menu h2 a").eq(0).trigger("click");
+        });
+    </script>
+</head>
+<body>
+    <h1>RSS 구독하기</h1> 
+    <div id="rssWrap">
+        <div class="tab_menu">
+            <h2><a href="https://rss.blog.naver.com/zjvl851.xml" class="on">영화정보</a></h2>
+            <h2><a href="https://rss.blog.naver.com/mal3500.xml">음악정보</a></h2>
+            <h2><a href="https://www.khan.co.kr/rss/rssdata/culture_news.xml">최근기사</a></h2>
+        </div>
+        <ul id="rssList">
+            <!-- <li>안녕하세요 <span>2020.10.10</span></li> -->
+        </ul>
+    </div>
+</body>
+</html>
