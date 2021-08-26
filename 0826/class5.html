@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>빵 갤러리</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        #wrap { width: 826px; margin: 20px auto; border: 1px solid #333; 
+                padding: 20px; }
+        #wrap h1 { text-align: center; }
+        #popup { position: fixed; left: 0; right: 0; top: 0; bottom: 0; 
+                background-color: rgba(0, 0, 0, 0.5); z-index: 999; display: none; }
+        .bigImg { text-align: center; background-color: #fff; position: relative;
+                    width: 540px; padding-bottom: 30px; margin: 100px auto; 
+        }
+        .bigImg .close { width: 50px; position: absolute; right: 20px; top: 20px; }
+        .bigImg img { width: auto; max-height: 500px; }
+        .bigImg .name { font-size: 32px; }
+        .bigImg .name span { color: brown; }
+
+        .bigImg .prev { position: absolute; left: 10px; top: 45%; width: 30px; }
+        .bigImg .next { position: absolute; right: 10px; top: 45%; width: 30px; }
+
+        .list { list-style: none; text-align: center; }
+        .list li { display: inline-block; width: 200px; margin: 10px 5px; overflow: hidden;
+                    border: 1px solid #ccc; height: 200px; padding: 15px; }
+        .list li.on { border-color: brown; }
+        .list li:hover { border-color: brown; }
+        .list li:hover img { transform: scale(1.1); opacity: 1; }
+        .list li img { width: 100%; opacity: 0.8; transition: .2s; }
+        .list li.on img { opacity: 1; }
+        
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $(".list>li").on({
+                click : function(){
+                    let idx = $(this).index()+1;
+                    $("#popup").fadeIn(500);
+                    $(".popImg").attr("src",`./img/0${idx}_pp.jpg`);
+                    $(".bigImg p span").text($(".list li img").eq(idx-1).attr("alt"));
+                    $(".next").click(function(){
+                        idx++;
+                        if(idx > 9) { idx = 1 }
+                        $(".popImg").attr("src",`./img/0${idx}_pp.jpg`);
+                        $(".bigImg p span").text($(".list li img").eq(idx-1).attr("alt"));
+                    })
+                    $(".prev").click(function(){
+                        idx--;
+                        if(idx < 1){ idx = 9}
+                        $(".popImg").attr("src",`./img/0${idx}_pp.jpg`);
+                        $(".bigImg p span").text($(".list li img").eq(idx-1).attr("alt"));
+                    })
+                }
+            });
+            $(".close").click(function(){
+                $("#popup").fadeOut(500);
+            })
+            
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <h1>Bakery Gallery</h1>
+        <div id="popup">
+            <div class="bigImg">
+                <img src="./img/01_pp.jpg" alt="소라빵" class="popImg">
+                <img src="./img/close.png" alt="닫기" class="close">
+                <p class="name">ParisBaguette - <span>소라빵</span></p>
+                <img src="./img/prev.svg" alt="이전" class="prev">
+                <img src="./img/next.svg" alt="다음" class="next">
+            </div>
+        </div>
+        <ul class="list">
+            <li><img src="./img/1.jpg" alt="소라빵"></li>
+            <li><img src="./img/2.jpg" alt="하트빵"></li>
+            <li><img src="./img/3.jpg" alt="잡곡빵"></li>
+            <li><img src="./img/4.jpg" alt="딸기식빵"></li>
+            <li><img src="./img/5.jpg" alt="꽈베기도넛"></li>
+            <li><img src="./img/6.jpg" alt="발효빵"></li>
+            <li><img src="./img/7.jpg" alt="핫도그"></li>
+            <li><img src="./img/8.jpg" alt="목화번"></li>
+            <li><img src="./img/09_pp.jpg" alt="바게트"></li>
+        </ul>
+    </div>
+</body>
+</html>
