@@ -32,6 +32,9 @@
     <script>
         $(function(){
             let imgWidth = $(".slide>li").outerWidth();
+            let slideWidth = imgWidth * $(".slide>li").length;
+            $(".slide").width(slideWidth);
+            console.log(slideWidth)
             
             function play(){
                 $(".slide").animate({left : -imgWidth}, 1000, function(){
