@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make slide</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        ul , li { list-style: none; }
+        #slider { width: 1000px; height: 440px; margin: 50px auto; position: relative; overflow: hidden; }
+        .slide { width: 4000px; height: 440px; position: absolute; left: 0; }
+        .slide li { float: left; height: 440px; width: 1000px;  }
+        .slide li img { width: 100%; }
+
+        .dotList { position: absolute; text-align: center; left: 50%; bottom: 30px; 
+                    z-index: 999; transform: translateX(-50%);
+        }
+        .dotList li { width: 30px; height: 30px; background-color: #ccc;
+                        color: #fff; line-height: 30px; border-radius: 50%;
+                        float: left; margin: 0 2px; transition: .2s;
+        }
+        .dotList li.on { background-color: orangered; }
+
+        .btnBox {  }
+        .btnBox button { position: absolute; top: 45%; 
+                        border: none; background-color: transparent; font-size: 70px;
+                        transform: scaleX(0.5); color: #fff; text-shadow: 2px 2px 5px #ccc;
+        }
+        .btnBox .prev { left: 20px; }
+        .btnBox .next { right: 20px; }
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            let imgWidth = $(".slide>li").outerWidth();
+            
+            function play(){
+                $(".slide").animate({left : -imgWidth}, 1000, function(){
+                    $(".slide>li:first").insertAfter(".slide>li:last");
+                    $(".slide").css("left", 0);
+                    let idx = $(".slide>li:first img").attr("alt");
+                    $(".dotList>li").eq(idx-1).addClass("on").siblings("li").removeClass("on");
+                });
+            }
+            function playBack(){
+                $(".slide>li:last").insertBefore(".slide>li:first");
+                $(".slide").css("left", -imgWidth);
+                $(".slide").stop().animate({left : 0}, 1000, function(){
+                    let idx = $(".slide>li:first img").attr("alt");
+                    $(".dotList>li").eq(idx-1).addClass("on").siblings("li").removeClass("on");
+                });
+            };
+            
+            $("button.next").on("click", play);
+            $("button.prev").click(playBack);
+            let move = setInterval(play, 3000);
+
+            $("button").on({
+                mouseenter : function(){
+                    clearInterval(move);
+                    console.log("stop");
+                },
+                mouseleave : function(){
+                    move = setInterval(play, 3000);
+                    console.log("play");
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <ul class="slide">
+            <li><img src="./images/main_img01.png" alt="1"></li>
+            <li><img src="./images/main_img02.png" alt="2"></li>
+            <li><img src="./images/main_img03.png" alt="3"></li>
+            <li><img src="./images/main_img04.png" alt="4"></li>
+        </ul>
+        <ul class="dotList">
+            <li class="on">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+        <div class="btnBox">
+            <button class="prev"> &lt; </button>
+            <button class="next"> &gt; </button>
+        </div>
+    </div>
+</body>
+</html>
