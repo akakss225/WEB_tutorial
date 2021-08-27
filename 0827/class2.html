@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 메뉴</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { height: 100%; overflow-x: hidden; }
+        header { height: 80px; background-color: #f6f5ef; padding: 30px 0; 
+                border-top: 2px solid #000; border-bottom: 1px solid #e5e5e5; }
+        header nav { width: 1000px; margin: 0 auto; }
+        .logo { float: left; }
+        .gnb { list-style: none; float: right; margin-top: 30px; text-align: center; transition: 1s; }
+        .gnb>li { float: left; font-size: 18px; min-width: 140px; height: 82px;
+                    padding-top: 20px;
+                    box-sizing: border-box; position: relative; transition: .3s;  }
+        .gnb li:last-child { display: none; }
+        .gnb>li:hover { background: #2C2A29; }
+        .gnb>li:hover a { color: #f6f5ef;  }
+
+        .gnb>li.on { background: #2C2A29; }
+        .gnb>li.on a { color: #f6f5ef;  }
+
+        .gnb>li>a { color: #000; text-decoration: none; }
+        .submenu { list-style: none; position: absolute; top: 78px; left: 0;
+                    width: 100%; z-index: 9; display: none; padding-top: 20px; }
+        .submenu li { font-size: 14px; line-height: 2.8; }
+        .submenu li a { color: #f6f5ef; text-decoration: none; }
+        .bg { background: #2C2A29; color: #f6f5ef; 
+                position: absolute; left: 0; top: 140px;
+                width: 100%; height: 200px; display: none; }
+        .toggle { display: none; width: 50px; position: absolute; right: 20px; top: 50px;  }
+        .toggle span { display: block; width: 100%; height: 2px; background-color: #2C2A29; }
+        .toggle span:nth-child(2) { margin: 8px 0; }
+        .close { display: none; }
+        
+        /* 모바일 (  ~ 580px ) */
+        @media screen and (max-width: 580px) {
+            header { height: 70px; padding: 20px 0; }
+            .logo { margin-left: 2%; }
+            .toggle { display: block; }
+            .close { display: block; position: absolute; top: 20px; left: 20px; font-size: 32px;}
+
+            .gnb {  float: none; background: rgba(44, 42, 41, 0.8);
+                    width: 350px; height: 100%; position: absolute; right: -110%; top: 0;
+                    margin: 0; padding: 120px 30px 0; z-index: 999;
+            }
+            .gnb>li { float: none; font-size: 18px; min-width: 100%; height: 60px;
+                        padding-top: 0; position: static;  }
+            .gnb li:last-child { display: block; }
+            .gnb>li a { color: #f6f5ef; text-decoration: none; }
+            .gnb>li:hover { background: transparent; }
+            
+            .gnb>li.on { background: #2C2A29; }
+            .gnb>li.on a { color: #f6f5ef;  }
+
+            }
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            $(window).resize(function(){
+                let wrapWidth = $(this).width(); // browser 화면너비
+                console.log(wrapWidth)
+                if(wrapWidth > 580) { // pc browser
+                    $(".gnb>li").off();
+                    $(".gnb>li, .bg").on({
+                        mouseenter : function(){
+                            $(this).addClass("on").siblings("li").removeClass("on");
+                            $(".bg").stop().slideDown(300);
+                            $(".submenu").stop().slideDown(300);
+                        },
+                        mouseleave : function(){
+                            $(this).removeClass("on");
+                            $(".bg").stop().slideUp(500);
+                            $(".submenu").stop().slideUp(500);
+                        }
+                    })
+                }
+                else{ // mobile browser
+                    $(".gnb>li").off();
+                    $(".toggle").click(function(){
+                        $(".gnb").css("right", 0)
+                    });
+                    $(".close").click(function(){
+                        $(".gnb").css("right", "-110%")
+                    })
+                }
+            });
+            $(window).resize();
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo"><img src="./logo.png" alt="starbugs"></h1>
+            <ul class="gnb">
+                <li>
+                    <a href="#">COFFEE</a>
+                    <ul class="submenu">
+                        <li><a href="#">한눈에보기</a></li>
+                        <li><a href="#">스타벅스소개</a></li>
+                        <li><a href="#">세계의스타벅스</a></li>
+                        <li><a href="#">글로벌뉴스</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">MENU</a>
+                    <ul class="submenu">
+                        <li><a href="#">음료</a></li>
+                        <li><a href="#">디저트</a></li>
+                        <li><a href="#">상품</a></li>
+                        <li><a href="#">카드</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">STORE</a>
+                    <ul class="submenu">
+                        <li><a href="#">매장찾기</a></li>
+                        <li><a href="#">스타벅스리저브</a></li>
+                        <li><a href="#">스토어매장찾기</a></li>
+                        <li><a href="#">매장이야기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">REWARDS</a>
+                    <ul class="submenu">
+                        <li><a href="#">스타벅스리워드</a></li>
+                        <li><a href="#">스타벅스카드</a></li>
+                        <li><a href="#">Gift-Card</a></li>
+                        <li><a href="#">카드소개</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">WHAT's NEW</a>
+                    <ul class="submenu">
+                        <li><a href="#">이벤트</a></li>
+                        <li><a href="#">뉴스</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="close"> X </a></li>
+            </ul>
+            <div class="toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="bg"></div>
+        </nav>
+    </header>
+</body>
+</html>
