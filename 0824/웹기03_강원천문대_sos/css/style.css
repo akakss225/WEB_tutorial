@@ -55,15 +55,28 @@ header nav { float: right; height: 50px;}
 }
 #content .imgbox { border-top: 1px solid #0066ad; text-align: center; padding-top: 10px; }
 
-footer { height: 100px; border: 2px solid #ccc; overflow: hidden;}
+
+footer { height: 100px; border-top: 1px solid #ccc; overflow: hidden;}
 footer>div { float: left; }
-footer .btm_logo { line-height: 100px; margin: 0 10px; border-right: 2px solid #ccc; 
+footer .btm_logo { line-height: 100px; margin: 0 10px; border-right: 1px solid #ccc; 
                     width: 160px;
 }
 .btm_logo img { padding-top: 30px; }
 footer .copy { text-align: center; margin: 15px 0 0 270px; width: 500px; }
 footer .copy ul {}
 footer .copy li { float: left; width: 120px; height: 40px; line-height: 40px; 
-                    border-bottom: 2px solid #ccc; margin-bottom: 10px;
+                    border-bottom: 1px solid #ccc; margin-bottom: 10px;
 }
-footer .copy p {  }
+footer .copy li a:hover { color: tomato; }
+footer .copy p { font-size: 12px; text-align: center; color: #555; }
+
+
+#popup { position: fixed; background-color: rgba(0, 0, 0, 0.6); left: 0; right: 0; top: 0; bottom: 0; 
+            display: none;
+}
+#popup .modal { width: 600px; background-color: #fff; margin: 150px auto; padding: 70px;}
+#popup .modal h2 { border-bottom: 1px solid #0066ad; padding-bottom: 10px; }
+#popup .modal p { margin-top: 20px; line-height: 2; color: #555; font-size: 14px; }
+#popup .modal .close { margin-top: 40px; background-color: #0066ad; padding: 10px 20px; 
+                        border: none; color: #fff;
+}
