@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹페이지</title>
+    <style>
+        /* reset code */
+        * { margin: 0; padding: 0; }
+        #wrap { width: 800px; margin: 0 auto; }
+        .clear::after { content: ""; display: block; clear: both; }
+
+        /* 데스크탑 css 공통사항. */
+        header { border-bottom: 1px solid #ccc; padding-bottom: 30px; overflow: hidden; }
+        header h1 { background-color: skyblue; text-align: center; color: #fff;
+                    padding: 20px 0; margin-bottom: 20px;
+        }
+        header nav { float: left; width: 30%; }
+        header .gnb { list-style: none; }
+        header .gnb li { background-color: rgb(155, 37, 60); padding: 10px; 
+                        border-bottom: 1px solid #eee;
+        }
+        header .gnb li a { text-decoration: none; color: #fff; }
+        header section { float: right; width: 65%; }
+        header section h2 { margin-bottom: 10px; }
+        header section p { line-height: 2; color: #555; }
+
+        #content { padding: 30px 0; text-align: center; }
+        #content h2 { margin-bottom: 20px; }
+        #content img { width: 100%; }
+        #content .imgbox { width: 90%; margin: 10px auto; }
+
+        footer { background-color: #ddd; text-align: center; padding: 20px 0; 
+                    font-size: 14px;
+        }
+        
+        /* 태블릿(540 ~ 720) css */
+        @media screen and (min-width: 540px) and (max-width: 720px) {
+            #wrap { width: 100%; }
+            header h1 { background-color: rgb(155, 37, 60); }
+            header nav { float: none; width: 100%; margin-bottom: 20px; }
+            header .gnb { overflow: hidden; }
+            header .gnb li { float: left; width: 24%; margin: 0 0.5%; box-sizing: border-box; 
+                                text-align: center;
+            }
+            header section { float: none; width: 100%; }
+            header section h2 { text-align: center; }
+            header section p { padding: 0 20px; }
+
+            #content { overflow: hidden; }
+            #content .imgbox { float: left; width: 48%; margin: 10px 1%; }
+        }
+
+        /* 모바일(0 ~ 540) css */
+        @media screen and (max-width: 540px) {
+            #wrap { width: 100%; }
+            header h1 { background-color: gold; color: #333; }
+            header nav { float: none; width: 100%; margin: 0 0 20px; box-sizing: border-box; }
+            .gnb { margin: 0 2%; }
+            .gnb li { width: 96%; margin: 0; }
+            header section { float: none; width: 92%; margin: 0 4%; }
+
+            .imgbox:nth-of-type(1) { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h1>사진 갤러리</h1>
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#">사진역사</a></li>
+                    <li><a href="#">카메라 종류</a></li>
+                    <li><a href="#">렌즈</a></li>
+                    <li><a href="#">역사</a></li>
+                </ul>
+            </nav>
+            <section>
+                <h2>포토 갤러리</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, consequuntur praesentium. Architecto harum, porro incidunt libero ab vel ex recusandae officia cupiditate magni laboriosam voluptas nisi, placeat, debitis vitae eveniet?</p>
+            </section>
+        </header>
+        <div id="content">
+            <h2>포토 갤러리</h2>
+            <div class="imgbox">
+                <img src="./img/naksansa.jpg" alt="1">
+            </div>
+            <div class="imgbox">
+                <img src="./img/nungsohwa.jpg" alt="2">
+            </div>
+        </div>
+        <footer>
+            <p>copyright</p>
+        </footer>
+    </div>
+</body>
+</html>
