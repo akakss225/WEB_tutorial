@@ -51,7 +51,7 @@
                         if(idx < 1){ idx = 9}
                         $(".popImg").attr("src",`./img/0${idx}_pp.jpg`);
                         $(".bigImg p span").text($(".list li img").eq(idx-1).attr("alt"));
-                    })
+                    });
                 }
             });
             $(".close").click(function(){
