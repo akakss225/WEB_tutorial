@@ -4,9 +4,68 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Jonathan Nicol</title>
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="css/jonathan.css">
+	<script src="./js/jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$(".toggle").click(function(){
+				$("header nav").stop().toggleClass("on");
+			});
+		});
+	</script>
 </head>
 <body>
-
+	<div id="wrap">
+		<header>
+			<div class="inner">
+				<h1 class="logo"><a href="#">JONATHAN NICOL</a></h1>
+				<nav>
+					<ul class="gnb">
+						<li><a href="#">WORK</a></li>
+						<li><a href="#">BLOG</a></li>
+						<li><a href="#">ABOUT</a></li>
+						<li><a href="#">CONTACT</a></li>
+					</ul>
+				</nav>
+				<div class="toggle">
+					<i class="fas fa-bars"></i>
+				</div>
+			</div>
+		</header>
+		</div>
+		<div id="content">
+			<ul class="list">
+				<li><a href="#"><img src="./img/engraving-men.png" alt="men"><strong>WORK</strong></a></li>
+				<li><a href="#"><img src="./img/engraving-typewriter.png" alt="type"><strong>BLOG</strong></a></li>
+				<li><a href="#"><img src="./img/engraving-brain.png" alt="brain"><strong>ABOUT</strong></a></li>
+				<li><a href="#"><img src="./img/engraving-bird.png" alt="bird"><strong>TWITTER</strong></a></li>
+				<li><a href="#"><img src="./img/engraving-octopus.png" alt="octopus"><strong>GITHUB</strong></a></li>
+				<li><a href="#"><img src="./img/engraving-boy.png" alt="boy"><strong>CONTACT</strong></a></li>
+			</ul>
+		</div>
+		<footer>
+			<div class="btm_logo">
+				<a href="#">JONATHAN NICOL</a>
+			</div>
+			<div class="address">
+				<p>
+					Jonathan Nicol
+					Room 6, Level 5
+					358 Lonsdale Street
+					Melbourne, VIC 3000
+					Australia
+				</p>
+			</div>
+			<div class="email">
+				<a href="#">info@jonathannicol.com</a>
+			</div>
+			<div class="icon">
+				<span class="twitter"><a href="#"></a></span>
+				<span class="github"><a href="#"></a></span>
+			</div>
+		</footer>
+	</div>
 </body>
 </html>
