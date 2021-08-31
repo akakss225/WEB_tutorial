@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀페이지 슬라이더</title>
+    <style>
+        * { margin: 0; padding: 0; }
+
+        #slider { width: 100%; position: relative; height: 600px; }
+        .slide { width: 400%; list-style: none; position: absolute; left: 0; top: 0; }
+        .slide li { width: 25%; float: left; } /* 풀페이지의 경우 슬라이더 이미지 하나의 크기를 무조건 부모의 1 / n */
+        .slide li img { width: 100%; }
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            let num = 0;
+            let count = $(".slide li").length;
+            setInterval(function(){
+                num++;
+                if(num == count){ num = 0}
+                $(".slide").animate({ left : (num * -100)+"%"  },1000,function(){});
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <ul class="slide">
+            <li><img src="./images/main_img01.png" alt="0"></li>
+            <li><img src="./images/main_img02.png" alt="1"></li>
+            <li><img src="./images/main_img03.png" alt="2"></li>
+            <li><img src="./images/main_img04.png" alt="3"></li>
+        </ul>
+    </div>
+</body>
+</html>
