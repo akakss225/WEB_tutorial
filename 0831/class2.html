@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>풀페이지 슬라이더</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { overflow-x: hidden; }
+        #slider { width: 100%; position: relative; overflow: hidden; box-sizing: border-box; 
+                    border: 1px solid red;
+        }
+        .slide { width: 400%; list-style: none; overflow: hidden; }
+        .slide li { width: 25%; float: left; } /* 풀페이지의 경우 슬라이더 이미지 하나의 크기를 무조건 부모의 1 / n */
+        .slide li img { width: 100%; }
+        .dot { position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); list-style: none; }
+        .dot li { float: left; width: 20px; height: 20px; border-radius: 50%; background-color: #ddd; 
+                    margin: 0 5px; transition: .2s; text-align: center; line-height: 20px;
+        }
+        .dot li.on { background-color: crimson; }
+
+    </style>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+            let count = $(".slide li").length;
+            let slideWidth = 100/count;
+            $(".slide").width(count*100+"%");
+            $(".slide>li").width(slideWidth+"%");
+            
+
+            let dot = $("<ul class='dot'>");
+                for ( let i = 0; i < count; i++){
+                    dot.append("<li>"+(i+1)+"</li>");
+                }
+            $("#slider").append(dot);
+
+            $(".dot>li:first").addClass("on");
+            setInterval(function(){
+                $(".slide").animate({ marginLeft : "-100%"  },1000,function(){
+                    $(".slide>li").eq(0).insertAfter(".slide>li:last");
+                    $(".slide").css("margin-left", 0);
+                    let idx = $(".slide>li:first").children("img").attr("alt");
+                    $(".dot>li").eq(idx).addClass("on").siblings("li").removeClass("on");
+                });
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+    <div id="slider">
+        <ul class="slide">
+            <li><img src="./images/main_img01.png" alt="0"></li>
+            <li><img src="./images/main_img02.png" alt="1"></li>
+            <li><img src="./images/main_img03.png" alt="2"></li>
+            <li><img src="./images/main_img04.png" alt="3"></li>
+        </ul>
+    </div>
+</body>
+</html>
