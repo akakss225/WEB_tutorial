@@ -23,7 +23,6 @@
                 let contact = $(".contact").offset().top;
                 let slideHeight = $(".slide>li").height();
                 
-
                 if (down > slideHeight){
                     $("header").addClass("on");
                 }
@@ -37,7 +36,66 @@
                 else{
                     $("#top").fadeOut("fast");
                 }
+                let weare = $("#weare").offset().top;
+                let work = $("#work").offset().top;
+                let blog = $("#blog").offset().top;
+                
+                // we are
+                if ( down > weare - 500){
+                    $("#weare").addClass("on");
+                }
+                else{
+                    $("#weare").removeClass("on");
+                }
+                if ( down < 10 ) {
+                    $("#weare").removeClass("on");
+                }
+
+                // work
+                if ( down > work - 500){
+                    $("#work").addClass("on");
+                }
+                else{
+                    $("#work").removeClass("on");
+                }
+
+                // blog
+                if ( down > blog - 500){
+                    $("#blog").addClass("on");
+                }
+                else{
+                    $("#blog").removeClass("on");
+                }
+                //contact
+                if ( down > contact - 500){
+                    $("#contact").addClass("on");
+                }
+                else{
+                    $("#contact").removeClass("on");
+                }
+                
+                // each() 이용
+                /*
+                $("#content>section").each(function(index, value){
+                    if (down < 10){
+                        $(#weare).removeClass("on")
+                    }
+                    else if( down > $(this).offset().top - 500){
+                        $(this).addClass("on");
+                    }
+                    else{
+                        $(this).removeClass("on");
+                    }
+                })
+
+                */
             });
+
+            $(".toggle").click(function(){
+                $("header nav").toggleClass("on");
+            });
+
+
         });
     </script>
 </head>
