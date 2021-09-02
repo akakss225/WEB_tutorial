@@ -56,7 +56,7 @@ header {}
 
 #content { text-align: center; padding: 50px 0; }
 .title { padding: 25px 5%; font-size: 20px; line-height: 1.8;
-         box-sizing: border-box; }
+              box-sizing: border-box; }
 .title b { color: rgb(62, 115, 196); }
 
 .listbox {}
@@ -67,29 +67,29 @@ header {}
 .place_list li:hover img { transform: scale(1.1); }
 
 .place_list li .place_title { font-size: 18px; padding-top: 25px;
-                              font-weight: bold; }
+                                   font-weight: bold; }
 .place_list li .sub_title { padding: 20px 50px 30px; line-height: 1.6;
                             font-size: 14px; color: #555; }
 .place_list li .view { display: inline-block; padding: 5px 0 10px;
-                       margin-bottom: 30px; color: #555;
-                       border-top: 2px solid #333; }
+                            margin-bottom: 30px; color: #555;
+                            border-top: 2px solid #333; }
 
 #popup { position: fixed; left: 0; right: 0; top: 0; bottom: 0;
-         background: rgba(0,0,0,0.7); z-index: 9999; display: none; }
+              background: rgba(0,0,0,0.7); z-index: 9999; display: none; }
 .modal { background-color: #fff; width: 96%; margin: 100px auto;
-         box-sizing: border-box; padding: 30px 8%;
-         text-align: center; }
+              box-sizing: border-box; padding: 30px 8%;
+              text-align: center; }
 .modal .pop_title { font-size: 30px; padding: 10px 0 24px; }
 .modal img { width: 100%; }
 .modal .pop_subtitle { padding-top: 15px; line-height: 1.8; font-size: 16px;
-  width: 92%; margin: 0 auto; }
- 
+                            width: 92%; margin: 0 auto; }
+
 footer { box-sizing: border-box; padding: 25px 20px 90px;
-         border-top: 1px solid #ddd; }
+              border-top: 1px solid #ddd; }
 .footer_menu { display: flex; font-size: 16px; font-weight: bold; }
 .footer_menu li::after { content: "|"; display: inline-block; 
-                         padding: 0 10px; font-size: 10px; 
-                         position: relative; top: -4px; }
+                            padding: 0 10px; font-size: 10px; 
+                            position: relative; top: -4px; }
 .footer_menu li:last-child::after { content: ""; }                        
 .footer_menu li a { color: #444; }
 footer h2 { padding-top: 15px; font-size: 12px; color: #555; line-height: 1.6; }
@@ -108,7 +108,7 @@ footer h2 { padding-top: 15px; font-size: 12px; color: #555; line-height: 1.6; }
 .quick_list { height: 100%; background-color: #3a3e46; 
               display: flex; }
 .quick_list li { font-size: 16px; text-align: center; 
-                 padding: 16px 0; flex: 1 1 0; }
+                     padding: 16px 0; flex: 1 1 0; }
 .quick_list li:nth-child(1) 
 { background: url(../img/ico_phone_mobtm.png) no-repeat 20px center / 30px; }                 
 .quick_list li:nth-child(2) 
@@ -122,8 +122,8 @@ footer h2 { padding-top: 15px; font-size: 12px; color: #555; line-height: 1.6; }
 .top { position: fixed; right: 4%; bottom: 160px; text-align: center;
        z-index: 100; }
 .top a { display: block; width: 45px; height: 45px; 
-         background: url(../img/ico_totop.png) no-repeat center / 45px; 
-         text-indent: -999em; overflow: hidden; }
+              background: url(../img/ico_totop.png) no-repeat center / 45px; 
+              text-indent: -999em; overflow: hidden; }
 .top { display: none; }
 
 /* PC css */

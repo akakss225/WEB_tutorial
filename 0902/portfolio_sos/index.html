@@ -1,116 +1,164 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <!-- META -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="./css/vegas.css">
+    <link rel="stylesheet" href="./css/reset2.css" />
     <link rel="stylesheet" href="./css/style.css" />
-
     <!--JS-->
-    <script src="jquery.min.js"></script>
-    <script src="js/script.js"></script>
-
+    <script src="./js/jquery-3.3.1.min.js"></script>
+	<script src="./js/vegas.js"></script>
     <title>front</title>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Header -->
-<div class="header-wrapper">
-	<div class="header-contents">
-		<h1 class="title">LOGO</h1>
-		<nav class="nav-bar">
-			<ul>
-				<li><a href="#about">About</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#skills">Skills</a></li>
-			</ul>
-		</nav>
+	<div class="header-wrapper">
+		<div class="header-contents">
+			<h1 class="title">LOGO</h1>
+			<nav class="nav-bar">
+				<ul>
+					<li><a href="#about">About</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#skills">Skills</a></li>
+				</ul>
+			</nav>
+		</div>
 	</div>
-</div>
-     
-<!-- div:slider  슬라이더 -->
-<div class="slider">
- <div class="slider-bg"></div>	
- <div class="slider-content">
- 	<h1 class="copy">
- 		<span>   </span>
- 		<span>   </span>
- 	</h1>
- 	<a href="" class="btn">More</a>
- </div>	
-</div>
+		
+	<!-- div:slider  슬라이더 -->
+	<div class="slider">
+		<div class="slider-bg"></div>	
+		<div class="slider-content">
+			<h1 class="copy">
+				<span>WEB Front</span>
+				<span>응용 SW개발자 과정</span>
+			</h1>
+			<a href="" class="btn">More</a>
+		</div>	
+	</div>
 
-<!-- Main -->
-<div class="main-wrapper">
+	<!-- Main -->
+	<div class="main-wrapper">
+		<!-- section-1 : 자기소개 -->
+		<section class="section1" id="about">
+			<div class="section-content">
+				<div class="left">
+					<h3>About</h3>
+					<h2>ABCD</h2>
+					<h2>EFGHIJKLMNOP</h2>
+					<p>안녕하세요...<br>
+						...의 포트폴리오 사이트입니다.<br>
+						반응형 웹페이지를 <br>
+						<strong>HTML, CSS, jQuery</strong>를 이용하여<br>
+						제작하였습니다.
+					</p>
+				</div>
+				<div class="right">
+					<img src="./img/about2.jpg" alt="1">
+				</div>
+			</div>
+		</section>
+			
+		<!-- section-2 : 포트폴리오 -->
+		<section class="section2" id="portfolio">
+			<div class="section-content">
+				<h2>Portfolio</h2>	
+				<ul class="imgbox">
+					<li>
+						<a href="#"><img src="img/img02.jpg" alt=""></a>
+						<h4>웹사이트 제목01</h4>	
+					</li>
+					<li>
+						<a href="#"><img src="img/img04.jpg" alt=""></a>
+						<h4>웹사이트 제목02</h4>	
+					</li>
+					<li>
+						<a href="#"><img src="img/img06.jpg" alt=""></a>
+						<h4>웹사이트 제목03</h4>	
+					</li>
+				</ul>
+			</div>
+		</section>
 
- <!-- section-1 : 자기소개 -->
- <div class="section1" id="about">
- 	<div class="section-content">
- 	 <div class="left">
+		<!-- section-3 : 보유 기술 역량 -->
+		<section class="section3" id="skills">
+			<div class="section-content">
+				<h2>SKills</h2>
+				<div class="skillbox">
+					<ul class="left">
+						<li>HTML5/css</li>	
+						<li><span class="score html"></span></li>
+						<li>javascript/jQuery</li>	
+						<li><span class="score jq"></span></li>
+					</ul>
+					<ul class="right">
+						<li>java</li>	
+						<li><span class="score java"></span></li>
+						<li>spring</li>	
+						<li><span class="score sp"></span></li>
+					</ul>	
+				</div>
+			</div>
+		</section>
+	
+	</div>
 
- 	 </div>
- 	 <div class="right">
+	<!-- footer-->
+	<div class="footer-wrapper">
+		<p>Copyright 2021 webdi All Right Reserved.</p>
+		<!-- copyright 저작권, 판권 / all right reserved 무단 전제와 복제를 금함 -->
+	</div>  
 
- 	 </div>
- 	</div>
- </div>
-      
- <!-- section-2 : 포트폴리오 -->
- <div class="section2" id="portfolio">
- 	<div class="section-content">
- 	 <h2>Portfolio</h2>	
- 	 <ul class="imgbox">
- 	 	<li>
- 	 	  <a href="#"><img src="img/img02.jpg" alt=""></a>
- 	 	  <h4>웹사이트 제목01</h4>	
- 	 	</li>
- 	 	<li>
- 	 	  <a href="#"><img src="img/img04.jpg" alt=""></a>
- 	 	  <h4>웹사이트 제목02</h4>	
- 	 	</li>
- 	 	<li>
- 	 	  <a href="#"><img src="img/img06.jpg" alt=""></a>
- 	 	  <h4>웹사이트 제목03</h4>	
- 	 	</li>
- 	 </ul>
- 	</div>
- </div>
+	<!-- script -->
+	<script>
+		$(".slider .slider-bg").vegas({
+			delay: 5000, // 지연시간
+			overlay: "./dot/03.png",
+				slides: [
+				    { 
+						video: {
+							src: [
+								'./video/video1.mp4',
+							],
+							loop: true,
+							mute: true
+						}
+					},
+					{ 
+						video: {
+							src: [
+								'./video/video2.mp4',
+							],
+							loop: true,
+							mute: true
+						}
+					}
+				]
+		});
 
- <!-- section-3 : 보유 기술 역량 -->
- <div class="section3" id="skills">
- 	<div class="section-content">
- 		<h2>SKills</h2>
- 		<div class="skillbox">
- 		 <ul class="left">
- 		  <li>HTML5/css</li>	
- 		  <li><span class="score html"></span></li>
- 		  <li>javascript/jQuery</li>	
- 		  <li><span class="score jq"></span></li>
- 		 </ul>
- 		 <ul class="right">
- 		  <li>java</li>	
- 		  <li><span class="score java"></span></li>
- 		  <li>spring</li>	
- 		  <li><span class="score sp"></span></li>
- 		 </ul>	
- 		</div>
- 	</div>
- </div>
- 
-</div>
+		$(window).scroll(function(){
+			let st = $(this).scrollTop();
+			let boxHeight = $(".header-contents").outerHeight();
+			
+			if( st > boxHeight ){
+				$(".header-wrapper").addClass("active");
+			}
+			else{
+				$(".header-wrapper").removeClass("active");
+			}
 
-<!-- footer-->
-<div class="footer-wrapper">
-	<p>Copyright 2021 webdi All Right Reserved.</p>
-	<!-- copyright 저작권, 판권 / all right reserved 무단 전제와 복제를 금함 -->
-</div>  
-
-<!-- script -->
-<script type="text/javascript" charset="utf-8">
-
-</script>
- 
-  </body>
+			$(".main-wrapper>section").each(function(idx, object){
+				if( st > $(this).offset().top - 400 ){
+					$(this).addClass("active");
+				}
+				else{
+					$(this).removeClass("active");
+				}
+			});
+		});
+	</script>
+</body>
 </html>
