@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+/*
+  -webkit- 로 시작하면 접두어 크롬, 사파리에 적용
+  -ms- 로 시작하면 모질라계열(파이어폭스)등에서 동작
+*/
+
+body,
+html {
+  min-width: 330px; 
+	/* 가로사이즈가 너무 작아지는 것 방지*/
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #272727;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.7;
+}
+
+ul,li { list-style: none; }
+
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+  word-break: keep-all;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 28px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+button:active,
+button:hover,
+button:focus {
+  outline: 0;
+}
+
+/* header */
+.header-wrapper {}
+.active.header-wrapper {}
+
+.header-contents {} 
+
+.title {}
+.active .title, .active .nav-bar {}
+.nav-bar { }
+.nav-bar ul {}
+.nav-bar li { }
+.nav-bar li:last-of-type {}
+
+/* slider 이미지 슬라이더 */
+.slider { }
+.slider-bg {}
+.slider-content { }
+
+.copy { }
+
+.copy span { }
+@keyframes ani {}
+
+.btn { }
+.btn:hover { }
+
+.main-wrapper>div { }
+.section-content {}
+
+/* section-1 자기소개 */
+.section1 { }
+
+.active.section1 h2 {}
+.left, .right {}
+
+.left { }
+.right { }
+
+.section1 .txt { }
+
+.active.section1 .txt {}
+
+.section1 img { }
+.active.section1 img { }
+
+/* section-2 포트폴리오 */
+.section2 { }
+.section2 h2 { }
+.active.section2 h2 {}
+.section2 h4 {}
+
+.section2 .imgbox { }
+.active.section2 .imgbox { }
+
+.imgbox li { }
+.imgbox li a { }
+.imgbox li img { }
+.imgbox li img:hover {}
+
+/* section-3 스킬 */
+.section3 { }
+.section3 h2 { }
+
+.section3 ul { }
+
+.section3 ul:first-of-type { }
+.section3 ul li:nth-of-type(2n-1) {}
+.section3 ul li:nth-of-type(2n) {}
+
+.score { }
+.active .score { }
+
+.html { width: 98%; }
+.jq { width: 80%; }
+.java { width: 70%; }
+.sp { width: 90%; }
+
+
+/* section-4 */
+
+
+/* footer */
+.footer-wrapper {}
+.footer-wrapper p {}
+
+
+
+

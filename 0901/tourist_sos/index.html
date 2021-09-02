@@ -27,7 +27,7 @@
         </div>
 
         <div class="menubox">
-          <ul>
+          <ul class="loginBox">
             <li><a href="#">로그인</a></li>
             <li><a href="#">회원가입</a></li>
           </ul> 
@@ -76,25 +76,28 @@
     <div class="main_slider">
       <div class="swiper">
         <ul class="swiper-wrapper">
-          <li class="swiper-slide">
+          <li class="swiper-slide img1">
             <div class="rollcontent">
-              <a href="#"><img src="img/img_slidecontents01.png" alt=""></a>
+              <a href="#"><img src="./img/img_slidecontents01.png" alt=""></a>
               <p class="roll_txt">BE TOURISI FOR BETTER LIFE</p>
             </div>
           </li>
-          <li class="swiper-slide">
+          <li class="swiper-slide img2">
             <div class="rollcontent">
-              <a href="#"><img src="img/img_slidecontents02.png" alt=""></a>
+              <a href="#"><img src="./img/img_slidecontents02.png" alt=""></a>
               <p class="roll_txt">BE TOURISI FOR BETTER LIFE</p>
             </div>
           </li>
-          <li class="swiper-slide">
+          <li class="swiper-slide img3">
             <div class="rollcontent">
-              <a href="#"><img src="img/img_slidecontents03.png" alt=""></a>
+              <a href="#"><img src="./img/img_slidecontents03.png" alt=""></a>
               <p class="roll_txt">BE TOURISI FOR BETTER LIFE</p>
             </div>
           </li>
         </ul>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
     <div class="mobile_slider">
@@ -145,7 +148,7 @@
           <h3 class="place_title">기념공원</h3> 
           <p class="sub_title">드넓은 대지에 정원과 함게하는 문화가 있다</p>
           <span class="view">VIEW</span>
-          </li>
+        </li>
         </ul>
       </div>
     </div>
@@ -226,18 +229,33 @@
     $(".header_top").removeClass("on");
   });
 
+    // pc menu
+  $(".gnb>li").on({
+    mouseenter : function(){
+      $(this).children(".submenubg").stop().fadeIn("fast")
+    },
+    mouseleave : function(){
+      $(this).children(".submenubg").stop().fadeOut("fast")
+    }
+  })
+
   $(".place_list>li").each(function(index, value){
     $(this).children("a").click(function(e){
       e.preventDefault();
       $(".pop_title").text($(this).siblings(".place_title").text());
       $(".pop_subtitle").text($(this).siblings(".sub_title").text());
       $("#popup img").attr("src", $(this).children("img").attr("src"))
-      $("#popup").stop().show();
+      $("#popup").stop().fadeIn("fast");
     });
     $("#popup").click(function(e){
-      $("#popup").stop().hide();
+      $("#popup").stop().fadeOut("fast");
     });
+    $(".modal").click(function(e){
+      e.stopPropagation();
+    })
   });
+
+
 
 </script>
 </body>
