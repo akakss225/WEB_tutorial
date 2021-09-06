@@ -10,14 +10,15 @@
 </head>
 <body>
     <div id="app">
-        <my-com v-on:show-log="printText"></my-com>
+        <my-com v-on:hi="test" v-bind:propsdata=message></my-com>
     </div>
     <script>
         Vue.component("my-com",{
-            template: "<button v-on:click='showLog'>SHOW</button>",
+            props: ["propsdata"],
+            template: "<button v-on:click='showLog'>HI {{propsdata}}</button>",
             methods: {
                 showLog : function(){
-                    this.$emit("show-log")
+                    this.$emit("hi")
                 }
             }
         });
@@ -25,11 +26,11 @@
         new Vue({
             el: "#app",
             data: {
-                message: "Hello Vue!",
+                message: "Vue!",
             },
             methods: {
-                printText: function(){
-                    console.log("이벤트 수신하였음.");
+                test: function(){
+                    alert("HI~!");
                 }
             }
         });
