@@ -5,110 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUMIN's Page</title>
+    <link rel="stylesheet" href="./css/style.css">
     <script src="./js/jquery-3.3.1.min.js"></script>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
+    <script src="./js/script.js"></script>
 </head>
 <body>
     <div id="wrap">
-        <div id="slider">
-            <div class="slide">
-                <ul class="list">
-                    <li><img src="./img/slide1.jpeg" alt="0"></li>
-                    <li><img src="./img/slide2.jpeg" alt="1"></li>
-                    <li><img src="./img/slide3.jpeg" alt="2"></li>
-                    <li><img src="./img/slide4.jpeg" alt="3"></li>
-                    <li><img src="./img/slide5.jpeg" alt="4"></li>
-                </ul>
-            </div>
-        </div>
+        <video class="topVideo" src="./video/helloWorld.mp4" autoplay muted loop></video>
         <header>
-            <h1 class="top_logo"><a href="#">SUMIN's</a></h1>
-            <nav>
-                <ul class="gnb">
-                    <li>
-                        <a href="#">WEB_Tutorial</a>
-                        <ul class="subMenu">
-                            <li><a href="">HTML</a></li>
-                            <li><a href="">CSS</a></li>
-                            <li><a href="">JavaScript</a></li>
-                            <li><a href="">jQuery</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">JAVA_Tutorial</a>
-                        <ul class="subMenu">
-                            <li><a href="">Basement</a></li>
-                            <li><a href="">DataStructure</a></li>
-                            <li><a href="">Algorithm</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">PYTHON_Tutorial</a>
-                        <ul class="subMenu">
-                            <li><a href="#">Basement</a></li>
-                            <li><a href="#">DataStructure</a></li>
-                            <li><a href="#">Algorithm</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">GIT_Tutorial</a>
-                        <ul class="subMenu">
-                            <li><a href="#">Basement</a></li>
-                            <li><a href="#">DataStructure</a></li>
-                            <li><a href="#">Algorithm</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+            <div class="inner">
+                <h1 class="top_logo"><a href="#">SUMIN's</a></h1>
+                <nav>
+                    <ul class="gnb">
+                        <li>
+                            <a href="#">WEB_Tutorial</a>
+                            <div class="subwrap">
+                                <ul class="subMenu">
+                                    <li><a href="">HTML</a></li>
+                                    <li><a href="">CSS</a></li>
+                                    <li><a href="">JavaScript</a></li>
+                                    <li><a href="">jQuery</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">JAVA_Tutorial</a>
+                            <div class="subwrap">
+                                <ul class="subMenu">
+                                    <li><a href="">J_Basement</a></li>
+                                    <li><a href="">J_DataStructure</a></li>
+                                    <li><a href="">J_Algorithm</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">PYTHON_Tutorial</a>
+                            <div class="subwrap">
+                                <ul class="subMenu">
+                                    <li><a href="#">P_Basement</a></li>
+                                    <li><a href="#">P_DataStructure</a></li>
+                                    <li><a href="#">P_Algorithm</a></li>
+                                </ul>
+                            </div> 
+                        </li>
+                        <li>
+                            <a href="#">GIT_Tutorial</a>
+                            <div class="subwrap">
+                                <ul class="subMenu">
+                                    <li><a href="#">G_Basement</a></li>
+                                    <li><a href="#">G_DataStructure</a></li>
+                                    <li><a href="#">G_Algorithm</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         <div id="content">
-            <section class="html">
+            <section id="html">
                 <div class="title1">
                     <h2>HTML</h2>
                 </div>
                 <div class="bg1">
-                    <p>하이퍼텍스트 마크업 언어(Hyper Text Markup Language, HTML)는 웹 페이지를 위한 지배적인 마크업 언어다.<br>
-                        또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미를 나타내는 것뿐만 아니라 링크, 인용과 그 밖의 항목으로 구조적 문서를 만들 수 있는 방법을 제공한다.</p>
+                    <span><strong>하이퍼텍스트 마크업 언어(Hyper Text Markup Language, HTML)</strong>는 웹 페이지를 위한 지배적인 마크업 언어다.<br>
+                        또한, HTML은 제목, 단락, 목록 등과 같은 본문을 위한 구조적 의미를 나타내는 것뿐만 아니라 링크, 인용과 그 밖의 항목으로 구조적 문서를 만들 수 있는 방법을 제공한다.</span>
                 </div>
             </section>
-            <section class="html">
+            <section id="java">
                 <div class="title2">
                     <h2>JAVA</h2>
                 </div>
                 <div class="bg2">
-                    <p>자바(JAVA)는 대표적인 Object oriented Language(객체지향언어)이다.<br>
-                        현재 웹 애플리케이션 개발에 가장 많이 사용하는 언어 가운데 하나이고, 모바일 기기용 소프트웨어 개발에도 널리 사용하고 있다.</p>
+                    <span><strong>자바(JAVA)</strong>는 대표적인 Object oriented Language(객체지향언어)이다.<br>
+                        현재 웹 애플리케이션 개발에 가장 많이 사용하는 언어 가운데 하나이고, 모바일 기기용 소프트웨어 개발에도 널리 사용하고 있다.</span>
                 </div>
             </section>
-            <section class="html">
+            <section id="python">
                 <div class="title3">
                     <h2>PYTHON</h2>
                 </div>
                 <div class="bg3">
-                    <p>파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어이다.<br>
-                        플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다.</p>
+                    <span><strong>파이썬(Python)</strong>은 1991년 프로그래머인 귀도 반 로섬이 발표한 고급 프로그래밍 언어이다.<br>
+                        플랫폼에 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다.</span>
                 </div>
             </section>
-            <section class="html">
+            <section id="git">
                 <div class="title4">
                     <h2>GIT-HUB</h2>
                 </div>
                 <div class="bg4">
-                    <p>깃허브(GIT-HUB)는 대표적인 형상 관리 도구 중 하나이다.<br>
-                        이는 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.</p>
+                    <span><strong>깃허브(GIT-HUB)</strong>는 대표적인 형상 관리 도구 중 하나이다.<br>
+                        이는 컴퓨터 파일의 변경사항을 추적하고 여러 명의 사용자들 간에 해당 파일들의 작업을 조율하기 위한 분산 버전 관리 시스템이다.</span>
                 </div>
             </section>
         </div>
+        <button class="sideBtn">&lt;</button>
         <div class="sidebox">
+            <button class="close">x</button>
             <ul>
-                <li><a href="#">HTML</a></li>
-                <li><a href="#">JAVA</a></li>
-                <li><a href="#">PYTHON</a></li>
-                <li><a href="#">GIT-HUB</a></li>
+                <li><a href="#html">HTML</a></li>
+                <li><a href="#java">JAVA</a></li>
+                <li><a href="#python">PYTHON</a></li>
+                <li><a href="#git">GIT-HUB</a></li>
             </ul>
         </div>
-        <footer></footer>
+        <div id="slider">
+            <div class="slide">
+                <h2>추천 교재</h2>
+                <ul class="list">
+                    <li><img src="./img/html1.png" alt="0"></li>
+                    <li><img src="./img/java1.png" alt="1"></li>
+                    <li><img src="./img/python1.png" alt="2"></li>
+                    <li><img src="./img/git1.png" alt="3"></li>
+                </ul>
+            </div>
+        </div>
+        <footer>
+            <h2>SUMIN's</h2>
+            <p>copyright</p>
+        </footer>
         <div id="top">
             <a href="#">TOP</a>
         </div>
