@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        .popup { border: 1px solid #000; padding: 20px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1> Hi Mr.{{name}}, Nice to meet you.</h1>
+        <input type="text" placeholder="Write your name" v-model="name">
+        <hr>
+        <p @click="open">Today's Weather : {{ weather }}</p>
+        <hr>
+        <a :href="hrefUrl" target="_blank">
+            <img :src="imgUrl" :alt="imgAlt">
+        </a>
+        <div class="popup" v-if="show" @click="close">
+            <p>{{message}}</p>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                popup: "popup",
+                name: "",
+                weather: "Rainy",
+                hrefUrl: "https://www.naver.com",
+                imgUrl: "https://picsum.photos/400", // 랜덤이미지 추출해주는 사이트.
+                imgAlt: "random image",
+                message: "It's raining day.",
+                show: true
+            },
+            methods: {
+                close: function(){
+                    this.show = false;
+                },
+                open: function(){
+                    this.show = true;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
