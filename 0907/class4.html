@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        #title { font-size: 42px; text-align: center; text-decoration: underline; }
+        .subcopy { color: blue; font-style: italic; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h3> {{title}} </h3>
+        <p v-bind:id="idA">ID Binding</p>
+        <p :class="clA">CLASS Binding</p>
+        <p v-bind:style="stA">STYLE attribute Binding</p>
+        <p>{{message.split("").reverse().join("")}}</p>
+        <p>{{false ? 100 : 0}}</p>
+        <p>{{reverseTxt}}</p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello",
+                idA: "title",
+                clA: "subcopy",
+                stA: "color: red; text-align: right;"
+            },
+            computed: { // 계산된 값을 출력
+                reverseTxt: function(){
+                    return this.message.split("").reverse().join("");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
