@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디렉티브 문법</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        #red { color: red; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a v-if="flag">print</a>
+        <ul>
+            <li v-for="system in systems">{{system}}</li>
+        </ul>
+        <p v-show="check">print</p>
+        <h5 :id="uid">Vue Directive example</h5>
+        <input type="text" v-model="inputText">
+        <button v-on:click="popAlert">Alert!</button>
+        <input type="checkbox" v-model="check">
+        <p>{{inputText}}</p>
+        <button @click="addBtn">{{num}} click</button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                flag: true,
+                uid: "red",
+                systems: ["a-test", "b-test", "c-test"],
+                inputText: "test",
+                check: false,
+                num: 0
+            },
+            methods: {
+                popAlert: function(){
+                    return alert("DANGER!")
+                },
+                addBtn: function(){
+                    this.num++;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
