@@ -7,7 +7,9 @@ $(function(){
         $(this).toggleClass("on");
         $(this).parents("li").siblings("li").children("a").removeClass("on");
         $(this).parents("li").siblings("li").children(".subwrap").stop().hide();
+        $(this).parents("li").toggleClass("on").siblings("li").removeClass("on");
     });
+
 
     // 스크롤시 상단에 nav 박스 고정 및 사이드버튼 출력 , top버튼
     $(window).scroll(function(){
@@ -53,6 +55,7 @@ $(function(){
         }
     });
 
+
     // 사이드메뉴 버튼 & 사이드박스 
     $(".sideBtn").click(function(){
         $(this).stop().hide();
@@ -64,13 +67,40 @@ $(function(){
         $(".sideBtn").stop().show();
     });
 
+
     // 하단 슬라이드 박스
-    $(".slide .list li:nth-child(2)").addClass("on").siblings("li").removeClass("on");
-    setInterval(function(){
+    function run(){ // 슬라이드 코드
         $(".slide .list").animate({marginLeft : -275}, 1000, function(){
             $(".slide .list li:first").insertAfter($(".slide .list li:last"));
             $(".slide .list").css("margin-left", 0);
             $(".slide .list li:nth-child(2)").addClass("on").siblings("li").removeClass("on");
-        })
-    }, 3000)
+        });
+    };
+    let interval = setInterval(run, 3000);
+    $(".slide .list li:nth-child(2)").addClass("on").siblings("li").removeClass("on");
+    if ($(window).outerWidth() < 960){ // 초기값 : 브라우저 실행시 현재 width에 따라 pc사이즈면 슬라이드가 실행되고, 아니면 실행되지않는다.
+        $(".slide .list li:nth-child(2)").removeClass("on").siblings("li").removeClass("on");
+        clearInterval(interval);
+    };
+    
+    $(window).resize(function(){ // width를 변경하면서 pc size가 되면 슬라이드 실행, 테블릿 size가 되면 슬라이드 멈춤.
+        if($(window).outerWidth() < 960){
+            $(".slide .list li:nth-child(2)").removeClass("on")
+            clearInterval(interval);
+            
+        }
+        else{
+            $(".slide .list li:nth-child(2)").addClass("on").siblings("li").removeClass("on");
+            clearInterval(interval);
+            interval = setInterval(run, 3000);
+        }
+        if ($(window).outerWidth() > 520 && $("nav").hasClass("active")){
+            $("nav").removeClass("active");
+        }
+    });
+
+    // 모바일 토글버튼
+    $("#toggle").click(function(){
+        $("nav").stop().toggleClass("active");
+    })
 });
