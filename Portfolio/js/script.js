@@ -28,7 +28,7 @@ $(function(){
         else{
             $(".sideBtn").fadeOut(500);
         };
-
+        
         $("#content div[class^='title']").each(function(){
             if( st > $(this).offset().top - 400 ){
                 $(this).addClass("active");
