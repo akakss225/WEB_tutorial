@@ -21,7 +21,10 @@ a { color: #333; text-decoration: none; }
 
 .slide .list li img { width: 1200px; height: 700px;  }
 
-.topVideo { width: 100%; border: none; margin: none; }
+#videoBox { position: relative; }
+.topVideo { width: 100%; border: none; margin: none;}
+#login { position: absolute; right: 7%; top: 2%; z-index: 9999; color: #ccc; font-size: 1em;  }
+#my { position: absolute; right: 3%; top: 2%; z-index: 9999; color: #ccc; font-size: 1em;  }
 
 header { height: 80px; background-color: #fff; position: relative; border-bottom: 1px solid #ccc; 
             margin-bottom: 30px; transition: .5s; }
@@ -87,7 +90,7 @@ header nav { flex: 2 2 0; margin-right: 5%;  }
 .sidebox ul li { width: 100%; text-align: center; }
 .sidebox ul li a { color: #eee; }
 .sidebox ul li a:hover { color: #fff; text-shadow: 3px 3px 5px #000; }
-.sideBtn { border: none; position: fixed; top: 50%; right: 0; transform: translateY(-50%); 
+.sideBtn { border: none; position: fixed; top: 50%; right: 0; transform: translateY(-50%);  z-index: 99;
             padding: 15px 5px 15px 15px; border-radius: 30px 0 0 30px; background-color: rgba(0, 0, 0, 0.6); 
             color: #eee; box-sizing: border-box; font-size: 1.2em; display: none; cursor: pointer; }
 
@@ -115,13 +118,15 @@ footer p { flex: 3 3 0; text-align: center; letter-spacing: 2px; font-size: 0.8e
 
 /* 테블릿 사이즈 */
 @media screen and (max-width: 960px) {
+    #login { font-size: .9em; right: 9%; }
+    #my { font-size: .9em; }
     header .inner { display: block; }
     .top_logo { flex: none; margin-left: 0; width: 100%;
                 text-align: center; margin-bottom: 10px; }
     header nav { flex: none; width: 100%; }
 
     #content span { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -30%); 
-            font-size: .9em; letter-spacing: 2px; line-height: 2; height: 35%; }
+            font-size: .9em; letter-spacing: 2px; line-height: 2; height: min-content; }
     
     #slider { width: 100%;  }
     #slider .slide { width: 80%; height: 100%; padding-bottom: 30px; margin: 0 auto; }
@@ -137,6 +142,8 @@ footer p { flex: 3 3 0; text-align: center; letter-spacing: 2px; font-size: 0.8e
 
 /* 모바일 사이즈 */
 @media screen and (max-width: 520px) {
+    #login { font-size: .7em; right: 12%; }
+    #my { font-size: .7em; }
     header { height: 70px; background-color: #fff; margin-bottom: 20px}
     header .inner {  }
     .top_logo { margin: 0 auto; line-height: 70px; width: 30%;  }
@@ -157,6 +164,8 @@ footer p { flex: 3 3 0; text-align: center; letter-spacing: 2px; font-size: 0.8e
     .gnb>li:hover { background-color: #ddd; }
     .gnb>li:hover>a { color: #000; }
 
+    
+
     .subwrap { position: relative; left: 0; top: 10px; height: 100%; }
     .subMenu { display: block;  }
     .subMenu li { width: 100%; flex: none; text-align: right; padding: 10px 0; border-bottom: 1px solid #fff; }
@@ -176,11 +185,12 @@ footer p { flex: 3 3 0; text-align: center; letter-spacing: 2px; font-size: 0.8e
 
     #slider { width: 100%;  }
     #slider .slide { width: 100%; height: 100%; padding-bottom: 30px; margin: 0 auto; }
-    #slider .slide h2 { font-size: 1.8em;}
-    #slider .slide .list { width: 100%; display: flex; justify-content: space-around; flex-flow: column wrap; }
-    #slider .slide .list li { width: 40%; height: 100%; border: none;
-                                margin-right: 0; opacity: 0.8; transition: .5s; }
-    #slider .slide .list li:hover { opacity: 1; transform: scale(1.1); box-shadow: 2px 2px 10px #222; }
+    #slider .slide h2 { font-size: 1.5em;}
+    #slider .slide .list { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; 
+                            gap: 2%; padding: 3%;}
+    #slider .slide .list li { width: 90%; }
+    #slider .slide .list li:hover { transform: translateY(-5px); box-shadow: 2px 2px 5px #222; }
     #slider .slide .list li img { width: 100%; height: 100%; padding: 0; }
-
+    
+    .sideBtn { display: none !important; }
 }

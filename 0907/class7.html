@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .title { text-align: center; margin: 20px 0; }
+        .list { list-style: none; text-align: center; overflow: hidden; 
+                width: 1000px; margin: 0 auto; }
+        .list li { float: left; width: 31%; padding: 10px; margin: 0 1% 40px; 
+                    border: 5px solid #ddd; transition: .5s; }
+        .list li h2 { font-size: 18px; color: #555; }
+        .list li .imgbox { margin: 10px 0; }
+        .list li .imgbox img { width: 100%; }
+        .list li .imgbox p { font-size: 12px; }
+
+        .modal { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 500px;
+                background-color: #fff; padding: 30px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); }
+        .modal h2 { margin: 10px 0; }
+        .modal img { width: 100%; }
+        .modal button { background-color: #333; padding: 8px 20px; border: none; margin-top: 20px;
+                        color: #fff; }
+    </style>
+</head>
+<body>
+    <h1 class="title">상품 갤러리</h1>
+    <div id="app">
+        <ul class="list">
+            <template v-for="(item, idx) in items">
+                <li :class="item.class">
+                    <h2>{{item.title}}</h2>
+                    <div class="imgbox">
+                        <img :src="item.imgUrl" @click="popup(idx)">
+                    </div>
+                    <p>{{item.subcopy}}</p>
+                </li>
+            </template>
+        </ul>
+        <div class="modal" v-if="showModal">
+            <h2>{{items[index].title}}</h2>
+            <img :src="items[index].imgUrl" alt="">
+            <button @click="showModal=false">close</button>
+        </div>
+        
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                title: "title",
+                items: [
+                    { class: "p01", title: "banner01", imgUrl: "./images/pmb1.jpg", subcopy: "오늘의 할인상품은 01번 입니다."},
+                    { class: "p02", title: "banner02", imgUrl: "./images/pmb2.jpg", subcopy: "오늘의 할인상품은 02번 입니다."},
+                    { class: "p03", title: "banner03", imgUrl: "./images/pmb3.jpg", subcopy: "오늘의 할인상품은 03번 입니다."},
+                    { class: "p04", title: "banner04", imgUrl: "./images/pmb4.jpg", subcopy: "오늘의 할인상품은 04번 입니다."},
+                    { class: "p05", title: "banner05", imgUrl: "./images/pmb5.jpg", subcopy: "오늘의 할인상품은 05번 입니다."},
+                    { class: "p06", title: "banner06", imgUrl: "./images/pmb6.jpg", subcopy: "오늘의 할인상품은 06번 입니다."},
+                ],
+                showModal: false,
+                index: null
+            },
+            methods: {
+                popup: function(idx){
+                    this.showModal = true;
+                    this.index = idx
+                }
+            }
+        });
+    </script>
+</body>
+</html>
