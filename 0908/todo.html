@@ -19,7 +19,18 @@
                     border-bottom: 1px dashed #ddd; list-style-position: inside; }
         .list li button { margin: 5px 2px 0; padding: 5px 10px; float: right; 
                             font-size: 16px; border-radius: 5px; background-color: blueviolet;
-                            color: #fff; border: none; outline: none; }
+                            color: #fff; border: none; outline: none; cursor: pointer; }
+        .deletBtn { color: red; padding: 10px; background-color: #fff; border: 1px solid #ddd; 
+                    border-radius: 5px; margin: 0 auto; display: block; width: 70px; text-align: center; 
+                    cursor: pointer; }
+
+        .modal { width: 400px; height: 150px; background-color: rgba(255, 255, 255, 0.5); position: fixed; box-shadow: 1px 1px 2px #000;
+                top: 30%; left: 50%; transform: translate(-50%,-50%); text-align: center; z-index: 10; }
+        .modal input { line-height: 2; }
+        .modal h2 {  }
+        .modal button { font-size: 16px; border-radius: 5px; background-color: blueviolet;
+                    color: #fff; border: none; outline: none; cursor: pointer;
+                    margin: 5px 2px 0; padding: 5px 10px; }
     </style>
 </head>
 <body>
@@ -27,18 +38,30 @@
         <h1>{{ title }}</h1>
 
         <div id="inputBox">
-            <input type="text" :id="idName" v-model="todo"> <!-- 할일 목록 입력 -->
+            <input type="text" :id="idName" v-model="todo" @keypress.enter="addTodo"> <!-- 할일 목록 입력 -->
             <input type="submit" :class="className1" @click="addTodo" value="등록"> <!-- 할일 목록 전송 -->
         </div>
 
         <ol :class="olClass">
-            <li v-for="(todo, idx) in todos"> {{todo}} <button @click="delBtn(idx)">DEL</button> </li>
+            <li v-for="(todo, idx) in todos"> 
+                {{todo}} 
+                <button @click="delBtn(idx)">DEL</button> <button @click="openModal(idx)">FIX</button>
+            </li>
         </ol>
+        <span class="deletBtn" @click="deleteAll">Delete</span>
+        <div class="modal" v-if="showModal">
+            <h2>수정하실 내용을 입력하세요.</h2>
+            <input type="text" class="fixbox" v-model="fix" @keypress.enter="fixBtn">
+            <button @click="fixBtn()">수정하기</button>
+        </div>
     </div>
     <script>
         new Vue({
             el: "#app",
             data: {
+                showModal: false,
+                index: null,
+                fix: "",
                 title: "TO DO LIST",
                 className1: "addBtn",
                 idName: "inBox",
@@ -55,6 +78,23 @@
                 },
                 delBtn: function(idx){
                     this.todos.splice(idx,1);
+                },
+                deleteAll: function(){
+                    this.todos = [];
+                },
+                openModal: function(idx){
+                    this.index = idx;
+                    this.showModal = !this.showModal;
+                },
+                fixBtn: function(){
+                    if ( this.fix != ""){
+                        this.todos.splice(this.index,1,this.fix);
+                        this.showModal = !this.showModal;
+                        this.fix = "";
+                    }
+                    else{
+                        alert("공백 입력 불가");
+                    }
                 }
             }
         });
