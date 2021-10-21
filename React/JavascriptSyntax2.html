@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Syntax2</title>
+    <script>
+
+        // 배열을 인덱스로 확인하는 방법
+        var arr =[10, 20, 30];
+        for(i = 0; i < 3; i++){
+            console.log(arr[i]);
+        }
+
+        // 구조 분해 할당
+        [a, b, c] = [10, 20, 30];
+        console.log(a);
+        console.log(b);
+        console.log(c);
+        
+        [a, b, ...result] = [10, 20, 30, 40, 50];
+        console.log(a);
+        console.log(b);
+        console.log(result);
+
+        // JSON 형식의 객체 ( JavaScript Object Notation )
+        var person = {name : "홍길동", age : 10};
+        console.log(person);
+        console.log(person.name);
+        console.log(person.age);
+        
+        ({name, age} = person);
+        console.log(name);
+        console.log(age);
+
+        // 전개 구문
+        function sum(a,b,c){
+            return a+b+c;
+        }
+        var arr2 = [10, 20, 30];
+        console.log(sum(arr2[0], arr2[1], arr2[2]));
+        console.log(sum(...arr2));
+
+        var arr3 = [...arr, ...arr2];
+        console.log(arr3);
+        console.log([...arr, ...arr2]);
+
+        // 즉시 실행 함수
+        (function (){
+            console.log("즉시실행함수");
+        })();
+
+        // 함수 레퍼런스 연습
+        function func1() {
+            console.log("func1");
+        }
+        func1();
+
+        var func2 = function(){
+            console.log("Anonymous");
+        }
+        func2();
+
+        var func3 = func2;
+        func3();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
