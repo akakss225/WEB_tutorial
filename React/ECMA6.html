@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECMAScriot6</title>
+    <script>
+        class Car{
+            constructor(name){
+                this.brand = name;
+            }
+            present(){
+                return 'I have a ' + this.brand;
+            }
+        }
+        
+        mycar = new Car("Ford");
+        document.write(mycar.present());
+        
+        let a = 10;
+        a = 20;
+        console.log(a);
+
+        const b = 30;
+        
+        console.log(b);
+
+        const myArray = ['apple', 'banana', 'orange'];
+        const myList = myArray.map((item) => item + " fruit");
+
+        console.log(myList);
+        
+    </script>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        hello = (val) => "Hello " + val;
+        document.getElementById("demo").innerHTML = hello("World!");
+    </script>
+</body>
+</html>
